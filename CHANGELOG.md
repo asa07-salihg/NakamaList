@@ -1,4 +1,7 @@
-# What's New
+## 0.9.6
+**Support the app**
+
+- Added a "Buy me a coffee" button at the bottom of Settings so you can support development if you'd like; it's entirely optional. Also tidied the What's New screen, which was showing its title twice.
 
 ## 0.9.5
 **Character appearances**
