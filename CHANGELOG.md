@@ -1,3 +1,8 @@
+## 0.9.7
+**Fewer broken links**
+
+- Person pages now list only anime that exist on MyAnimeList, so tapping an entry no longer opens a 404; manga and unmatched entries are filtered out.
+
 ## 0.9.6
 **Support the app**
 
