@@ -1,3 +1,18 @@
+## 0.10.0
+**Explore more in Discover**
+
+- Every Discover row now has a "Show more" link that opens the full list as a top-to-bottom card view with a Load more button. Two new categories, Top Ranked Anime and Top Ranked Manga, list titles by their MyAnimeList rank (with a #rank badge in the full view).
+
+## 0.9.9
+**Your language**
+
+- The whole app is now translated into all 56 languages offered in the language picker, including right-to-left support for Arabic, Hebrew, Persian and Urdu. Pick yours in Settings -> Language.
+
+## 0.9.8
+**More reliable news**
+
+- The in-app news reader now finds a brand-new article's full text more reliably by also checking the live News Discussion board, not just forum search (which lags for just-published articles).
+
 ## 0.9.7
 **Fewer broken links**
 
