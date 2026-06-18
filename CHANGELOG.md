@@ -1,3 +1,13 @@
+## 0.10.2
+**Load more search results**
+
+- Search results now have a Load more button that fetches the next page instead of stopping at the first batch.
+
+## 0.10.1
+**More on the detail page**
+
+- Related and Recommendations now have a "Show more" link that opens the full list as a top-to-bottom card view, like characters and staff.
+
 ## 0.10.0
 **Explore more in Discover**
 
