@@ -1,3 +1,18 @@
+## 0.13.0
+**Continue widgets**
+
+- Two home-screen widgets, Continue Watching and Continue Reading, that mirror your Home rail: a full poster card with left/right arrows to flip through your in-progress titles, tap to open one, tap the pencil to jump straight to its edit sheet, and tap "+1" to advance the episode or chapter right from the widget.
+
+## 0.12.0
+**AniList account & reviews**
+
+- Optionally sign in with AniList from Settings, and read community reviews right on a title's detail page (sourced from AniList, with a "Show more" full list). Tap a review to read it in full inside the app, with scores shown on the familiar 1-10 scale.
+
+## 0.11.0
+**Share, surprise me, and storage control**
+
+- Share any anime or manga to other apps from its detail page, tap the dice on Discover to open a random top anime, view and clear the app's cached data from Settings, and check for new episodes/news on demand with "Check for updates now".
+
 ## 0.10.2
 **Load more search results**
 
