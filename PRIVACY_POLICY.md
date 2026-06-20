@@ -36,6 +36,12 @@ official MyAnimeList API and only to provide app features) data such as:
 
 The App requests only the access needed to provide its features.
 
+If you also sign in with your **AniList** account (optional), the App accesses, through the
+official AniList GraphQL API and only to provide the AniList features: your AniList username,
+and — for the optional **Sync** feature — your own anime/manga list entries (status, progress,
+score). These are compared with your MyAnimeList list and, only when you start a sync, written to
+or from it. The App only ever reads and writes **your own** data.
+
 ## Authentication and Tokens
 
 - Sign-in uses MyAnimeList's OAuth 2.0 Authorization Code flow with PKCE where available.
@@ -47,6 +53,10 @@ The App requests only the access needed to provide its features.
 - NakamaList does not receive, store, inspect, or log your MyAnimeList password.
 - Tokens are never written to logs, crash reports, analytics services, or any remote
   service operated by NakamaList.
+- The optional **AniList** sign-in uses AniList's OAuth 2.0 Implicit Grant (no client secret). The
+  AniList access token is stored securely on your device in separate encrypted storage, is never
+  logged or sent to any service operated by NakamaList, and your AniList password is entered only on
+  AniList-controlled pages.
 
 ## Web Fallback / In-App WebView
 
@@ -106,8 +116,11 @@ Network requests may be made to:
 - **YouTube** (`youtube-nocookie.com` / `img.youtube.com`), only when you tap a video
   embedded in a forum post or news article: the official YouTube IFrame embed is loaded
   in a WebView so the trailer/PV can play in-app. We never extract or proxy the video.
-- **Optional metadata providers** used by the App, such as AniList, when enabled, to
-  display supplementary read-only anime or manga metadata.
+- **AniList** (`anilist.co` / `graphql.anilist.co`): used to display supplementary read-only
+  anime/manga metadata and community reviews; and, if you sign in to AniList and use the optional
+  **Sync** feature, to read and update **your own** AniList list entries (status/progress/score)
+  through the official AniList API. NakamaList only ever accesses your own data and acts only when
+  you start a sync.
 - Image, RSS, CDN, or media sources referenced by the content displayed in the App or
   inside fallback web pages.
 
