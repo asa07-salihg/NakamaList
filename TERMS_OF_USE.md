@@ -68,8 +68,9 @@ MyAnimeList password.
 
 ## 4. Optional External Services
 
-The App may use optional third-party or external services only as secondary,
-read-only helpers where appropriate. These must not replace MyAnimeList as the
+The App may use optional third-party or external services only as secondary helpers where
+appropriate (read-only, except that the optional AniList Sync writes to your own AniList list at
+your request). These must not replace MyAnimeList as the
 primary product focus for MyAnimeList account data, user lists, list updates,
 authentication, or supported MyAnimeList functionality. They include, for example:
 
@@ -78,7 +79,11 @@ authentication, or supported MyAnimeList functionality. They include, for exampl
 - **YouTube**, only when you tap a video embedded in a forum post or news article:
   the App loads YouTube's official IFrame embed so the trailer/PV plays in-app. The
   App does not download, extract, or re-host the video.
-- Optional metadata providers (such as AniList) for supplementary read-only metadata.
+- **AniList**, used (a) without an account for supplementary read-only metadata and community
+  reviews, and (b) optionally, if you sign in with your own AniList account, for the **Sync**
+  feature, which reads and updates **your own** AniList list (status/progress/score) through the
+  official AniList GraphQL API. Sync is user-initiated and only ever touches your own data. Your use
+  of AniList is also subject to AniList's own Terms of Use; MyAnimeList remains the primary list.
 
 If optional external content is shown, it may be governed by the terms and policies of
 the relevant provider. The App should continue to function even if such a service is
