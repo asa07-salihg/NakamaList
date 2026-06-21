@@ -32,7 +32,7 @@
     -webkit-background-clip:text;background-clip:text;color:transparent}
 
   .bg-fx{position:fixed;inset:0;z-index:-1;pointer-events:none}
-  .bg-fx i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+  .bg-fx i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;will-change:transform}
   .bg-fx i:nth-child(1){width:520px;height:520px;background:#5b39d6;top:-160px;left:-80px}
   .bg-fx i:nth-child(2){width:440px;height:440px;background:#7a2ea0;top:240px;right:-120px;opacity:.35}
   .bg-fx::after{content:"";position:absolute;inset:0;
@@ -78,8 +78,8 @@
   .device{position:relative;width:288px;aspect-ratio:1080/2400;border-radius:44px;
     border:11px solid #1b1828;background:#000;overflow:hidden;
     box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.04) inset;
-    animation:float 6s ease-in-out infinite}
-  .device img{width:100%;height:100%;object-fit:cover;display:block}
+    animation:float 6s ease-in-out infinite;transform:translateZ(0)}
+  .device img{width:100%;height:100%;object-fit:cover;display:block;backface-visibility:hidden}
   @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
   @media(max-width:880px){.device{width:250px}}
 
@@ -100,7 +100,7 @@
   @media(max-width:880px){.bento{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:520px){.bento{grid-template-columns:1fr}}
   .tile{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;
-    position:relative;overflow:hidden;transition:.2s}
+    position:relative;overflow:hidden;transition:.2s;transform:translateZ(0)}
   .tile:hover{border-color:#3a3252;transform:translateY(-3px)}
   .tile.lg{grid-column:span 2}
   @media(max-width:520px){.tile.lg{grid-column:span 1}}
@@ -115,8 +115,9 @@
   .rail::-webkit-scrollbar{height:7px}
   .rail::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
   .frame{flex:0 0 auto;scroll-snap-align:center;width:228px;aspect-ratio:1080/2400;border-radius:34px;
-    border:9px solid #1b1828;background:#000;overflow:hidden;box-shadow:0 22px 50px rgba(0,0,0,.5)}
-  .frame img{width:100%;height:100%;object-fit:cover;display:block}
+    border:9px solid #1b1828;background:#000;overflow:hidden;box-shadow:0 22px 50px rgba(0,0,0,.5);
+    transform:translateZ(0)}
+  .frame img{width:100%;height:100%;object-fit:cover;display:block;backface-visibility:hidden}
   .hint{text-align:center;color:var(--dim);font-size:13px;margin-top:4px}
 
   .closing{text-align:center}
@@ -133,7 +134,27 @@
 
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){.device{animation:none}.reveal{opacity:1;transform:none}}
+
+  section,
+  .strip,
+  footer{
+    content-visibility:auto;
+    contain-intrinsic-size:1px 900px;
+  }
+
+  @media(max-width:880px){
+    .bg-fx i{filter:blur(60px)}
+    .phone-stage::before{filter:blur(6px)}
+    .device{box-shadow:0 28px 60px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.04) inset}
+    .frame{box-shadow:0 16px 36px rgba(0,0,0,.45)}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .device{animation:none}
+    .reveal{opacity:1;transform:none}
+    *{transition:none!important}
+  }
 </style>
 </head>
 <body>
@@ -141,7 +162,7 @@
 
 <nav id="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="assets/nakamalist_icon_rounded.png" alt=""/>NakamaList</a>
+    <a class="brand" href="#top"><img src="assets/nakamalist_icon_rounded.png" alt="" decoding="async"/>NakamaList</a>
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#screens">Screenshots</a>
@@ -171,7 +192,7 @@
       <p class="affil">Not affiliated with MyAnimeList. Every sign-in, read and write goes through the official MyAnimeList API, with your own account.</p>
     </div>
     <div class="phone-stage reveal in">
-      <div class="device"><img src="assets/home.png" alt="NakamaList Home screen"/></div>
+      <div class="device"><img src="assets/home.png" alt="NakamaList Home screen" fetchpriority="high" decoding="async"/></div>
     </div>
   </div>
 </header>
@@ -252,14 +273,14 @@
       <p>Light, dark and white themes, an accent palette, swipe navigation, and home-screen widgets.</p>
     </div>
     <div class="rail reveal">
-      <div class="frame"><img src="assets/home.png" alt="Home"/></div>
-      <div class="frame"><img src="assets/mylist.png" alt="My List"/></div>
-      <div class="frame"><img src="assets/edit.png" alt="Edit entry"/></div>
-      <div class="frame"><img src="assets/detail.png" alt="Detail page"/></div>
-      <div class="frame"><img src="assets/discover.png" alt="Discover"/></div>
-      <div class="frame"><img src="assets/profile.png" alt="Profile"/></div>
-      <div class="frame"><img src="assets/seasonal.png" alt="Seasonal"/></div>
-      <div class="frame"><img src="assets/forums.png" alt="Forums"/></div>
+      <div class="frame"><img src="assets/home.png" alt="Home" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/mylist.png" alt="My List" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/edit.png" alt="Edit entry" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/detail.png" alt="Detail page" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/discover.png" alt="Discover" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/profile.png" alt="Profile" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/seasonal.png" alt="Seasonal" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/forums.png" alt="Forums" loading="lazy" decoding="async"/></div>
     </div>
     <p class="hint">Drag sideways to browse</p>
   </div>
@@ -280,7 +301,7 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <a class="brand" href="#top"><img src="assets/nakamalist_icon_rounded.png" alt="" style="width:26px;height:26px"/>NakamaList</a>
+        <a class="brand" href="#top"><img src="assets/nakamalist_icon_rounded.png" alt="" style="width:26px;height:26px" loading="lazy" decoding="async"/>NakamaList</a>
         <p class="made">Made by one person, in their spare time, for everyone who keeps a MyAnimeList and wishes the phone app felt better.</p>
       </div>
       <div class="foot-links">
@@ -301,9 +322,38 @@
 
 <script>
   const nav=document.getElementById('nav');
-  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>8));
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  let ticking=false;
+
+  function updateNav(){
+    nav.classList.toggle('scrolled',window.scrollY>8);
+    ticking=false;
+  }
+
+  window.addEventListener('scroll',()=>{
+    if(!ticking){
+      requestAnimationFrame(updateNav);
+      ticking=true;
+    }
+  },{passive:true});
+
+  updateNav();
+
+  const revealEls=document.querySelectorAll('.reveal:not(.in)');
+
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12,rootMargin:'80px 0px'});
+
+    revealEls.forEach(el=>io.observe(el));
+  }else{
+    revealEls.forEach(el=>el.classList.add('in'));
+  }
 </script>
 </body>
 </html>
