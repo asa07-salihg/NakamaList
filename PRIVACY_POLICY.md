@@ -38,7 +38,7 @@ The App requests only the access needed to provide its features.
 
 If you also sign in with your **AniList** account (optional), the App accesses, through the
 official AniList GraphQL API and only to provide the AniList features: your AniList username,
-and — for the optional **Sync** feature — your own anime/manga list entries (status, progress,
+and - for the optional **Sync** feature - your own anime/manga list entries (status, progress,
 score). These are compared with your MyAnimeList list and, only when you start a sync, written to
 or from it. The App only ever reads and writes **your own** data.
 
