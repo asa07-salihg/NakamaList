@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>NakamaList - An unofficial MyAnimeList client for Android</title>
-<meta name="description" content="NakamaList brings your anime and manga lists, the seasons, and the MAL community into one fast Android app. In 56 languages."/>
+<title>NakamaList - MyAnimeList client for Android</title>
+<meta name="description" content="NakamaList is an unofficial MyAnimeList client for Android. Track anime and manga, browse seasons, and manage your list."/>
 <link rel="icon" href="assets/nakamalist_icon_rounded.png"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="NakamaList - An unofficial MyAnimeList client for Android"/>
-<meta property="og:description" content="Your lists, the seasons, the community. One fast Android app, in 56 languages."/>
+<meta property="og:title" content="NakamaList - MyAnimeList client for Android"/>
+<meta property="og:description" content="Track your anime and manga list from one Android app."/>
 <meta property="og:image" content="https://asa07-salihg.github.io/NakamaList/assets/home.png"/>
 <meta property="og:url" content="https://asa07-salihg.github.io/NakamaList/"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+
 <style>
   :root{
     --bg:#08070d; --panel:#100e1a; --card:#15121f; --line:#241f33;
@@ -157,18 +158,24 @@
   }
 </style>
 </head>
+
 <body>
 <div class="bg-fx"><i></i><i></i></div>
 
 <nav id="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="assets/nakamalist_icon_rounded.png" alt="" decoding="async"/>NakamaList</a>
+    <a class="brand" href="#top">
+      <img src="assets/nakamalist_icon_rounded.png" alt="" decoding="async"/>
+      NakamaList
+    </a>
+
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#screens">Screenshots</a>
       <a href="https://github.com/asa07-salihg/NakamaList/blob/main/CHANGELOG.md">Changelog</a>
       <a href="https://github.com/asa07-salihg/NakamaList">GitHub</a>
     </div>
+
     <a class="nav-cta" href="#get">Get the app</a>
   </div>
 </nav>
@@ -177,89 +184,183 @@
   <div class="wrap hero">
     <div class="reveal in">
       <span class="eyebrow"><b></b>Unofficial MyAnimeList client for Android</span>
-      <h1>Your lists, the seasons,<br/>the community. <span class="grad">One app.</span></h1>
-      <p class="lead">NakamaList is a MyAnimeList client I built because I wanted one that felt right on Android. Sign in with your MAL account and pick up where you left off, in 56 languages.</p>
+
+      <h1>
+        Track anime and manga<br/>
+        in <span class="grad">one Android app.</span>
+      </h1>
+
+      <p class="lead">
+        NakamaList lets you manage your MyAnimeList anime and manga lists from your phone.
+        Sign in with your MAL account and keep everything up to date.
+      </p>
+
       <div class="cta" id="get">
         <a class="btn primary" aria-disabled="true">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3l16 9-16 9V3z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 3l16 9-16 9V3z"/>
+          </svg>
           Coming soon on Google Play
         </a>
+
         <a class="btn ghost" href="https://github.com/asa07-salihg/NakamaList">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.38.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.38.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/>
+          </svg>
           View on GitHub
         </a>
       </div>
-      <p class="affil">Not affiliated with MyAnimeList. Every sign-in, read and write goes through the official MyAnimeList API, with your own account.</p>
+
+      <p class="affil">
+        Unofficial app. Uses the official MyAnimeList API with your own account.
+      </p>
     </div>
+
     <div class="phone-stage reveal in">
-      <div class="device"><img src="assets/home.png" alt="NakamaList Home screen" fetchpriority="high" decoding="async"/></div>
+      <div class="device">
+        <img src="assets/home.png" alt="NakamaList Home screen" fetchpriority="high" decoding="async"/>
+      </div>
     </div>
   </div>
 </header>
 
 <div class="strip">
   <div class="wrap">
-    <div class="stat"><span class="n grad">56</span><span class="l">languages, with RTL</span></div>
-    <div class="stat"><span class="n grad">1917</span><span class="l">seasons covered, to today</span></div>
-    <div class="stat"><span class="n grad">0</span><span class="l">ads or trackers</span></div>
-    <div class="stat"><span class="n grad">1.0</span><span class="l">stable, and growing</span></div>
+    <div class="stat">
+      <span class="n grad">56</span>
+      <span class="l">languages</span>
+    </div>
+
+    <div class="stat">
+      <span class="n grad">1917</span>
+      <span class="l">seasons available</span>
+    </div>
+
+    <div class="stat">
+      <span class="n grad">0</span>
+      <span class="l">ads or trackers</span>
+    </div>
+
+    <div class="stat">
+      <span class="n grad">1.0</span>
+      <span class="l">current version</span>
+    </div>
   </div>
 </div>
 
 <section id="features">
   <div class="wrap">
     <div class="head reveal">
-      <h2>Built for people who actually keep a list.</h2>
-      <p>Most trackers stop at your list. NakamaList carries the parts of MAL that usually get left behind on mobile.</p>
+      <h2>Everything you need to manage your list.</h2>
+      <p>
+        Update your progress, browse anime and manga, and keep track of what you watch or read.
+      </p>
     </div>
+
     <div class="bento">
 
       <div class="tile lg reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/><path d="M18 16l2 2 3-3" stroke-width="2"/></svg></div>
-        <h3>Your list, down to the last detail</h3>
-        <p>Status, score, episode and chapter progress, volumes, start and finish dates, rewatch and reread counts, priority, tags and comments. Tap +1 to bump progress and watch it update on the spot.</p>
+        <div class="ico">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h10"/>
+            <path d="M18 16l2 2 3-3" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Your list</h3>
+        <p>
+          Update status, score, episodes, chapters, dates, tags and notes.
+        </p>
       </div>
 
       <div class="tile reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/></svg></div>
-        <h3>A Home that knows you</h3>
-        <p>Continue Watching and Reading, fresh episodes, plan-to picks, and what is airing this season.</p>
+        <div class="ico">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 11l9-7 9 7"/>
+            <path d="M5 10v9h14v-9"/>
+          </svg>
+        </div>
+        <h3>Home</h3>
+        <p>
+          Continue watching or reading, see new episodes and check seasonal anime.
+        </p>
       </div>
 
       <div class="tile reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 5-5 2 2-5 5-2z"/></svg></div>
-        <h3>Discover, every angle</h3>
-        <p>All official rankings, Top Ranked, suggestions for you, full-screen search, and a random pick.</p>
+        <div class="ico">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M15 9l-2 5-5 2 2-5 5-2z"/>
+          </svg>
+        </div>
+        <h3>Discover</h3>
+        <p>
+          Browse rankings, recommendations, search results and random picks.
+        </p>
       </div>
 
       <div class="tile reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M6 3h9l5 5v13H6z"/><path d="M15 3v5h5"/><path d="M9 13h6M9 17h6"/></svg></div>
-        <h3>Detail pages worth reading</h3>
-        <p>Synopsis, score and rank, related and recommended, characters and staff with their own pages, the trailer, theme songs and discussions.</p>
+        <div class="ico">
+          <svg viewBox="0 0 24 24">
+            <path d="M6 3h9l5 5v13H6z"/>
+            <path d="M15 3v5h5"/>
+            <path d="M9 13h6M9 17h6"/>
+          </svg>
+        </div>
+        <h3>Details</h3>
+        <p>
+          View synopsis, score, rank, characters, staff, trailers and related titles.
+        </p>
       </div>
 
       <div class="tile reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
-        <h3>Stats that feel like yours</h3>
-        <p>Full anime and manga statistics plus on-device analytics, down to a genre-connections chart.</p>
+        <div class="ico">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>
+          </svg>
+        </div>
+        <h3>Stats</h3>
+        <p>
+          See anime and manga statistics with simple on-device charts.
+        </p>
       </div>
 
       <div class="tile reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></div>
-        <h3>News, forums and clubs</h3>
-        <p>The latest MAL news in an in-app reader, read-only forums with full formatting, and a clubs browser.</p>
+        <div class="ico">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 5h16v14H4z"/>
+            <path d="M8 9h8M8 13h5"/>
+          </svg>
+        </div>
+        <h3>Community</h3>
+        <p>
+          Read MAL news, browse forums and check clubs.
+        </p>
       </div>
 
       <div class="tile reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9z"/><path d="M10 21a2 2 0 004 0"/></svg></div>
-        <h3>Notifications that matter</h3>
-        <p>A nudge when a show you watch airs, or when the news touches your list, all in one bell feed.</p>
+        <div class="ico">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9z"/>
+            <path d="M10 21a2 2 0 004 0"/>
+          </svg>
+        </div>
+        <h3>Notifications</h3>
+        <p>
+          Get notified when a tracked anime has a new episode.
+        </p>
       </div>
 
       <div class="tile lg reveal">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg></div>
-        <h3>AniList, when you want it</h3>
-        <p>Connect AniList to read community reviews and keep both lists in sync, with a previewed one-way apply and automatic mirroring of your edits. Optional, and only ever your own data.</p>
+        <div class="ico">
+          <svg viewBox="0 0 24 24">
+            <path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/>
+            <path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/>
+          </svg>
+        </div>
+        <h3>AniList support</h3>
+        <p>
+          Optionally connect AniList to read reviews and sync list changes.
+        </p>
       </div>
 
     </div>
@@ -269,9 +370,12 @@
 <section class="shots" id="screens">
   <div class="wrap">
     <div class="head center reveal">
-      <h2>See it for yourself.</h2>
-      <p>Light, dark and white themes, an accent palette, swipe navigation, and home-screen widgets.</p>
+      <h2>Screenshots</h2>
+      <p>
+        Dark, light and white themes, accent colors, swipe navigation and widgets.
+      </p>
     </div>
+
     <div class="rail reveal">
       <div class="frame"><img src="assets/home.png" alt="Home" loading="lazy" decoding="async"/></div>
       <div class="frame"><img src="assets/mylist.png" alt="My List" loading="lazy" decoding="async"/></div>
@@ -282,17 +386,22 @@
       <div class="frame"><img src="assets/seasonal.png" alt="Seasonal" loading="lazy" decoding="async"/></div>
       <div class="frame"><img src="assets/forums.png" alt="Forums" loading="lazy" decoding="async"/></div>
     </div>
+
     <p class="hint">Drag sideways to browse</p>
   </div>
 </section>
 
 <section class="closing">
   <div class="wrap reveal">
-    <h2>1.0 is almost here.</h2>
-    <p>NakamaList is on its way to Google Play. Until then, the code and the story live on GitHub. Star it to follow along.</p>
+    <h2>Coming soon.</h2>
+    <p>
+      NakamaList will be available on Google Play soon.
+      You can follow the project on GitHub.
+    </p>
+
     <div class="cta">
       <a class="btn primary" aria-disabled="true">Coming soon on Google Play</a>
-      <a class="btn ghost" href="https://github.com/asa07-salihg/NakamaList">Star on GitHub</a>
+      <a class="btn ghost" href="https://github.com/asa07-salihg/NakamaList">View on GitHub</a>
     </div>
   </div>
 </section>
@@ -301,9 +410,16 @@
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <a class="brand" href="#top"><img src="assets/nakamalist_icon_rounded.png" alt="" style="width:26px;height:26px" loading="lazy" decoding="async"/>NakamaList</a>
-        <p class="made">Made by one person, in their spare time, for everyone who keeps a MyAnimeList and wishes the phone app felt better.</p>
+        <a class="brand" href="#top">
+          <img src="assets/nakamalist_icon_rounded.png" alt="" style="width:26px;height:26px" loading="lazy" decoding="async"/>
+          NakamaList
+        </a>
+
+        <p class="made">
+          Made by one developer for people who use MyAnimeList.
+        </p>
       </div>
+
       <div class="foot-links">
         <a href="https://github.com/asa07-salihg/NakamaList/blob/main/PRIVACY_POLICY.md">Privacy</a>
         <a href="https://github.com/asa07-salihg/NakamaList/blob/main/TERMS_OF_USE.md">Terms</a>
@@ -312,10 +428,11 @@
         <a href="https://buymeacoffee.com/asa07salihg">Sponsor</a>
       </div>
     </div>
+
     <p class="legal">
-      NakamaList is an independent, unofficial app. It is not affiliated with, endorsed by, or officially
-      connected to MyAnimeList, AniList, or any related company. All trademarks and product names belong to
-      their respective owners. Copyright (c) 2026 Ahmet Salih Golen. All rights reserved.
+      NakamaList is an unofficial app. It is not affiliated with MyAnimeList, AniList,
+      or any related company. All trademarks belong to their owners.
+      Copyright © 2026 Ahmet Salih Golen.
     </p>
   </div>
 </footer>
