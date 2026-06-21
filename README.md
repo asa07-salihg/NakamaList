@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="NakamaList" height="120" src="assets/nakamalist_icon_rounded.png"/>
+  <img alt="NakamaList" height="200" src="assets/nakamalist_icon_rounded.png"/>
 
   # NakamaList
 
