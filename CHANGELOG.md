@@ -1,17 +1,277 @@
+## 1.0.0
+**NakamaList 1.0**
+
+- The first stable release. Thank you for being here at 1.0.
+
+## 0.17.8
+**Localized UI**
+
+- The UI is localized into 56 languages.
+
+## 0.17.7
+**Continue Reading widget**
+
+- Added a home-screen Continue Reading widget.
+
+## 0.17.6
+**Continue Watching widget**
+
+- Added a home-screen Continue Watching widget.
+
+## 0.17.5
+**Automatic AniList write-through**
+
+- Once both accounts are linked, any change you make to your MyAnimeList list is mirrored to AniList automatically in the background.
+
+## 0.17.4
+**MyAnimeList to AniList sync**
+
+- Added MyAnimeList to AniList list sync.
+
+## 0.17.3
+**AniList community reviews**
+
+- Added optional AniList community reviews.
+
+## 0.17.2
+**List-news notifications**
+
+- Added list-news notifications.
+
+## 0.17.1
+**Airing notifications**
+
+- Added airing notifications.
+
+## 0.17.0
+**Clubs browser**
+
+- Added a Clubs browser.
+
+## 0.16.9
+**Read-only Forums**
+
+- Added read-only Forums.
+
+## 0.16.8
+**News**
+
+- Added News.
+
+## 0.16.7
+**Seasonal**
+
+- Added Seasonal.
+
+## 0.16.6
+**Rich manga detail pages**
+
+- Added rich manga detail pages.
+
+## 0.16.5
+**Rich anime detail pages**
+
+- Added rich anime detail pages.
+
+## 0.16.4
+**Discover**
+
+- Added Discover.
+
+## 0.16.3
+**Personalized Home**
+
+- Added a personalized Home.
+
+## 0.16.2
+**Full list management**
+
+- Added full list management with read and write support.
+
+## 0.16.1
+**On-device analytics**
+
+- Added on-device analytics.
+
+## 0.16.0
+**Profile statistics**
+
+- Added your profile with full anime and manga statistics.
+
+## 0.15.7
+**Official sign-in**
+
+- Added official sign-in.
+
+## 0.15.6
+**AniList sync write-through actions**
+
+- Add, edit, +1 and remove actions on your MyAnimeList list are mirrored to AniList automatically in the background.
+
+## 0.15.5
+**AniList sync pacing**
+
+- AniList sync requests are paced at about 25 requests a minute to stay comfortably within AniList's rate limit.
+
+## 0.15.4
+**AniList sync progress notification**
+
+- The sync runs in the background with a progress notification, so you can leave the screen while it works.
+
+## 0.15.3
+**AniList score conversion**
+
+- Scores are converted between AniList's 100-point scale and MyAnimeList's 1-10 scale.
+
+## 0.15.2
+**One-way AniList list copy**
+
+- The Sync with AniList screen lets you copy status, progress and score one way, either MyAnimeList to AniList or AniList to MyAnimeList.
+
+## 0.15.1
+**AniList list comparison**
+
+- The Sync with AniList screen compares your two lists by matched title and shows the titles that differ.
+
+## 0.15.0
+**Sync with AniList**
+
+- If you sign in to both MyAnimeList and AniList, a new Sync with AniList screen is available in Settings.
+
+## 0.14.5
+**AniList account settings**
+
+- Settings now manage your AniList account under its own header.
+
+## 0.14.4
+**MyAnimeList account settings**
+
+- Settings now manage your MyAnimeList account under its own header.
+
+## 0.14.3
+**Optional AniList setup sign-in**
+
+- The first-launch welcome can optionally guide you through signing in with AniList.
+
+## 0.14.2
+**MyAnimeList setup sign-in**
+
+- The first-launch welcome can guide you through signing in with MyAnimeList.
+
+## 0.14.1
+**Replay welcome**
+
+- The welcome flow can be replayed anytime from Settings.
+
+## 0.14.0
+**Welcome aboard**
+
+- Added a skippable first-launch welcome that walks you through setup and then drops you on Home.
+
+## 0.13.7
+**Widget +1 action**
+
+- Continue widgets now let you tap "+1" to advance the episode or chapter right from the widget.
+
+## 0.13.6
+**Widget edit shortcut**
+
+- Continue widgets now let you tap the pencil to jump straight to the edit sheet.
+
+## 0.13.5
+**Widget title opening**
+
+- Tapping a title in a Continue widget opens it in the app.
+
+## 0.13.4
+**Widget navigation arrows**
+
+- Continue widgets now have left and right arrows to flip through your in-progress titles.
+
+## 0.13.3
+**Widget poster card**
+
+- Continue widgets now show a full poster card.
+
+## 0.13.2
+**Continue Reading widget**
+
+- Added a Continue Reading home-screen widget that mirrors your Home rail.
+
+## 0.13.1
+**Continue Watching widget**
+
+- Added a Continue Watching home-screen widget that mirrors your Home rail.
+
 ## 0.13.0
 **Continue widgets**
 
-- Two home-screen widgets, Continue Watching and Continue Reading, that mirror your Home rail: a full poster card with left/right arrows to flip through your in-progress titles, tap to open one, tap the pencil to jump straight to its edit sheet, and tap "+1" to advance the episode or chapter right from the widget.
+- Added home-screen Continue widgets.
+
+## 0.12.4
+**Review score display**
+
+- AniList review scores are shown on the familiar 1-10 scale.
+
+## 0.12.3
+**Full review reader**
+
+- Tapping a review opens it in full inside the app.
+
+## 0.12.2
+**More AniList reviews**
+
+- A "Show more" option opens the full AniList review list on a title's detail page.
+
+## 0.12.1
+**AniList reviews on detail pages**
+
+- Community reviews sourced from AniList are now shown on a title's detail page.
 
 ## 0.12.0
-**AniList account & reviews**
+**AniList account**
 
-- Optionally sign in with AniList from Settings, and read community reviews right on a title's detail page (sourced from AniList, with a "Show more" full list). Tap a review to read it in full inside the app, with scores shown on the familiar 1-10 scale.
+- You can optionally sign in with AniList from Settings.
+
+## 0.11.4
+**Manual update checks**
+
+- Added "Check for updates now" to check for new episodes and news on demand.
+
+## 0.11.3
+**Cache storage control**
+
+- You can view and clear the app's cached data from Settings.
+
+## 0.11.2
+**Surprise me**
+
+- Added a dice button on Discover that opens a random top anime.
+
+## 0.11.1
+**Share titles**
+
+- You can share any anime or manga to other apps from its detail page.
 
 ## 0.11.0
-**Share, surprise me, and storage control**
+**Storage and discovery tools**
 
-- Share any anime or manga to other apps from its detail page, tap the dice on Discover to open a random top anime, view and clear the app's cached data from Settings, and check for new episodes/news on demand with "Check for updates now".
+- Added share, surprise me, storage control and manual update tools.
+
+## 0.10.5
+**Top Ranked Manga**
+
+- Added Top Ranked Manga to Discover.
+
+## 0.10.4
+**Top Ranked Anime**
+
+- Added Top Ranked Anime to Discover.
+
+## 0.10.3
+**Discover rank badges**
+
+- Ranked Discover lists show titles by their MyAnimeList rank with a #rank badge in the full view.
 
 ## 0.10.2
 **Load more search results**
@@ -19,216 +279,501 @@
 - Search results now have a Load more button that fetches the next page instead of stopping at the first batch.
 
 ## 0.10.1
-**More on the detail page**
+**More detail-page lists**
 
-- Related and Recommendations now have a "Show more" link that opens the full list as a top-to-bottom card view, like characters and staff.
+- Related and Recommendations now have a "Show more" link that opens the full list as a top-to-bottom card view.
 
 ## 0.10.0
 **Explore more in Discover**
 
-- Every Discover row now has a "Show more" link that opens the full list as a top-to-bottom card view with a Load more button. Two new categories, Top Ranked Anime and Top Ranked Manga, list titles by their MyAnimeList rank (with a #rank badge in the full view).
+- Every Discover row now has a "Show more" link that opens the full list as a top-to-bottom card view with a Load more button.
+
+## 0.9.23
+**Right-to-left language support**
+
+- Added right-to-left support for Arabic, Hebrew, Persian and Urdu.
+
+## 0.9.22
+**56 languages**
+
+- The whole app is now translated into all 56 languages offered in the language picker.
+
+## 0.9.21
+**Language picker**
+
+- You can pick your language in Settings -> Language.
+
+## 0.9.20
+**Live News Discussion lookup**
+
+- The in-app news reader now checks the live News Discussion board when looking for a brand-new article's full text.
+
+## 0.9.19
+**Forum search news fallback**
+
+- The in-app news reader still uses forum search as part of finding the full article body.
+
+## 0.9.18
+**Filtered person-page entries**
+
+- Person pages now list only anime that exist on MyAnimeList.
+
+## 0.9.17
+**Person-page 404 prevention**
+
+- Tapping an entry on a person page no longer opens a 404.
+
+## 0.9.16
+**Filtered unmatched person entries**
+
+- Manga and unmatched entries are filtered out on person pages.
+
+## 0.9.15
+**Buy me a coffee**
+
+- Added a "Buy me a coffee" button at the bottom of Settings so you can support development if you'd like.
+
+## 0.9.14
+**What's New title cleanup**
+
+- Tidied the What's New screen, which was showing its title twice.
+
+## 0.9.13
+**Character anime appearances**
+
+- A character's page now lists the anime they appear in.
+
+## 0.9.12
+**Character appearance roles**
+
+- Character appearance entries now show the character's role.
+
+## 0.9.11
+**Tappable character appearances**
+
+- Each character appearance entry is tappable and opens that anime.
+
+## 0.9.10
+**Cast and staff label clipping fix**
+
+- Fixed a corner-clipping glitch on the bottom label of cast and staff cards.
 
 ## 0.9.9
 **Your language**
 
-- The whole app is now translated into all 56 languages offered in the language picker, including right-to-left support for Arabic, Hebrew, Persian and Urdu. Pick yours in Settings -> Language.
+- Added support for choosing your language from Settings.
 
 ## 0.9.8
 **More reliable news**
 
-- The in-app news reader now finds a brand-new article's full text more reliably by also checking the live News Discussion board, not just forum search (which lags for just-published articles).
+- The in-app news reader now finds a brand-new article's full text more reliably.
 
 ## 0.9.7
 **Fewer broken links**
 
-- Person pages now list only anime that exist on MyAnimeList, so tapping an entry no longer opens a 404; manga and unmatched entries are filtered out.
+- Person pages now avoid entries that would open broken MyAnimeList links.
 
 ## 0.9.6
 **Support the app**
 
-- Added a "Buy me a coffee" button at the bottom of Settings so you can support development if you'd like; it's entirely optional. Also tidied the What's New screen, which was showing its title twice.
+- Added an optional way to support development from Settings.
 
 ## 0.9.5
 **Character appearances**
 
-- A character's page now lists the anime they appear in (with their role), each tappable to open that anime; also fixed a corner-clipping glitch on the bottom label of cast and staff cards.
+- Character pages now include anime appearance information.
 
 ## 0.9.4
 **Roles on person pages**
 
-- A voice actor's page now lists the anime they voiced (with the character and role) and a staff member's page lists the anime they worked on (with the position); tap any to open that anime.
+- Person pages now list anime roles for voice actors and staff members.
 
 ## 0.9.3
 **Character and staff pages**
 
-- Tap any character, voice actor or staff member to open their page (full image and bio from AniList); spoilers use the same Show-spoiler buttons as forum posts, and links to other people open inside the app.
+- Tap any character, voice actor or staff member to open their page with full image and bio from AniList.
 
 ## 0.9.2
 **Staff**
 
-- A swipeable Staff rail above Theme Songs, with the complete list behind "More staff".
+- Added a swipeable Staff rail above Theme Songs, with the complete list behind "More staff".
 
 ## 0.9.1
 **Characters and voice actors**
 
-- A swipeable Characters rail, each paired with its Japanese voice actor, with the complete cast behind "More characters".
+- Added a swipeable Characters rail, each paired with its Japanese voice actor, with the complete cast behind "More characters".
 
 ## 0.9.0
 **Trailers**
 
-- The official trailer (PV) now plays inline on the anime detail page, between the synopsis and the info grid.
+- The official trailer, or PV, now plays inline on the anime detail page between the synopsis and the info grid.
+
+## 0.8.7
+**In-app theme song playback**
+
+- Theme song videos now play in-app, with no browser required.
+
+## 0.8.6
+**Ending themes**
+
+- Ending themes are now available on the anime detail page.
+
+## 0.8.5
+**Opening themes**
+
+- Opening themes are now available on the anime detail page.
+
+## 0.8.4
+**AnimeThemes source**
+
+- Anime detail page theme songs are sourced from AnimeThemes.
 
 ## 0.8.3
 **Theme song playback**
 
-- Opening and Ending themes on the anime detail page, sourced from AnimeThemes and played inline in swipeable Openings/Endings pagers (in-app video, no browser).
+- Theme songs now play inline in swipeable Openings and Endings pagers.
 
 ## 0.8.2
-**Clear WebView data and What's New**
+**What's New**
 
-- A working "Clear WebView data" action in Settings, plus this What's New screen on the Version row.
+- Added the What's New screen on the Version row.
 
 ## 0.8.1
-**Customizable navigation**
+**Clear WebView data**
 
-- Show, hide and reorder the bottom-navigation destinations (Settings stays pinned); the classic bar spreads tabs evenly when there are five or fewer.
+- Added a working "Clear WebView data" action in Settings.
 
 ## 0.8.0
+**Customizable navigation**
+
+- You can now show, hide and reorder bottom-navigation destinations.
+
+## 0.7.12
+**Classic navigation layout**
+
+- The classic bar spreads tabs evenly when there are five or fewer.
+
+## 0.7.11
+**Pinned Settings tab**
+
+- Settings stays pinned in the customizable navigation.
+
+## 0.7.10
+**Genre Connections filters**
+
+- Added list-status, min-score and node-count filters to Genre Connections.
+
+## 0.7.9
+**Genre Connections tabs**
+
+- Added Genres, Themes and Demographics tabs to Genre Connections.
+
+## 0.7.8
 **Genre Connections chord**
 
-- The Genre Connections graphic was rebuilt as a real woven chord with Genres / Themes / Demographics tabs and list-status, min-score and node-count filters.
+- The Genre Connections graphic was rebuilt as a real woven chord.
+
+## 0.7.7
+**Type and format analytics**
+
+- Added a type/format breakdown to profile analytics.
+
+## 0.7.6
+**List-by-genre analytics**
+
+- Added list-by-genre analytics, with genre counts that open My List filtered to that genre.
+
+## 0.7.5
+**Score distribution analytics**
+
+- Added score distribution to profile analytics.
 
 ## 0.7.4
 **Profile analytics**
 
-- On-device, MyAnimeList-style analytics: score distribution, list-by-genre (tap a count to open My List filtered to it), and a type/format breakdown.
+- Added on-device, MyAnimeList-style analytics.
 
 ## 0.7.3
 **Licenses and legal**
 
-- An open-source licenses screen, plus strengthened Privacy Policy and Terms of Use with a contact email.
+- Added an open-source licenses screen.
 
 ## 0.7.2
 **Clubs**
 
-- A Clubs tab with name search and a category filter that opens the matching MyAnimeList page.
+- Added a Clubs tab with name search and a category filter that opens the matching MyAnimeList page.
 
 ## 0.7.1
 **Performance pass**
 
-- One shared network client app-wide, R8 minify and resource shrinking, and an off-main-thread cache.
+- Added one shared network client app-wide.
 
 ## 0.7.0
 **Richer forum posts**
 
-- Full MyAnimeList BBCode in posts (quotes, spoilers, code, tables, alignment, sizes), animated GIFs, and inline YouTube playback.
+- Forum posts now support full MyAnimeList BBCode.
+
+## 0.6.8
+**Inline YouTube in forum posts**
+
+- Added inline YouTube playback in forum posts.
+
+## 0.6.7
+**Animated GIFs in forum posts**
+
+- Added animated GIF support in forum posts.
+
+## 0.6.6
+**Forum post formatting**
+
+- Forum posts now support quotes, spoilers, code, tables, alignment and sizes.
+
+## 0.6.5
+**In-place discussions**
+
+- Episode and chapter discussions open in place.
+
+## 0.6.4
+**Matched forum discussions**
+
+- Discussion threads on detail pages are matched from the forums.
 
 ## 0.6.3
 **Episode and chapter discussions**
 
-- Discussion threads on the detail page, matched from the forums and opened in place.
+- Added episode and chapter discussion threads on the detail page.
 
 ## 0.6.2
 **In-app news reader**
 
-- A reader that recovers the full article body from its forum topic; news notifications and MyAnimeList links open in-app.
+- Added a reader that recovers the full article body from its forum topic.
 
 ## 0.6.1
 **Forum reading**
 
-- Read-only Forums: boards to topics to posts, paginated, with in-tab back navigation and topic search.
+- Added read-only Forums with boards, topics and posts.
 
 ## 0.6.0
 **Detail polish**
 
-- A single centered poster carousel, real status-distribution bars, a two-column info grid, a collapsible background, and a tap-to-open Seasonal jump.
+- Added a single centered poster carousel.
+
+## 0.5.8
+**Seasonal detail jump**
+
+- Added a tap-to-open Seasonal jump on the detail page.
+
+## 0.5.7
+**Collapsible background**
+
+- Added a collapsible background on the detail page.
+
+## 0.5.6
+**Two-column info grid**
+
+- Added a two-column info grid on the detail page.
+
+## 0.5.5
+**Status-distribution bars**
+
+- Added real status-distribution bars on the detail page.
+
+## 0.5.4
+**In-app recommendation back-stack**
+
+- Tapping a related or recommended title pushes it onto an in-app back-stack.
+
+## 0.5.3
+**Recommendations rail**
+
+- Added Recommendations poster rails on the detail page.
+
+## 0.5.2
+**Related rail**
+
+- Added Related poster rails on the detail page.
 
 ## 0.5.1
 **Related and recommendations**
 
-- Related and Recommendation poster rails on the detail page; tapping a title pushes it onto an in-app back-stack.
+- Added Related and Recommendation poster rails on the detail page.
 
 ## 0.5.0
 **Detail screen**
 
-- A full anime and manga detail overlay openable from any screen, with a list-synced floating edit / add button.
+- Added a full anime and manga detail overlay openable from any screen.
+
+## 0.4.5
+**Floating edit/add button**
+
+- Added a list-synced floating edit / add button on the detail overlay.
+
+## 0.4.4
+**Seasonal add action**
+
+- Seasonal cards now support add.
+
+## 0.4.3
+**Seasonal plus-one action**
+
+- Seasonal cards now support plus-one.
 
 ## 0.4.2
 **Settings persistence**
 
-- Every preference now survives a cold start (saved on-device).
+- Every preference now survives a cold start and is saved on-device.
 
 ## 0.4.1
 **Seasonal cards**
 
-- List-aware Seasonal cards with quick edit, plus-one, and add.
+- Added list-aware Seasonal cards with quick edit.
 
 ## 0.4.0
 **Home**
 
-- A real Home: Continue Watching/Reading, New Episodes, Plan to Watch/Read, and This Season.
+- Added a real Home screen.
+
+## 0.3.10
+**This Season rail**
+
+- Home includes This Season.
+
+## 0.3.9
+**Plan to Watch/Read rail**
+
+- Home includes Plan to Watch/Read.
+
+## 0.3.8
+**New Episodes rail**
+
+- Home includes New Episodes.
+
+## 0.3.7
+**Continue Reading rail**
+
+- Home includes Continue Reading.
+
+## 0.3.6
+**Continue Watching rail**
+
+- Home includes Continue Watching.
+
+## 0.3.5
+**List actions in search results**
+
+- List actions are available directly on search results.
+
+## 0.3.4
+**Search suggestions**
+
+- Search includes suggestions.
 
 ## 0.3.3
 **Discover search**
 
-- Full-screen search with recents, an NSFW toggle, and suggestions, with list actions directly on results.
+- Added full-screen search with recents and content filtering.
 
 ## 0.3.2
 **Discover rails**
 
-- Live ranking rails for top, airing, upcoming, and more.
+- Added live ranking rails for top, airing, upcoming and more.
 
 ## 0.3.1
 **Editing your list**
 
-- A full edit sheet that writes back to MyAnimeList, with optimistic updates that apply instantly while syncing.
+- Added a full edit sheet that writes back to MyAnimeList, with optimistic updates that apply instantly while syncing.
 
 ## 0.3.0
 **My List**
 
-- A live My List with status tabs, type filters, sorts, and airing badges.
+- Added a live My List.
+
+## 0.2.8
+**Airing badges**
+
+- My List includes airing badges.
+
+## 0.2.7
+**My List sorting**
+
+- My List includes sorts.
+
+## 0.2.6
+**My List type filters**
+
+- My List includes type filters.
+
+## 0.2.5
+**My List status tabs**
+
+- My List includes status tabs.
+
+## 0.2.4
+**Bell feed**
+
+- Added a bookmarkable bell feed.
+
+## 0.2.3
+**Local notifications**
+
+- Added local notifications.
 
 ## 0.2.2
 **Notifications**
 
-- Local notifications with a bookmarkable bell feed.
+- Added notifications.
 
 ## 0.2.1
 **Your profile**
 
-- A real profile with full anime and manga statistics.
+- Added a real profile with full anime and manga statistics.
 
 ## 0.2.0
 **Sign in**
 
-- MyAnimeList sign-in via the official OAuth flow.
+- Added MyAnimeList sign-in via the official OAuth flow.
+
+## 0.1.8
+**On-device cache**
+
+- Added a compliant on-device cache for faster, offline-friendly reads.
+
+## 0.1.7
+**Browser fallback**
+
+- Added a selectable browser fallback.
+
+## 0.1.6
+**Per-app language**
+
+- Added per-app language.
 
 ## 0.1.5
-**Browser fallback and cache**
+**Theme modes**
 
-- A selectable browser fallback and a compliant on-device cache for faster, offline-friendly reads.
+- Added theme modes: System, Light and Dark.
 
 ## 0.1.4
 **Theme and language**
 
-- Theme modes (System / Light / Dark) and per-app language.
+- Added theme and language settings.
 
 ## 0.1.3
 **News**
 
-- MyAnimeList news via the official RSS feed.
+- Added MyAnimeList news via the official RSS feed.
 
 ## 0.1.2
 **Seasonal**
 
-- A live Seasonal browser with an archive back to the earliest seasons.
+- Added a live Seasonal browser with an archive back to the earliest seasons.
 
 ## 0.1.1
 **Identity**
 
-- A distinct violet identity with a user-selectable accent palette.
+- Added a distinct violet identity with a user-selectable accent palette.
 
 ## 0.1.0
 **Foundations**
 
-- The MyAnimeList-first app shell with the swipe "revolver" navigation.
+- Added the MyAnimeList-first app shell with the swipe "revolver" navigation.
