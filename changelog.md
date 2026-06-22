@@ -1,7 +1,13 @@
 ## 1.0.0
 **NakamaList 1.0**
 
-- The first stable release. Thank you for being here at 1.0.
+- The first stable release: track your anime and manga, browse Discover and Seasonal, read News, Forums and Clubs, see your profile stats, get airing and news notifications, and optionally connect AniList.
+
+**Quality of life**
+
+- Tapping a navigation tab now closes the notifications panel or an open detail page, so you go straight to the tab you picked.
+- Fixed a title being clipped at the corner on the home "This season" cards.
+- AniList sync now reads your full MyAnimeList list, so titles you already have are no longer mislabeled as "only on AniList".
 
 ## 0.17.8
 **Localized UI**
