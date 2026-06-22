@@ -55,7 +55,7 @@ device. A mature-content (NSFW) toggle is off by default.
 
 ## Download
 
-> _Coming soon to Google Play._
+[Get it on Google Play](https://play.google.com/store/apps/details?id=com.nakamalist.app)
 
 ## Languages
 
