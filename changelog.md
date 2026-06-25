@@ -1,13 +1,72 @@
+## 1.0.13
+**Crash fix**
+
+- Fixed a rare crash when leaving a detail page while its trailer or theme-song player was on screen.
+
+## 1.0.12
+**Adaptation links**
+
+- The manga an anime is based on (and vice-versa) now shows under Related, sourced from AniList to fill the gap MyAnimeList's API leaves blank.
+
+## 1.0.11
+**Onboarding reorder polish**
+
+- Reordering in first-launch setup now uses the exact same mechanism as Settings, with no scroll-vs-drag conflict.
+
+## 1.0.10
+**Score and setup polish**
+
+- Score options sit on one row, the edit score shows in your chosen scale, score rounding explains each option, Sync settings appear only when both accounts are linked, and onboarding reorder drag is fixed.
+
+## 1.0.9
+**More of someone's works**
+
+- People with lots of credits now have a "Load more" on their page instead of stopping at the first 50.
+
+## 1.0.8
+**Score scale in setup**
+
+- You can now pick your score scale during first-launch setup, and drag-to-reorder works in both directions everywhere.
+
+## 1.0.7
+**Reorder fixes**
+
+- Drag-to-reorder now works in both directions and is available in the first-launch setup too.
+
+## 1.0.6
+**Pick your score scale**
+
+- You can now show your own scores on a different scale (100-point, decimals, 5 stars or 3 smileys) from Settings > Score.
+
+## 1.0.5
+**Drag to reorder**
+
+- You can now long-press and drag a navigation row to reorder it, alongside the existing up/down arrows.
+
+## 1.0.4
+**Fullscreen and fuller credits**
+
+- Trailers and theme songs can now go fullscreen, and people pages include their manga works alongside anime.
+
+## 1.0.3
+**Polish**
+
+- Unrated rows in My List now match the rated style, and people pages show more of someone's works.
+
+## 1.0.2
+**Choose your start tab**
+
+- You can now pick which tab opens when you launch the app: star it in Settings > Navigation.
+
+## 1.0.1
+**Sync and quality-of-life update**
+
+- Adds a sync clean-up mode and score-rounding option, a quick score picker and score filter in My List, and fixes the notification-tap crash, edit-sheet touches, ranking order, and full-list sync.
+
 ## 1.0.0
 **NakamaList 1.0**
 
 - The first stable release: track your anime and manga, browse Discover and Seasonal, read News, Forums and Clubs, see your profile stats, get airing and news notifications, and optionally connect AniList.
-
-**Quality of life**
-
-- Tapping a navigation tab now closes the notifications panel or an open detail page, so you go straight to the tab you picked.
-- Fixed a title being clipped at the corner on the home "This season" cards.
-- AniList sync now reads your full MyAnimeList list, so titles you already have are no longer mislabeled as "only on AniList".
 
 ## 0.17.8
 **Localized UI**
