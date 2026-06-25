@@ -1,3 +1,8 @@
+## 1.0.14
+**Full localization**
+
+- The newest features are now translated into every supported language.
+
 ## 1.0.13
 **Crash fix**
 
