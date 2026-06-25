@@ -1,3 +1,18 @@
+## 1.0.17
+**Episode notifications open the discussion**
+
+- Tapping a new-episode notification (tray or bell) now jumps straight to that episode's in-app forum discussion, and works without leaving the bell.
+
+## 1.0.16
+**Notification fix**
+
+- The new-episode bell feed and notifications now open the title in the app (with its episode discussions) instead of an external website.
+
+## 1.0.15
+**Notification fix**
+
+- Tapping a new-episode notification now opens the title in the app (with its episode discussions) instead of a website.
+
 ## 1.0.14
 **Full localization**
 
