@@ -1,3 +1,8 @@
+## 1.0.21
+**Sort and filter studio & person works**
+
+- Studio and character/staff pages now have a sort menu (Default, Score, Member, Air/Pub date) and a My List filter (Not in My List / In My List / Planned), so you can quickly narrow a person's or studio's works to what you haven't seen yet.
+
 ## 1.0.20
 **Studios and authors open in-app**
 
