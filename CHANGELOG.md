@@ -1,3 +1,8 @@
+## 1.0.19
+**Android 15 edge-to-edge cleanup**
+
+- Dropped the deprecated status/navigation bar color attributes (ignored on Android 15); system bars are now transparent edge-to-edge and their icon contrast follows your selected theme.
+
 ## 1.0.18
 **Live next-episode countdown**
 
