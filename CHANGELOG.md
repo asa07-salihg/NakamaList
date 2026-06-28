@@ -1,3 +1,8 @@
+## 1.0.20
+**Studios and authors open in-app**
+
+- Tapping a studio now opens its works inside the app, and tapping a manga author opens their person page (the same one the cast uses) instead of jumping to the browser; both fall back to the web page if AniList has no match.
+
 ## 1.0.19
 **Android 15 edge-to-edge cleanup**
 
