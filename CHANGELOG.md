@@ -1,3 +1,8 @@
+## 1.0.18
+**Live next-episode countdown**
+
+- Currently-airing anime now show a live "Ep N: 45d 9h 40m" countdown to the next episode in place of the aired date, sourced from AniList; finished titles keep the date range.
+
 ## 1.0.17
 **Episode notifications open the discussion**
 
