@@ -1,3 +1,8 @@
+## 1.0.23
+**Faster notifications**
+
+- Background checks now run every 15 minutes instead of every few hours, so episode and news alerts arrive much sooner.
+
 ## 1.0.22
 **More reliable background notifications**
 
