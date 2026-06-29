@@ -1,3 +1,8 @@
+## 1.0.22
+**More reliable background notifications**
+
+- Background notification checks now wait for a network connection and re-arm themselves on launch, so new-episode and news alerts are more likely to arrive without opening the app. (If your phone still holds them back, exclude NakamaList from battery optimization in system settings.)
+
 ## 1.0.21
 **Sort and filter studio & person works**
 
