@@ -1,3 +1,38 @@
+## 1.0.30
+**Score scales as a list**
+
+- The score scale options are now stacked one per row (like a list), in Settings and onboarding, so they're easier to read and pick.
+
+## 1.0.29
+**Simpler score scales**
+
+- Removed the 5-star scale and made the scale picker show every option at once (no more hidden, scrolled-off choices). Remaining scales: 100 Point, 10 Point Decimal, and 10 Point.
+
+## 1.0.28
+**Finer score sorting**
+
+- Sorting My List by score now uses your exact score, so two titles with the same rounded 1-10 (e.g. 85 and 87) order correctly instead of tying.
+
+## 1.0.27
+**Whole 5-star scores**
+
+- On the 5-star scale, scores now show as whole stars (each star = 2 points on the 10-point scale) instead of odd half-star values like 3.5.
+
+## 1.0.26
+**Scoring polish**
+
+- Fixed the score bar looking broken on the 100-point scale (it now matches the clean episode bar), merged score scale and rounding into one Score setting with a single connected example, and renamed the scales to match AniList (100 Point, 10 Point Decimal, 10 Point, 5 Star).
+
+## 1.0.25
+**AniList-first scoring**
+
+- With both MyAnimeList and AniList linked, you can now score in your chosen scale (100-point, 10-point decimal, or 5-star): the exact value is saved to AniList and a rounded 1-10 to MyAnimeList, and your fine score is read back from AniList so it sticks. The score picker follows your scale (and scrolls when it's long), and Settings shows a MAL/AniList example for each format.
+
+## 1.0.24
+**Final score prompt**
+
+- Finishing a series with a quick +1 now pops up a small "Final score" card so you can rate it in one tap; back or the X dismisses it.
+
 ## 1.0.23
 **Faster notifications**
 
