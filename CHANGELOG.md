@@ -1,3 +1,15 @@
+## 1.1.0
+**Stability, sign-in reliability and translation fixes**
+
+- Fixed the rare "randomly signed out" problem: a flaky connection or two requests refreshing your MyAnimeList session at the same time no longer log you out.
+- Restoring the app to a new phone (device transfer / cloud backup) no longer risks a crash on first launch - you simply sign in again.
+- The app language you pick now also works on Android 8-12 (it previously only applied on Android 13+), and notifications, forum spoiler buttons, chart titles, dates and many other texts now follow your chosen language.
+- Tapping a notification while the app is closed opens reliably on every device.
+- My List actions (+1, score, edit) can no longer touch the wrong entry when an anime and a manga share the same MAL id.
+- The edit sheet now pre-fills your saved start/finish dates.
+- Fixed several "old screen data flashes in" races (Forums back navigation, fast season switching, search Load more), smoother profile analytics and forum posts on large lists, and the genre chord chart draws with far less overhead.
+- Sync no longer overwrites your exact AniList score when only status/progress differ, and failed AniList writes are now counted correctly.
+
 ## 1.0.30
 **Score scales as a list**
 
