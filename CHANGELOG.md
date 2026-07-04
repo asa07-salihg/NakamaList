@@ -1,3 +1,11 @@
+## 1.1.1
+**Your MyAnimeList history on Home**
+
+- A new feed button at the top right of Home (matching the bell) switches between your personalized Home and MyAnimeList's four history feeds: Recent Anime, Recent Anime by Episode, Recent Manga, and Recent Manga by Chapter.
+- History entries look like My List rows - poster, the full status in its color ("Completed 26/26 ep"), and the same score chip with the quick score menu. Tap the poster to open the title; tap the rest of the card to jump straight into that episode's or chapter's forum discussion in-app.
+- Home now always starts at the top when you return to it, so New Episodes and Continue Watching can no longer stay hidden above the fold.
+- Empty feeds say "no activity yet" instead of an error (your MyAnimeList list must be public for history feeds to work).
+
 ## 1.1.0
 **Stability, sign-in reliability and translation fixes**
 
