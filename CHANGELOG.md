@@ -1,3 +1,13 @@
+## 1.1.3
+**Consistent layout on every device**
+
+- NakamaList now renders at a consistent default scale regardless of your system Font size and Display size (Screen zoom) settings, so the layout looks as designed and no longer shifts or clips on devices with those turned up.
+
+## 1.1.2
+**Clubs layout fix on large fonts**
+
+- The Clubs cards now grow to fit their text instead of clipping it, so titles and subtitles stay fully visible when you use a larger system font size or display zoom.
+
 ## 1.1.1
 **Your MyAnimeList history on Home**
 
