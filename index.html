@@ -4,15 +4,34 @@
 <meta name="google-site-verification" content="fendhI7GyMksF6w1IQmldaxWb5cM06VE_6yD8SFNYQg" />
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>NakamaList - MyAnimeList client for Android</title>
-<meta name="description" content="NakamaList is an unofficial MyAnimeList client for Android. Track anime and manga, browse seasons, and manage your list."/>
+
+<title>NakamaList - MyAnimeList Anime &amp; Manga Tracker for Android</title>
+<meta name="description" content="NakamaList is a free, ad-free MyAnimeList client for Android. Track, rate and organize your anime and manga, sync with AniList, and discover seasonal anime, rankings and recommendations."/>
+<meta name="keywords" content="anime tracker, anime tracking app, manga tracker, MyAnimeList app, MyAnimeList client, unofficial MAL client, track anime and manga, anime list app, MAL client Android, AniList Android, seasonal anime, rate and organize anime and manga"/>
+<meta name="author" content="Ahmet Salih Golen"/>
+<meta name="application-name" content="NakamaList"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+<meta name="theme-color" content="#08070d"/>
+<link rel="canonical" href="https://asa07-salihg.github.io/NakamaList/"/>
 <link rel="icon" href="assets/nakamalist_icon_rounded.png"/>
+<link rel="apple-touch-icon" href="assets/nakamalist_icon_rounded.png"/>
+
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="NakamaList - MyAnimeList client for Android"/>
-<meta property="og:description" content="Track your anime and manga list from one Android app."/>
+<meta property="og:site_name" content="NakamaList"/>
+<meta property="og:title" content="NakamaList - MyAnimeList Anime &amp; Manga Tracker for Android"/>
+<meta property="og:description" content="Free, ad-free MyAnimeList client for Android. Track, rate and organize anime and manga, sync AniList, and discover seasonal anime, rankings and recommendations."/>
 <meta property="og:image" content="https://asa07-salihg.github.io/NakamaList/assets/home.png"/>
+<meta property="og:image:alt" content="NakamaList home screen on Android"/>
+<meta property="og:image:width" content="1080"/>
+<meta property="og:image:height" content="2400"/>
 <meta property="og:url" content="https://asa07-salihg.github.io/NakamaList/"/>
+<meta property="og:locale" content="en_US"/>
+
 <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="NakamaList - MyAnimeList Anime &amp; Manga Tracker for Android"/>
+<meta name="twitter:description" content="Free, ad-free MyAnimeList client for Android. Track, rate and organize anime and manga, sync AniList, and discover seasonal anime and rankings."/>
+<meta name="twitter:image" content="https://asa07-salihg.github.io/NakamaList/assets/home.png"/>
+<meta name="twitter:image:alt" content="NakamaList home screen on Android"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
@@ -157,13 +176,40 @@
     .reveal{opacity:1;transform:none}
     *{transition:none!important}
   }
+
+  .faq{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;transition:.2s}
+  .faq details[open]{border-color:#3a3252}
+  .faq summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--violet2);font-size:20px;font-weight:400}
+  .faq details[open] summary::after{content:"\2212"}
+  .faq p{color:var(--muted);font-size:14.5px;line-height:1.65;margin-top:12px}
 </style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"WebSite","@id":"https://asa07-salihg.github.io/NakamaList/#website","name":"NakamaList","url":"https://asa07-salihg.github.io/NakamaList/","inLanguage":"en"},
+    {"@type":"SoftwareApplication","name":"NakamaList","operatingSystem":"Android 8.0+","applicationCategory":"EntertainmentApplication","url":"https://asa07-salihg.github.io/NakamaList/","downloadUrl":"https://play.google.com/store/apps/details?id=com.nakamalist.app","installUrl":"https://play.google.com/store/apps/details?id=com.nakamalist.app","image":"https://asa07-salihg.github.io/NakamaList/assets/home.png","inLanguage":"en","description":"Free, ad-free MyAnimeList client for Android. Track anime and manga, sync with AniList, and browse seasonal anime, rankings, news and forums.","author":{"@type":"Person","name":"Ahmet Salih Golen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"screenshot":["https://asa07-salihg.github.io/NakamaList/assets/home.png","https://asa07-salihg.github.io/NakamaList/assets/mylist.png","https://asa07-salihg.github.io/NakamaList/assets/detail.png","https://asa07-salihg.github.io/NakamaList/assets/discover.png"],"featureList":["Track anime and manga","Optional AniList sync","Seasonal anime","Rankings and recommendations","News, forums and clubs","New-episode notifications","56 languages"]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Is NakamaList free?","acceptedAnswer":{"@type":"Answer","text":"Yes. NakamaList is completely free, with no ads and no third-party tracking."}},
+      {"@type":"Question","name":"Is NakamaList an official MyAnimeList app?","acceptedAnswer":{"@type":"Answer","text":"No. NakamaList is an independent, unofficial MyAnimeList client. It uses the official MyAnimeList API with your own account and is not affiliated with MyAnimeList."}},
+      {"@type":"Question","name":"Does NakamaList track manga as well as anime?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can track both anime and manga, including status, score, episodes, chapters, volumes, dates, tags and notes."}},
+      {"@type":"Question","name":"Can I sync with AniList?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can optionally connect AniList to read reviews and keep your MyAnimeList and AniList lists in sync."}},
+      {"@type":"Question","name":"What Android version do I need?","acceptedAnswer":{"@type":"Answer","text":"NakamaList runs on Android 8.0 and newer."}},
+      {"@type":"Question","name":"Does NakamaList show seasonal anime and rankings?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can browse seasonal anime back to 1917, official rankings, recommendations, news, forums and clubs."}}
+    ]}
+  ]
+}
+</script>
 </head>
 
 <body>
 <div class="bg-fx"><i></i><i></i></div>
 
-<nav id="nav">
+<nav id="nav" aria-label="Primary">
   <div class="wrap">
     <a class="brand" href="#top">
       <img src="assets/nakamalist_icon_rounded.png" alt="" decoding="async"/>
@@ -173,11 +219,12 @@
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#screens">Screenshots</a>
+      <a href="#faq">FAQ</a>
       <a href="https://github.com/asa07-salihg/NakamaList/blob/main/CHANGELOG.md">Changelog</a>
       <a href="https://github.com/asa07-salihg/NakamaList">GitHub</a>
     </div>
 
-    <a class="nav-cta" href="#get">Get the app</a>
+    <a class="nav-cta" href="#top">Get the app</a>
   </div>
 </nav>
 
@@ -192,8 +239,8 @@
       </h1>
 
       <p class="lead">
-        NakamaList lets you manage your MyAnimeList anime and manga lists from your phone.
-        Sign in with your MAL account and keep everything up to date.
+        Sign in with your MyAnimeList account to track, rate and organize your anime and manga.
+        Sync with AniList, follow seasonal anime, and discover new series. Free, with no ads.
       </p>
 
       <div class="cta" id="get">
@@ -225,6 +272,8 @@
   </div>
 </header>
 
+<main>
+
 <div class="strip">
   <div class="wrap">
     <div class="stat">
@@ -252,9 +301,9 @@
 <section id="features">
   <div class="wrap">
     <div class="head reveal">
-      <h2>Everything you need to manage your list.</h2>
+      <h2>Everything you need to track anime and manga.</h2>
       <p>
-        Update your progress, browse anime and manga, and keep track of what you watch or read.
+        Update your progress, rate and organize your list, and keep track of every anime and manga you watch or read.
       </p>
     </div>
 
@@ -378,26 +427,61 @@
     </div>
 
     <div class="rail reveal">
-      <div class="frame"><img src="assets/home.png" alt="Home" loading="lazy" decoding="async"/></div>
-      <div class="frame"><img src="assets/mylist.png" alt="My List" loading="lazy" decoding="async"/></div>
-      <div class="frame"><img src="assets/edit.png" alt="Edit entry" loading="lazy" decoding="async"/></div>
-      <div class="frame"><img src="assets/detail.png" alt="Detail page" loading="lazy" decoding="async"/></div>
-      <div class="frame"><img src="assets/discover.png" alt="Discover" loading="lazy" decoding="async"/></div>
-      <div class="frame"><img src="assets/profile.png" alt="Profile" loading="lazy" decoding="async"/></div>
-      <div class="frame"><img src="assets/seasonal.png" alt="Seasonal" loading="lazy" decoding="async"/></div>
-      <div class="frame"><img src="assets/forums.png" alt="Forums" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/home.png" alt="NakamaList home screen with Continue Watching and seasonal anime" width="1080" height="2400" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/mylist.png" alt="NakamaList My List tracking anime and manga" width="1080" height="2400" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/edit.png" alt="Editing a MyAnimeList entry: status, score and episodes" width="1080" height="2400" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/detail.png" alt="Anime detail page with synopsis, characters and trailer" width="1080" height="2400" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/discover.png" alt="Discover anime rankings and recommendations" width="1080" height="2400" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/profile.png" alt="Profile with anime and manga statistics" width="1080" height="2400" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/seasonal.png" alt="Seasonal anime browser in NakamaList" width="1080" height="2400" loading="lazy" decoding="async"/></div>
+      <div class="frame"><img src="assets/forums.png" alt="MyAnimeList forums inside NakamaList" width="1080" height="2400" loading="lazy" decoding="async"/></div>
     </div>
 
     <p class="hint">Drag sideways to browse</p>
   </div>
 </section>
 
+<section id="faq">
+  <div class="wrap">
+    <div class="head center reveal">
+      <h2>Frequently asked questions</h2>
+      <p>Quick answers about NakamaList, the free MyAnimeList client for Android.</p>
+    </div>
+
+    <div class="faq reveal">
+      <details>
+        <summary>Is NakamaList free?</summary>
+        <p>Yes. NakamaList is completely free, with no ads and no third-party tracking.</p>
+      </details>
+      <details>
+        <summary>Is NakamaList an official MyAnimeList app?</summary>
+        <p>No. NakamaList is an independent, unofficial MyAnimeList client. It uses the official MyAnimeList API with your own account and is not affiliated with MyAnimeList.</p>
+      </details>
+      <details>
+        <summary>Does NakamaList track manga as well as anime?</summary>
+        <p>Yes. You can track both anime and manga, including status, score, episodes, chapters, volumes, dates, tags and notes.</p>
+      </details>
+      <details>
+        <summary>Can I sync with AniList?</summary>
+        <p>Yes. You can optionally connect AniList to read reviews and keep your MyAnimeList and AniList lists in sync.</p>
+      </details>
+      <details>
+        <summary>What Android version do I need?</summary>
+        <p>NakamaList runs on Android 8.0 and newer.</p>
+      </details>
+      <details>
+        <summary>Does NakamaList show seasonal anime and rankings?</summary>
+        <p>Yes. You can browse seasonal anime back to 1917, official rankings, recommendations, news, forums and clubs.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="closing">
   <div class="wrap reveal">
-    <h2>Coming soon.</h2>
+    <h2>Get NakamaList today.</h2>
     <p>
-      NakamaList will be available on Google Play soon.
-      You can follow the project on GitHub.
+      NakamaList is out now on Google Play. Download it free and track your anime and manga in one app.
     </p>
 
     <div class="cta">
@@ -406,6 +490,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="wrap">
