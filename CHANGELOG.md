@@ -1,3 +1,35 @@
+## 1.1.8
+**AniList profile, cleaner AniList-only experience**
+
+- The Profile screen can now show your real AniList statistics (mean score, days, episodes, per-status counts, and manga stats), fetched straight from AniList.
+- When both accounts are linked, a segmented toggle at the top of Profile switches between MyAnimeList and AniList instantly.
+- With an AniList-only sign-in, MyAnimeList-only sections (News, Clubs, Forums and the Home history feed) are now hidden and locked, so nothing opens empty.
+- Episode and list-news notifications now work from your AniList list too.
+- Onboarding now asks you to connect your account right after the welcome, before the appearance and navigation preferences.
+- Signed-out Profile, My List and Home no longer say "MyAnimeList" in their sign-in prompts, since you can now sign in with AniList too.
+- "Open full profile" now opens AniList when you are viewing your AniList profile (and MyAnimeList for the MyAnimeList profile), instead of always opening MyAnimeList.
+
+## 1.1.7
+**Edit from AniList, and pick your profile source**
+
+- With an AniList-only sign-in you can now edit your list: +1 progress, score, status, progress and removals write straight to AniList.
+- When both MyAnimeList and AniList are linked, Settings has a new Profile source switch to choose which account backs your Profile screen.
+
+## 1.1.6
+**Use NakamaList with just AniList**
+
+- You can now sign in with only your AniList account: your anime and manga list, Home rails and profile stats load straight from AniList, with no MyAnimeList account required. Editing your list from an AniList-only sign-in is coming in a follow-up.
+
+## 1.1.5
+**One place to sign in**
+
+- Tapping Sign in anywhere in the app now opens a single connect screen that offers both MyAnimeList and AniList, instead of jumping straight into MyAnimeList.
+
+## 1.1.4
+**Discover starts at the top**
+
+- Discover now opens pinned to the top, so the "Suggested for You" rail is fully visible instead of starting scrolled just past it.
+
 ## 1.1.3
 **Consistent layout on every device**
 
