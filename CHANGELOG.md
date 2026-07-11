@@ -1,3 +1,9 @@
+## 1.2.1
+**Swipe between My List tabs + smoother sorting**
+
+- Swipe left or right on My List to move between the status tabs (All, Watching, Completed, and so on).
+- Changing the sort or its direction no longer flickers: the list now jumps straight to the top cleanly.
+
 ## 1.2.0
 **Sort direction toggle + richer grid cards**
 
