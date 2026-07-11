@@ -1,3 +1,11 @@
+## 1.2.2
+**swipe between seasons + always opens on this season**
+
+- Swipe left or right on the Seasonal screen to move between Last, This Season, Next and the Archive - the same fluid tab transition My List got in 1.2.1. Neighbouring seasons preload as you swipe.
+- The top bar follows the swipe too: the tab underline glides between tabs, and the filter/sort toolbar slides together with its season's content.
+- My List's status-tab underline now glides with your swipe as well, instead of catching up after the page settles.
+- Seasonal no longer stays wherever you left it: entering the tab always lands on the current season (jumping to a season from a detail page still works as before).
+
 ## 1.2.1
 **Swipe between My List tabs + smoother sorting**
 
