@@ -1,3 +1,15 @@
+## 1.2.0
+**Sort direction toggle + richer grid cards**
+
+- Sort menus (My List, Seasonal, and studio/staff pages) now have an ascending/descending toggle next to them, defaulting to largest-first.
+- My List grid cards now match the Home style: score chip top-left (tap for a quick score), an edit button bottom-left, and +1 bottom-right while watching. Grid vs rows now shows instantly with no flash when you open My List.
+
+## 1.1.9
+**Grid view for My List, and one Account section**
+
+- My List has a new poster grid layout (Home-style cards with cover, progress, a tap-to-set score chip and a quick +1), switchable from a full-width toggle in Settings under My List.
+- Settings now has a single "Account" section: MyAnimeList and AniList each get their own Sign in / Log out row instead of two separate sections.
+
 ## 1.1.8
 **AniList profile, cleaner AniList-only experience**
 
