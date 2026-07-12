@@ -1,3 +1,8 @@
+## 1.2.5
+**Proper back inside the Seasonal Archive**
+
+- Opening a season from the Archive now shows a back arrow to the left of the type filter, and pressing back (button or system) returns you to the Archive list instead of jumping to This Season.
+
 ## 1.2.4
 **Smoother Seasonal grid**
 
