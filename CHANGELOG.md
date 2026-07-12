@@ -1,3 +1,10 @@
+## 1.2.4
+**Smoother Seasonal grid**
+
+- Changing the season, type filter, sort or its direction no longer flickers: the grid now jumps straight to the top cleanly, just like My List.
+- Leaving Seasonal for another tab and coming back no longer flickers either: it is already on This Season, with no visible jump.
+- The tab underline now glides when you tap a tab instead of jumping instantly.
+
 ## 1.2.3
 **Seasonal back button + reliable return to this season**
 
