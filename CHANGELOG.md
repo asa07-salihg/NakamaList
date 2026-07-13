@@ -1,3 +1,13 @@
+## 1.2.6
+**Forum links and @mentions work like on MAL**
+
+- Fixed forum posts showing raw [url=...] markup with a dead link when someone linked a YouTube video: those now render as proper tappable links, exactly like on MyAnimeList (only [yt] tags embed a player).
+- @username mentions in posts are now tappable and open that user's MAL profile, just like on the web forum.
+- Plain URLs pasted as text are now tappable links too (MAL web auto-links them; now so do we).
+- Quoted link targets ([url="..."]) no longer break the link.
+- [size=...] text sizing in posts now actually applies (it was silently ignored), including nested sizes; [sub]/[sup] now render as real subscript/superscript.
+- News now always starts at the top when you open the tab or switch categories, instead of restoring a mid-list scroll position.
+
 ## 1.2.5
 **Proper back inside the Seasonal Archive**
 
