@@ -2,7 +2,7 @@
 **Grid columns + portrait lock**
 
 - You can now choose 2 or 3 columns for the My List grid, from Settings under My List (it appears when Grid is selected), so the covers can be bigger and fit your phone better.
-- The app now stays in portrait like the official MyAnimeList app, so rotating the phone no longer breaks the layout, and trailers and theme songs no longer become unwatchable when the screen turns.
+- The app now stays in portrait like the official MyAnimeList app, so rotating the phone no longer breaks the layout. Trailers and theme songs still go fullscreen (upright in portrait) and rotate to landscape when you turn the phone.
 
 ## 1.2.6
 **Forum links and @mentions work like on MAL**
