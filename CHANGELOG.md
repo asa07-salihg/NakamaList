@@ -1,3 +1,11 @@
+## 1.2.8
+**On-time episode alerts + polish**
+
+- New-episode notifications now arrive minutes after the episode actually airs: alerts are scheduled to each episode's real air time instead of waiting for the next background check, which battery saving could delay for hours.
+- Reordering the navigation bar (in Settings or during the intro) no longer refreshes the screen when a row crosses the tab you're on - the list just moves.
+- Home no longer flickers when you come back to it: it opens cleanly at the top, the same fix Seasonal and My List got.
+- News categories now match MyAnimeList exactly: articles are filed under Anime, Manga, People, Music, Events and Industry using MAL's own article tags whenever the feed provides them.
+
 ## 1.2.7
 **Grid columns + portrait lock**
 
