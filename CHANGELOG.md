@@ -1,3 +1,9 @@
+## 1.2.9
+**See every dub**
+
+- Character pages now list the character's full voice cast at the bottom - every voice actor in every language, not just the Japanese one. Tap any of them to open their page.
+- Anime detail pages now show which languages a title has been dubbed in, as short codes (EN, DE, ES...) right in the info grid.
+
 ## 1.2.8
 **On-time episode alerts + polish**
 
