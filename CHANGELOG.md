@@ -1,3 +1,11 @@
+## 1.3.0
+**Notifications that don't get lost**
+
+- Episode alerts now recover on their own after a restart or an app update - you no longer need to open the app for them to keep working.
+- On supported devices, alerts are pinned to the exact air time with a system alarm, so they arrive on schedule even with battery saving active.
+- No more silently missed episodes: aired episodes are now also matched by their database ID over a catch-up window, so a title-name quirk or a delayed background check can't skip one anymore.
+- If your device's battery settings are limiting alerts, Settings now shows a fix-it shortcut under Notifications (it disappears once everything is allowed).
+
 ## 1.2.9
 **See every dub**
 
