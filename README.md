@@ -8,7 +8,7 @@
   Manage your anime and manga lists and follow the community (news, forums, clubs), in 56 languages.
 
   [![Platform](https://img.shields.io/badge/platform-Android-3DDC84.svg)](#)
-  [![Version](https://img.shields.io/badge/version-1.3.0-brightgreen.svg)](CHANGELOG.md)
+  [![Version](https://img.shields.io/badge/version-1.3.1-brightgreen.svg)](CHANGELOG.md)
   [![Languages](https://img.shields.io/badge/languages-56-blue.svg)](#languages)
   [![License](https://img.shields.io/badge/license-Proprietary-lightgrey.svg)](#license)
 </div>
