@@ -2,7 +2,7 @@
 **Swipeable news + polish**
 
 - Swipe left or right on the News screen to move between categories - the same fluid tab experience as My List and Seasonal, with the tag bar following your swipe.
-- Voice actors now show their real language: a Chinese-original anime's lead now correctly reads "Chinese" instead of a stock "Japanese" label, everywhere on the detail page.
+- Voice actors now show their real language: a Chinese-original anime's lead now correctly reads "Chinese" instead of a stock "Japanese" label, everywhere on the detail page. Cast cards always pick the original-language actor (Japanese, then Chinese, then Korean) so a page never mixes languages, and the Dub field now lists the original audio too (e.g. "JA, EN, DE").
 - Fixed notification images sometimes growing far past their intended size when the title wrapped onto several lines - every poster is now the same size.
 - Home now loads noticeably faster on large lists: two heavy pieces of duplicate work at startup and on every return to Home were eliminated.
 
