@@ -1,3 +1,26 @@
+## 1.3.4
+**All the discussions, in-app**
+
+- "Show more" under Discussions now reveals threads in batches right in the app - no more being sent to the website to see the rest of a long-running show. The full MyAnimeList forum page is still one tap away under "More on MyAnimeList" as a fallback.
+- Discussion matching is now truly universal: it works regardless of how the title is punctuated (brackets, quotes, "?", "☆", dashes...), so entries like [Oshi no Ko] and Kaguya-sama's OVA now show their threads.
+- Faster, lighter on data: discussion search stops as soon as it has all the episodes, and the app now paces its AniList requests a touch higher while backing off automatically if the server ever asks it to - fewer stalls, no wasted quota.
+- Opening an anime is much lighter on the network: the full cast and staff lists are now loaded only when you tap "More", so a normal detail view makes far fewer requests and pages open quicker.
+
+## 1.3.3
+**English titles + a tighter, easier navigation**
+
+- New setting: choose your title language. Turn on English titles in Settings › Appearance to see titles in English (where available) instead of romaji, everywhere in the app - instantly.
+- The top bar is slimmer, so content starts higher and less space is wasted.
+- The revolver navigation is shorter and now the whole tab area is tappable, not just the button - much easier to hit.
+
+## 1.3.2
+**Complete episode discussions**
+
+- The Discussions list on a detail page now finds every episode/chapter thread, not just some: it pages through the full forum search, so long-running and multi-season series no longer drop scattered episodes.
+- Discussions are now matched across the ways a title and its threads can differ - spacing or a dash ("Kyousou Giga" vs "Kyousougiga", "B-gata H-kei" vs "B Gata H Kei"), a quoted/movie title ("Bungaku Shoujo" Movie), a decorative symbol (Mahou☆Shoutengai), a "Movie 1 -" style label before a subtitle (Ars Nova Movie 1 - DC), or a different official translation - which previously hid the whole list, while threads that belong to a different entry (a "(TV)", "(OVA)", season or year tag) are still correctly kept out.
+- The Discover search now resets to the browse view when you switch tabs and come back, instead of staying on your previous results (your recent-search history is kept).
+- Screens no longer fail on a single hiccup from MyAnimeList's servers: a transient timeout (502/503/504) is retried automatically before an error is shown.
+
 ## 1.3.1
 **Swipeable news + polish**
 
