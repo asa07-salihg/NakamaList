@@ -5,6 +5,11 @@
 - Discussion matching is now truly universal: it works regardless of how the title is punctuated (brackets, quotes, "?", "☆", dashes...), so entries like [Oshi no Ko] and Kaguya-sama's OVA now show their threads.
 - Faster, lighter on data: discussion search stops as soon as it has all the episodes, and the app now paces its AniList requests a touch higher while backing off automatically if the server ever asks it to - fewer stalls, no wasted quota.
 - Opening an anime is much lighter on the network: the full cast and staff lists are now loaded only when you tap "More", so a normal detail view makes far fewer requests and pages open quicker.
+- Fixed a crash on devices without a browser or share app: opening a link externally, sharing a title, or tapping a widget card now fails quietly instead of closing the app.
+- Smoother and faster across the board, especially on mid-range phones: screens are now pre-compiled instead of being built the first time you open them, and cover art is cached properly - so less stutter, quicker detail pages, and much less repeated downloading.
+- The back gesture now follows the modern Android animation.
+- Icons that point somewhere - like "open in browser" - now face the right way in right-to-left languages such as Arabic, Persian, Hebrew and Urdu.
+- Your sign-in is now protected by our own Android Keystore encryption instead of a library Google has retired. You stay signed in; nothing to do.
 
 ## 1.3.3
 **English titles + a tighter, easier navigation**
