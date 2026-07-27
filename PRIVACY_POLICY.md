@@ -1,7 +1,7 @@
 # Privacy Policy
 
 **App:** NakamaList  
-**Effective date:** June 6, 2026  
+**Effective date:** July 27, 2026  
 **Maintainer:** Ahmet Salih Gölen  
 **Contact:** nakamalist@proton.me
 
@@ -46,17 +46,19 @@ or from it. The App only ever reads and writes **your own** data.
 
 - Sign-in uses MyAnimeList's OAuth 2.0 Authorization Code flow with PKCE where available.
 - The App may receive an **access token** and a **refresh token** from MyAnimeList.
-- These tokens are stored securely on your device using Android platform security
-  features, such as Android Keystore-backed encrypted storage.
+- These tokens are stored encrypted on your device with AES-256-GCM, using a key that is
+  generated inside the **Android Keystore** and never leaves it. They are excluded from
+  cloud backup and device-to-device transfer, so a restored copy on another device cannot
+  be decrypted and simply signs you out.
 - Your MyAnimeList username and password are entered only on MyAnimeList-controlled
   pages, such as the official OAuth page or MyAnimeList web pages opened for fallback.
 - NakamaList does not receive, store, inspect, or log your MyAnimeList password.
 - Tokens are never written to logs, crash reports, analytics services, or any remote
   service operated by NakamaList.
 - The optional **AniList** sign-in uses AniList's OAuth 2.0 Implicit Grant (no client secret). The
-  AniList access token is stored securely on your device in separate encrypted storage, is never
-  logged or sent to any service operated by NakamaList, and your AniList password is entered only on
-  AniList-controlled pages.
+  AniList access token is stored in separate encrypted storage on your device, protected the same
+  way, is never logged or sent to any service operated by NakamaList, and your AniList password is
+  entered only on AniList-controlled pages.
 
 ## Web Fallback / In-App WebView
 
@@ -85,8 +87,11 @@ local data, or uninstalling the App.
 
 All data the App stores is kept **locally on your device**, including:
 
-- Authentication tokens, stored securely.
-- Cached anime, manga, forum, club, and news content for offline access and speed.
+- Authentication tokens, stored encrypted (see "Authentication and Tokens" below).
+- Cached anime, manga, forum, club, and news content for offline access and speed,
+  including a bounded cache of cover images and other artwork already shown to you.
+  Caches are temporary, size-limited, and cleared by "Clear cached data" in Settings,
+  by clearing the App's storage, or by uninstalling the App.
 - App preferences, such as language, theme, fallback mode, news refresh interval,
   and similar settings.
 - News read/unread and bookmark state.
@@ -113,6 +118,10 @@ Network requests may be made to:
   content, and community content.
 - **AnimeSchedule** (`animeschedule.net`), used read-only and on-device, to determine
   which anime on your *Watching* list are currently airing for new-episode reminders.
+- **AnimeThemes** (`animethemes.moe`), used read-only and without an account, to show a
+  title's opening and ending themes on its detail page. When you play a theme, the audio
+  or video file is streamed from AnimeThemes' own media servers. Only the anime's public
+  identifier is sent; no account or personal data is involved.
 - **YouTube** (`youtube-nocookie.com` / `img.youtube.com`), only when you tap a video
   embedded in a forum post or news article: the official YouTube IFrame embed is loaded
   in a WebView so the trailer/PV can play in-app. We never extract or proxy the video.
@@ -123,6 +132,9 @@ Network requests may be made to:
   you start a sync.
 - Image, RSS, CDN, or media sources referenced by the content displayed in the App or
   inside fallback web pages.
+- A **support/donation page** (`buymeacoffee.com`), only if you tap the optional
+  "Buy me a coffee" link in Settings. It opens in your browser or a Custom Tab; the App
+  sends nothing about you, and any data you enter there is handled by that service.
 
 Your use of MyAnimeList is governed by MyAnimeList's own Privacy Policy:
 
