@@ -1,7 +1,7 @@
 # Terms of Use
 
 **App:** NakamaList  
-**Effective date:** June 6, 2026  
+**Effective date:** July 27, 2026  
 **Maintainer:** Ahmet Salih Gölen  
 **Contact:** nakamalist@proton.me  
 
@@ -76,6 +76,9 @@ authentication, or supported MyAnimeList functionality. They include, for exampl
 
 - **AnimeSchedule**, used read-only and on-device to detect currently-airing anime
   for new-episode reminders.
+- **AnimeThemes**, used read-only and without an account, to list a title's opening and
+  ending themes and to stream them from AnimeThemes' own media servers when you play one.
+  The App does not download, re-host, or redistribute those files.
 - **YouTube**, only when you tap a video embedded in a forum post or news article:
   the App loads YouTube's official IFrame embed so the trailer/PV plays in-app. The
   App does not download, extract, or re-host the video.
@@ -84,6 +87,11 @@ authentication, or supported MyAnimeList functionality. They include, for exampl
   feature, which reads and updates **your own** AniList list (status/progress/score) through the
   official AniList GraphQL API. Sync is user-initiated and only ever touches your own data. Your use
   of AniList is also subject to AniList's own Terms of Use; MyAnimeList remains the primary list.
+
+The App also contains an optional **"Buy me a coffee" support link** in Settings. It is a
+voluntary donation, opens an external page operated by that provider, and buys no feature,
+content, licence, or service in the App. Any payment is a transaction between you and that
+provider, under their terms.
 
 If optional external content is shown, it may be governed by the terms and policies of
 the relevant provider. The App should continue to function even if such a service is
