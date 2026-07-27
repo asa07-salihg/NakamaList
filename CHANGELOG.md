@@ -1,3 +1,12 @@
+## 1.3.5
+**A clearer top bar, and news beyond your list**
+
+- The top bar sits tighter under the status bar, and the logo and bell are now as large as the selected tab below - easier to see and to tap.
+- The bell shows a dot in your accent colour when something new is waiting, and it clears as you read.
+- New setting: "All news". Turn it on under Notifications to hear about every MyAnimeList story, not only titles on your list.
+- Episode discussions are now complete for tricky entries: sequels whose threads MyAnimeList files under a different spelling of the title, and older seasons whose discussions had gone quiet under a currently-airing sequel. The list now keeps looking until it has every episode.
+- Fixed a startup crash on devices whose storage is full or damaged: the app now opens normally, and only background sync is skipped.
+
 ## 1.3.4
 **All the discussions, in-app**
 
@@ -10,6 +19,7 @@
 - The back gesture now follows the modern Android animation.
 - Icons that point somewhere - like "open in browser" - now face the right way in right-to-left languages such as Arabic, Persian, Hebrew and Urdu.
 - Your sign-in is now protected by our own Android Keystore encryption instead of a library Google has retired. You stay signed in; nothing to do.
+- The score on a detail page always stays on one line.
 
 ## 1.3.3
 **English titles + a tighter, easier navigation**
