@@ -1,3 +1,26 @@
+## 1.3.8
+**Pull to refresh, and a profile that keeps up**
+
+- Pull down from the top of My List, News or Profile to refresh right away, with the standard Android indicator.
+- Your profile statistics no longer lag behind: the entry counts, totals and mean score are now read from your own list, so they change the moment you edit an entry.
+- Watched episodes update instantly too. A +1 is counted straight away, and the number is corrected the next time MyAnimeList publishes its own figure.
+- The profile also refreshes itself when you edit something anywhere else in the app, instead of waiting for a restart.
+
+## 1.3.7
+**Sync progress that adds up**
+
+- The count on the Sync screen and the one in the notification now always match. They are fed from the same place, and both switch to the real total at the same moment once the lists have been re-read.
+- When a sync finishes, the progress notification is cleared, so you no longer see a finished run and a running one side by side with different numbers.
+- Reopening the app mid-sync no longer resets the notification to a blank progress bar.
+
+## 1.3.6
+**Search inside your list**
+
+- New search in My List: tap the magnifier next to the sort icon and the toolbar turns into a search bar. Type any title (romaji or English) to narrow the tab you are on, so a long list stays easy to get through.
+- Back or the arrow closes search and puts your full list back.
+- Your total entry counts live on the Profile screen, under your statistics.
+- The system back button now works everywhere in Settings: Appearance, Navigation, Language, Browser, the legal pages and licences all return to Settings instead of leaving the app.
+
 ## 1.3.5
 **A clearer top bar, and news beyond your list**
 
