@@ -1,3 +1,10 @@
+## 1.3.9
+**The right discussion thread, every time**
+
+- Discussions on a detail page now show MyAnimeList's own thread for movies, OVAs, ONAs and specials, instead of an unrelated forum post that happened to share the title.
+- Series that MyAnimeList files under a year, like "Suzumiya Haruhi no Yuuutsu (2009)", now find their episode discussions too: the forum names those threads with a season number instead of the year.
+- The back button now closes the edit sheet when you open it from a Home rail, like it already did everywhere else.
+
 ## 1.3.8
 **Pull to refresh, and a profile that keeps up**
 
