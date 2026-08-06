@@ -1,9 +1,22 @@
+## 1.4.1
+**Tablets, and a TV that actually works with a remote**
+
+- Tablets are properly supported. The app rotates and fills the screen instead of sitting in a portrait strip with black bars, and grids and tab strips adapt to the width you actually have. Phones stay portrait, as before.
+- Signing in works on TV. Sign-in now opens inside NakamaList rather than handing off to a TV browser, which usually opened on its own home page and lost the page it was asked for. It works from the welcome screen too, and closes itself once you are signed in.
+- Press OK on a title to step into it, and its own buttons light up: the title itself, its score, edit, and +1. Move along them with left and right, press OK again to use one, and press back to step out. Every button on a card is reachable with the remote now.
+- Left and right on the remote spin the revolver bar straight to the next tab. With the classic bar you move along the tabs and press OK, as you would expect.
+- The selection outline is drawn to fit the thing it marks, instead of being cut off at the edge of a row or wrapped around a poster and its title together.
+- The app now fills the whole TV screen. The safe-area margin added in 1.4.0 turned out to shrink it into a bordered box on sets that do not crop the picture, which is all of them.
+- Posters and grids keep a sensible size on a big screen rather than being blown up, and the tab strips sit across the screen instead of bunching in one corner.
+- The refresh button on TV is gone. It floated over the first row and added a stop to the remote's path for something the app already does on its own; pull to refresh is unchanged on phones and tablets.
+- A new TV banner, matching the store artwork.
+
 ## 1.4.0
 **NakamaList on the big screen**
 
 - NakamaList now installs and runs on Android TV and Google TV. It appears in the TV launcher with its own banner, and the whole app is available - no cut-down version.
 - Everything is usable with the remote: the D-pad moves between posters, rows and tabs, and whatever is selected is outlined in your accent colour so you can always see where you are.
-- The app fills the screen properly on TV instead of being squeezed into a phone-shaped strip.
+- The app fills the screen properly on TV instead of being squeezed into a phone-shaped strip, and stays inside the safe area so nothing is cut off by the edges of your screen.
 - Where you would pull to refresh on a phone, TV shows a refresh button you can reach with the remote.
 
 ## 1.3.9
