@@ -1,3 +1,11 @@
+## 1.4.0
+**NakamaList on the big screen**
+
+- NakamaList now installs and runs on Android TV and Google TV. It appears in the TV launcher with its own banner, and the whole app is available - no cut-down version.
+- Everything is usable with the remote: the D-pad moves between posters, rows and tabs, and whatever is selected is outlined in your accent colour so you can always see where you are.
+- The app fills the screen properly on TV instead of being squeezed into a phone-shaped strip.
+- Where you would pull to refresh on a phone, TV shows a refresh button you can reach with the remote.
+
 ## 1.3.9
 **The right discussion thread, every time**
 
