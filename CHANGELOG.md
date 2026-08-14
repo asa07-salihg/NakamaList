@@ -1,3 +1,13 @@
+## 1.4.2
+**Every change, everywhere, at once**
+
+- An edit made anywhere now appears everywhere immediately. Set a title to Watching from its page and it is on Home and in your list before you get back to them; a +1 from a Discover result updates the same title on Seasonal. Nothing waits for the server any more, and if a change is rejected it is undone rather than left on screen.
+- Titles added to Plan to Watch or Plan to Read from another screen now show up on Home. They only appeared after a restart before.
+- Episode counts can no longer read past the end of a series. Where MyAnimeList had you at 24 of 12 episodes, NakamaList shows 12 / 12, the same as the website. Your list on MyAnimeList is left exactly as it is.
+- Pull to refresh on a title's page, like everywhere else. It refetches the page and your list entry rather than redrawing what was already cached.
+- A Release Years chart in your profile statistics, showing how your anime list spreads across the years, right back to the oldest thing on it. Tap any year to open your list filtered to it. Thanks to the reader who wrote in asking for this.
+- Films, OVAs and older anime now have a release year. MyAnimeList only tells apps the season for titles that belong to a broadcast season, so everything else was arriving with no year at all: missing from the new chart, and sorted to the bottom whenever you ordered your list by air date.
+
 ## 1.4.1
 **Tablets, and a TV that actually works with a remote**
 
