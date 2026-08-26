@@ -1,3 +1,42 @@
+## 1.6.0
+**Following people from here**
+
+- You can now follow and unfollow AniList accounts from the Friends page, the same way you add and remove MyAnimeList names. The form and the list work identically; only the words differ, because these two are not the same act. A MyAnimeList name is a note kept inside this app, since MyAnimeList has no way to share a friends list. Following on AniList is real: it happens on your account, and the person can see it.
+- The buttons say so. Add and Remove on the MyAnimeList side, Follow and Unfollow on the AniList side.
+- Fixed: signing in as a different AniList account showed the previous account's following list, and could load the previous account's list as your own. What the app remembered about a signed-out account is now dropped, including two things that had never been cleared by anything.
+
+## 1.5.9
+**Both sets of friends, and lists that do not sit still for a month**
+
+- A title's page now shows your MyAnimeList friends and the people you follow on AniList at the same time, under a heading each. It used to show only whichever side the Friends page was set to, so half your friends were missing from a question that has one answer.
+- A friend's list is pulled again once it is a week old. It was loaded once and believed for as long as the app stayed open, which is right for an afternoon and wrong for a month: somebody three episodes in when you last looked has probably finished since.
+- Two people who use the same name on the two sites are two people now. They were one, and the second list loaded quietly replaced the first.
+- Who you follow on AniList is worked out once every half hour instead of on every title you open. Pulling to refresh the Friends page still asks properly, so somebody you followed a minute ago shows up.
+- A title's page only shows people who are still your friends. Unlinking AniList, or removing someone on the website, used to leave their score sitting there under a name that was no longer on any of your lists.
+- Signing out of AniList now clears what was loaded about that account. It kept the previous account's follow list, so signing in as somebody else showed the wrong people. Your MyAnimeList friends are left alone.
+- Opening Friends and going straight to Recent Activity could leave the feed empty until you pulled to refresh. It now waits for the list of people before fetching.
+
+## 1.5.8
+**Editing in bursts**
+
+- Every quick +1 was reading your entire saved list back off storage before writing it out again. Watching four episodes in a row did that four times over. The list is now held once and edited in place, so a burst of edits costs one read instead of one each.
+
+## 1.5.7
+**Five things an audit turned up**
+
+- Fixed: signing out left everything the app had loaded about other people in memory. Signing in as somebody else could show the previous account's friends' scores on a title's page.
+- Fixed: removing someone left their score on every title's page. The Friends page said they were gone and the detail page disagreed. Their open list closes too.
+- Fixed: two searches over friends' cached lists ran on the drawing thread - one when the activity feed landed, one every time a title's page opened. On a large friends list that was a visible stutter at exactly the wrong moment.
+- Fixed: the friends' score chart put an AniList 85 in the 8 row while your Profile counted the same entry as a 9. Both round now.
+- Fixed: moving between Home, Friends and Profile could leave the control in the top bar blank, when the screen you left cleared the slot after the screen you arrived at had filled it.
+
+## 1.5.6
+**The grid, and lists that keep up**
+
+- A friend's list follows your own layout setting. If you read My List as a poster grid, theirs is a poster grid too. It had been rows either way, which made "the same screen" not quite true.
+- Reading your friends' activity now also brings their lists up to date, without a single extra request. The feed already says who moved which title how far, so the cached lists take the change instead of waiting to be reloaded.
+- Scores are the exception: neither MyAnimeList nor AniList sends a score with an activity update, so a friend's score still comes from the last time their list was loaded.
+
 ## 1.5.5
 **Smoother on a long feed**
 
