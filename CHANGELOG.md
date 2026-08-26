@@ -1,3 +1,111 @@
+## 1.5.5
+**Smoother on a long feed**
+
+- Your friends' activity scrolls smoothly on a large list. Each row had been searching your whole list for its poster and a friend's whole list for their score, every time the screen redrew; both are now looked up directly.
+
+## 1.5.4
+**The bar holds what stays put**
+
+- The MyAnimeList/AniList switch and the person picker swapped places on the Friends page: the account moved up into the top bar, the person came down to the control row. The account is chosen once a session and the person changes constantly, and the bar is where the eye goes for the answer that stays put.
+- Profile's account switch moved to the same place, so it is the one control in the one spot across both pages. It used to take a row off the top of every screenful and scroll away with the page.
+- Searching people from Recent Activity now shows the people. It used to open a field over the unchanged feed, with nothing on screen answering what you were typing; picking a name narrows the feed and closes the search.
+- Fixed: the link to a title's score distribution on MyAnimeList went to a 404. The address was being built with the template text left in it rather than the title's number.
+- Friend scores on a title's page are cards now, the same card the Friends page uses for people, with the score where the remove cross sits there. Each one also says how far that person got, in the status colour used everywhere else, so "green, near the end" reads before any of the words do. An 8 at three episodes and an 8 at the end are not the same claim.
+- The friends' score distribution sits under Status distribution now, the exact chart your Profile draws. That block already answers "how did everyone receive this"; how many are watching it and what the people you know made of it are the same question.
+- Loading a friend's list downloads noticeably less. It had been asking for everything your own list needs - tags, comments, priority, rewatch counts, your own dates, genres - none of which a read-only view of somebody else's list ever shows.
+- The link to the full distribution moved into More on MyAnimeList, with the other ways out of the page.
+- A friend's AniList list no longer says UNKNOWN on every row. The type, the season and the episode count were never asked for, though AniList has all three; the MyAnimeList side of the same screen had been complete all along.
+- Pull to refresh now works from an empty feed and from a failed load - the two places you most want it. The message said to pull down and there was nothing to pull, because a line of text is not something you can drag.
+- Swiping sideways no longer switches between Friend Lists and Recent Activity. That is what the icon on the left is for, and Friend Lists is itself a row of swipeable status tabs, so the gesture had two meanings. My List keeps its swipe, where it only ever means one thing.
+
+## 1.5.3
+**Find the right friend**
+
+- Two searches, and neither can be mistaken for the other. The magnifier in the top bar searches **people** - that bar is about who you are looking at - and it is there on both views. The magnifier on the control row searches **what that view is showing**, so Recent Activity can now be searched by title.
+- Both work exactly like My List's: the field takes over the row, and back closes it and clears what you typed.
+- The name in the top bar gained a cross on its left when somebody is picked, so getting back to everyone no longer means opening the menu to find the entry that means "never mind". Both icons are the bell's size and sit against the name at whatever width it happens to be, so a long username shortens rather than pushing them off the bar.
+- The "add someone" box hides itself while you are searching. A form asking for a new name is noise on a screen whose job at that moment is finding an existing one.
+- Searching and finding nobody says so, rather than showing the "you have no friends yet" explanation to somebody who has plenty.
+
+## 1.5.2
+**A glyph instead of a code**
+
+- The Friend Lists / Recent Activity switch is an icon now: My List's own list mark and the history mark Discover already uses. Tap it to see both names written out.
+
+## 1.5.1
+**Whose score is that**
+
+- Fixed: a friend's activity row showed your score next to their name. Neither feed carries a score, so it now comes from their list once that has been loaded and stays blank until then. Blank is honest; your own number under someone else's name was not.
+
+## 1.5.0
+**Two views, one row**
+
+- The Friends page lost a whole row of chrome. The tab strip is gone; which view you are on is now a name on the left of the same row that carries the account switch and the filter.
+- My Friends folded into Friend Lists. It was a list of names you tapped to open a list, and Friend Lists already opened with that same list of names, so it was the same screen twice with a swipe between them. Adding and removing people now happens where the people are.
+- Two views instead of three also means swiping left and right is a single step rather than a hunt.
+- Removing someone stays on the MyAnimeList side, where the list is one the app keeps for you. Names on the AniList side come from your account's own follows, and unfollowing is a real action on your account, so there is no X there until that is built properly.
+
+## 1.4.9
+**A friend's list is your list**
+
+- Reading a friend's list now happens on My List's own screen: the same status tabs, the same toolbar (anime/manga, type, sort, direction, search) and the same rows. Not a smaller lookalike of it, the screen itself. The only difference is whose list it is, and that is the picker in the top bar.
+- It is read-only, so the edit and +1 buttons are gone rather than greyed out. They write to your list, and your list is not what is on screen.
+- Titles with no artwork now show a "?" instead of an empty frame. MyAnimeList's activity feed carries no images at all, so a friend watching something you do not have had nothing to show; the mark says "no picture" rather than looking like a failed load. Rows from AniList still fill in on their own.
+
+## 1.4.8
+**One shape for choosing a view**
+
+- Choosing between Home and Recent Activity moved into the top bar. It is a choice you make once, so it no longer takes a row of the page.
+- The swipeable strip now belongs to Recent Activity and carries its categories, so All, Anime and Manga are pages you swipe between. Both feeds are fetched once and filtered on the device, so a swipe lands on a page that already has its content instead of emptying the list and going back to the network.
+- Your friends' activity now uses the exact rows Home uses, not a lookalike: the poster, the progress bar, the full status line, and your own score on anything you also have.
+- Picking a friend moved up to the top bar and starts on All, staying in the same place whether you are reading their activity or their list.
+- The filter moved onto the MyAnimeList/AniList row, pinned right, which is exactly where My List keeps its own. It had been sitting on a strip of its own inside the page, so two halves of one question were on two different rows.
+- Filter rows are centred throughout, which mattered most on tablets and televisions where they had been sitting against the left edge with a wide empty band beside them.
+- Friends lists return to the top when you change a filter or switch person, the way My List already did.
+- Friend scores on a title's page now fill themselves in, and appear one by one as each list arrives. There is no longer a button to press first.
+- Fixed: opening a friend's list on AniList failed and blamed their privacy settings. The list was never private; the app had forgotten which account the name belonged to. It now remembers, and can look a name up when it does not.
+- Fixed: Home came back where you left it instead of at the top, which pushed New Episodes off the screen on opening.
+
+## 1.4.7
+**What your friends thought**
+
+- A Friend Scores block on every title's page: what each person on your Friends list gave it, your own score alongside theirs, and their average. Tap a name to open that person's list.
+- It uses lists you have already opened, so it costs nothing. If some are missing it says how many and offers to fetch them once; after that every title you open is instant.
+- A link straight to the full score distribution on MyAnimeList, for the picture across everyone rather than just your friends.
+- Your own score is marked and left out of the friends' average, because an average that includes you is not one you can compare yourself against.
+
+## 1.4.6
+**A simpler Home**
+
+- Home now has two buttons at the top instead of a hidden menu of five feeds: Home, and Recent Activity. Your own recent anime and manga updates arrive together in one list, newest first, with Anime and Manga filters.
+- The old menu made you choose between "Recent Anime" and "Recent Anime by Episode", which were the same events described twice. One list, no choice to make.
+- Pull down to refresh, on both views. On Home that reloads your list and rebuilds every rail; on Recent Activity it re-reads your feed instead of redrawing what was already cached.
+
+## 1.4.5
+**Read your friends' lists**
+
+- The Friend Lists tab is live. Pick someone and browse what they are watching and reading, laid out like your own list, with their status, their progress and their score. Tap a title to open it.
+- Filter by anime or manga and by status, exactly as you would your own list. Pull down to reload theirs.
+- Nothing is editable there, because it is their list. Your own controls are on the title's page, one tap away.
+- Fixed: with both accounts linked, switching to AniList still showed the MyAnimeList names you had typed. It now shows who you actually follow on AniList, and switching back returns your own list of names.
+
+## 1.4.4
+**What your friends are watching**
+
+- The Recent Activity tab is live. Everyone on your Friends list, merged into one feed, newest first, with what they watched or read and how far along they are. Tap a row to open the title.
+- Filter by anime or manga, or tap someone's name to see only them. Tap it again to go back to everyone.
+- It loads when you open the tab and refreshes when you pull down, not on every visit. On the MyAnimeList side each refresh is a couple of requests per person, so it waits until you ask.
+- A friend whose account has gone or whose list has been made private simply drops out of the feed instead of breaking it for everyone else.
+- Status colours are now identical everywhere in the app. The edit sheet had quietly drifted to a darker grey for Plan to Watch.
+
+## 1.4.3
+**Friends, part one**
+
+- A new Friends tab. Add people by their MyAnimeList username and they stay on your list, ready for what comes next: their recent activity and their lists, both arriving in the following updates.
+- If you also use AniList, a switch at the top lets you choose which account the page follows. Everyone you follow on AniList appears there on its own, with nothing to add by hand.
+- MyAnimeList keeps friend lists to its own website, so they cannot be brought over automatically. The page says so plainly the first time you open it, rather than leaving you wondering.
+- Names are checked as you add them, so a typo or an account with a private list is caught immediately instead of turning into an empty feed later.
+
 ## 1.4.2
 **Every change, everywhere, at once**
 
