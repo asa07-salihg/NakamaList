@@ -1,3 +1,15 @@
+## 1.7.2
+**Friend Scores, in one place and kept properly**
+
+- A title's page is ordered properly now. Everything about the title comes first, then everything about people, in one run: Discussions, then Status distribution, then Friend Scores.
+- The friends' chart had its own "Score Distribution" heading up beside Status distribution, which read as the site's scores rather than your friends'. It has moved into Friend Scores, under the cards - one section, one heading, and whose scores it is says so.
+- Every friend who has the title now appears, including Plan to Watch and anyone who has not rated it. Their card shows how far in they are with an empty score. The average and the chart still count only the people who actually gave a score, so the numbers are unchanged.
+- The Friends page opens on whichever of Friend Lists and Recent Activity you were last on, and remembers it between launches. It used to snap back to Friend Lists every time you stepped away to a title, which meant re-picking Recent Activity on every return.
+- Only that choice is remembered. Coming back puts you at the top of that segment - not inside a friend's open list, not on a feed filtered to one person, and not halfway down your friends where you had scrolled to. It is simply there when the screen appears, with none of the sliding-back-into-place you could watch happen.
+- Recent Activity rows show the artwork more often. A friend watching something you have never touched used to draw a grey question mark on the MyAnimeList side; the poster now comes from that friend's own list, which the app already has.
+- Your friends are listed alphabetically. They used to appear in the order you added them, which stops being findable somewhere around the tenth name - and the AniList side was already sorted by name, so the same screen was ordered two different ways depending on which account you were on.
+- Friends' lists are stored properly on the device now instead of being kept only in memory. They used to be thrown away every time the app closed, so the first title you opened after a restart had to fetch every friend again. They survive now, and the week-old refresh rule finally means a week.
+
 ## 1.7.1
 **Two things the release checks caught**
 
