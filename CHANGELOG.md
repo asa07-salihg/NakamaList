@@ -1,3 +1,30 @@
+## 1.7.1
+**Two things the release checks caught**
+
+- Both halves of adding a friend now report problems the same way. The MyAnimeList side was passing text identifiers around inside the data layer, which the build tooling flagged as meaningless; it answers with a result the screen turns into words, exactly as the AniList side already did.
+- No change you can see. This one is housekeeping so the release build passes its own checks.
+
+## 1.7.0
+**A dial for your color**
+
+- The color picker is a dial now, with a hand that swings to the one you pick. The white ring around the chosen swatch is gone - a white circle on a page about color read as a scratch, not as a highlight.
+- Fixed: choosing Grid in setup left the example above showing a row. It shows real grid cells now.
+- If you skip signing in, the example row is Fullmetal Alchemist: Brotherhood rather than a blank placeholder, so you can see what a filled row actually looks like.
+
+## 1.6.9
+**The star, and some light**
+
+- The bottom bar page in setup was missing the star that picks which tab opens when you launch the app. Settings had it, setup didn't, and it was the same list of rows in both. Now they match.
+- Every setup page carries a soft wash of your accent colour behind it, so picking a colour shows up everywhere rather than only on the page that asks.
+
+## 1.6.8
+**A first run worth having**
+
+- Setting up NakamaList used to be three screens, the last of which stacked nine settings into one long scroll. It is now one thing per page, and every page shows you what it is talking about. Tap a theme and the screen repaints. Pick a colour and it runs through everything. Choose a layout, a score scale or a title language and a real list row redraws in front of you.
+- Once you have signed in, that row is your own series at your own episode, not a mock-up.
+- Nothing was taken away. The navigation order, adult titles and notifications each got a page of their own instead of a switch in a pile.
+- Swipe between pages, or use the button. A thin bar shows how far along you are.
+
 ## 1.6.7
 **Five tabs that fit in every language**
 
