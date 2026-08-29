@@ -1,3 +1,44 @@
+## 1.6.7
+**Five tabs that fit in every language**
+
+- Fixed: the Recent Activity tabs were sized for English. In several languages the longest word did not fit its fifth of the screen and was cut short - "Afleveringen" arriving as "Afleveringe...". The strip now sizes itself to the longest label it was given.
+
+## 1.6.6
+**Export and Import, said plainly**
+
+- The two friends backup rows are called Export and Import now, and carry an arrow out and an arrow in rather than the chevron every other row uses. The chevron promises a screen on the other side; these two hand off to the file picker and come straight back.
+
+## 1.6.5
+**Your friends list can be saved now**
+
+- Settings has a Friends section, under My List: save your friends to a file, and load one back. Moving to a new phone, or reinstalling, no longer means typing every name again.
+- Loading merges rather than replaces, so restoring a backup onto a phone that already has friends on it leaves you with both.
+- It will also read a plain list of usernames, one per line, so you can paste names in from anywhere instead of adding them one at a time.
+- This covers the MyAnimeList names only, and the note in Settings says so: they live on your device and nowhere else, which is exactly why they can be lost. Who you follow on AniList is on your AniList account and comes back when you sign in.
+
+## 1.6.4
+**Swipe between your friends' activity feeds**
+
+- The filter menu on Recent Activity is gone. The categories are pages you swipe between, with the same strip the home page uses, so getting from All to Chapters is a drag rather than a menu.
+- Each category keeps its own place in the list, and changing person or search takes you back to the top.
+
+## 1.6.3
+**The same five on your friends' activity**
+
+- Your friends' Recent Activity has the same filter the home page got: All, Anime, Episodes, Manga, Chapters. As on the home page, All shows the list updates and the per-episode detail sits one option across.
+- The AniList side keeps All, Anime and Manga, because AniList publishes one activity stream rather than four feeds. There is no list-update-versus-episode distinction there to offer, and two options that could only ever be empty would be worse than not having them.
+
+## 1.6.2
+**All four of your history feeds**
+
+- Recent Activity has five tabs again: All, Anime, Episodes, Manga, Chapters. MyAnimeList publishes four history feeds and only two were being read, so the per-episode and per-chapter ones had nowhere to appear.
+- All still shows the list feeds only. The episode feed restates the same events one episode at a time, so putting everything in one tab meant two rows saying the same thing about the same title at the same second. The finer view is one tab across.
+
+## 1.6.1
+**Scrolling on Recent Activity**
+
+- Fixed: scrolling Recent Activity on the home page stuck, jumped or refused to move. Every category was sharing one scroll position, and while a swipe was in flight two lists of different lengths were writing into it at once. Each category keeps its own place now.
+
 ## 1.6.0
 **Following people from here**
 
@@ -138,7 +179,7 @@
 - Status colours are now identical everywhere in the app. The edit sheet had quietly drifted to a darker grey for Plan to Watch.
 
 ## 1.4.3
-**Friends, part one**
+**Friends**
 
 - A new Friends tab. Add people by their MyAnimeList username and they stay on your list, ready for what comes next: their recent activity and their lists, both arriving in the following updates.
 - If you also use AniList, a switch at the top lets you choose which account the page follows. Everyone you follow on AniList appears there on its own, with nothing to add by hand.
