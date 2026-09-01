@@ -33,8 +33,9 @@
 !/sitemap.xml
 !/404.html
 
-# Full-resolution screenshot archive - kept locally, never published.
+# Full-resolution screenshot sources - kept locally; only the .webp ships.
 /assets/full/
+/assets/tablet-home.png
 
 # Belt and braces: even if the allowlist above is ever loosened, these must
 # never be committed to a public repository.
