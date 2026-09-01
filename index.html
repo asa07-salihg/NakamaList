@@ -12,6 +12,8 @@
 <meta name="application-name" content="NakamaList"/>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
 <meta name="theme-color" content="#08070d"/>
+<meta name="color-scheme" content="dark"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
 <link rel="canonical" href="https://asa07-salihg.github.io/NakamaList/"/>
 <link rel="icon" href="assets/icon-256.webp" type="image/webp"/>
 <link rel="icon" href="assets/nakamalist_icon_rounded.png" sizes="any"/>
@@ -56,12 +58,15 @@
   --edge:clamp(20px,5vw,80px);
   --bezel:#16131f; --bezel-w:10px; --bezel-r:38px;
   --phone:1080/2400;                 /* every screenshot is this ratio */
-  --dev-w:min(332px,74vw,calc(74vh*0.45));  /* one width for every phone */
-  --tab-w:min(500px,86vw,calc(62vh*1.6));   /* landscape tablet, 16:10 */
+  --dev-w:min(408px,80vw,calc(84vh*0.45));   /* scenes - the device is the showcase */
+  --dev-hero:min(348px,72vw,calc(68vh*0.45));/* hero - shares the fold with the copy */
+  --dev-rail:min(360px,70vw,calc(66vh*0.45));/* gallery - heading and caption must fit */
+  --tab-w:min(620px,44vw,calc(76vh*1.6));    /* landscape tablet 16:10 - the 44vw
+                                                 cap leaves the headline its room */
   --tablet:2560/1600;
   --badge-h:clamp(56px,4.4vw,68px);         /* Play badge, and the button beside it */
-  --step:clamp(3.2rem,11vw,10rem);   /* display */
-  --step2:clamp(2.2rem,6vw,4.8rem);  /* section head */
+  --step:clamp(2.8rem,min(10vw,12.5vh),8.5rem);  /* display - height-aware */
+  --step2:clamp(2rem,min(5.4vw,7vh),4.4rem);     /* section head */
   --lead:clamp(1.05rem,1.5vw,1.35rem);
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -85,7 +90,8 @@ img{display:block;max-width:100%}
 ::selection{background:var(--violet);color:#fff}
 
 /* --- ambient light ------------------------------------------------ */
-.aura{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aura{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+  transform:translateZ(0)}
 .aura i{position:absolute;border-radius:50%;filter:blur(120px)}
 @media(max-width:760px){.aura i{filter:blur(70px)}}
 .aura i:nth-child(1){width:60vw;height:60vw;max-width:760px;max-height:760px;
@@ -93,6 +99,7 @@ img{display:block;max-width:100%}
 .aura i:nth-child(2){width:46vw;height:46vw;max-width:560px;max-height:560px;
   background:#8f2ea0;opacity:.2;top:52vh;right:-12vw}
 .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;
+  transform:translateZ(0);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E")}
 main,nav,footer{position:relative;z-index:2}
 
@@ -146,13 +153,15 @@ nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
 
 /* --- hero --------------------------------------------------------- */
 .hero{min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1.15fr .85fr;
-  align-items:center;gap:clamp(24px,4vw,64px);padding:120px var(--edge) 80px}
+  align-items:center;gap:clamp(24px,4vw,64px);
+  padding:clamp(96px,13vh,124px) var(--edge) clamp(44px,7vh,80px);
+  max-width:1240px;margin-inline:auto}
 @media(max-width:960px){.hero{grid-template-columns:1fr;padding-top:110px;padding-bottom:56px}}
 .tag{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.09em;
   text-transform:uppercase;color:var(--violet-lt);font-weight:600}
 .tag b{width:5px;height:5px;border-radius:50%;background:var(--violet);
   box-shadow:0 0 0 4px rgba(139,108,255,.16)}
-.hero h1{font-size:var(--step);font-weight:700;margin:26px 0 0}
+.hero h1{font-size:var(--step);font-weight:700;margin:clamp(16px,2.4vh,26px) 0 0}
 .hero h1 .ln{display:block;overflow:hidden}
 .hero h1 .ln>span{display:block;transform:translateY(105%);
   animation:rise .95s cubic-bezier(.16,1,.3,1) forwards}
@@ -164,8 +173,9 @@ nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
   .grad{background:linear-gradient(96deg,var(--violet-lt),#eab0ff 52%,var(--violet));
     -webkit-background-clip:text;background-clip:text;color:transparent}
 }
-.hero p.lead{font-size:var(--lead);color:var(--muted);max-width:46ch;margin-top:28px;line-height:1.62}
-.cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:38px}
+.hero p.lead{font-size:var(--lead);color:var(--muted);max-width:46ch;
+  margin-top:clamp(16px,2.6vh,28px);line-height:1.62}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:clamp(22px,3.4vh,38px)}
 .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;
   padding:15px 26px;border-radius:999px;transition:transform .2s,box-shadow .2s,border-color .2s}
 .btn.line{border:1px solid rgba(255,255,255,.17);color:var(--text);
@@ -179,28 +189,39 @@ nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
 /* the closing headline is display-sized, so its badge is scaled to match */
 .close .badge img{height:clamp(64px,6.4vw,84px)}
 .btn.line:hover{border-color:var(--violet);color:var(--text)}
-.note{margin-top:26px;font-size:12.5px;color:var(--dim);max-width:44ch;line-height:1.6}
+.note{margin-top:clamp(16px,2.4vh,26px);font-size:12.5px;color:var(--dim);max-width:44ch;line-height:1.6}
 
 .stage{position:relative;display:flex;justify-content:center;perspective:1400px}
 .stage::before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:50%;
   background:radial-gradient(circle,var(--glow),transparent 62%);filter:blur(20px)}
-.slab{transform:rotateY(-13deg) rotateX(4deg) translateZ(0);
+.slab{width:var(--dev-hero);transform:rotateY(-13deg) rotateX(4deg) translateZ(0);
   box-shadow:0 50px 110px rgba(0,0,0,.72),0 0 0 1px rgba(255,255,255,.05) inset}
 
 /* --- section scaffolding ------------------------------------------ */
 .rule{height:1px;background:linear-gradient(90deg,transparent,var(--line) 12%,var(--line) 88%,transparent);
   margin:0 var(--edge)}
 .scene{padding:clamp(90px,13vh,170px) var(--edge)}
-.scene-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.scene-grid{display:grid;grid-template-columns:minmax(min(100%,400px),1fr) auto;
+  gap:clamp(32px,4vw,72px);align-items:center;
+  /* keep the copy and the device as one composed spread instead of letting
+     them drift to opposite edges of a wide screen */
+  width:fit-content;max-width:1100px;margin-inline:auto}
+.scene-grid.flip{grid-template-columns:auto minmax(min(100%,400px),1fr)}
 .scene-grid.flip .copy{order:2}
-@media(max-width:900px){.scene-grid{grid-template-columns:1fr;gap:44px}
+@media(max-width:900px){
+  .scene-grid,.scene-grid.flip{grid-template-columns:1fr;gap:44px;justify-items:center;
+    width:auto;max-width:none}
+  .scene-grid:has(.shot--tab){max-width:none}
+  .scene .copy,.scene-grid:has(.shot--tab) .copy{max-width:none}
+  .scene-grid .copy{justify-self:stretch}
   .scene-grid.flip .copy{order:0}}
 .idx{font-family:"Space Grotesk";font-size:13px;font-weight:600;letter-spacing:.16em;
   color:var(--dim)}
 .idx s{text-decoration:none;color:var(--violet)}
 .scene h2{font-size:var(--step2);font-weight:700;margin:20px 0 22px}
+.scene .copy{max-width:34rem}
 .scene p{color:var(--muted);font-size:var(--lead);max-width:48ch;line-height:1.65}
-.bullets{list-style:none;margin-top:28px;display:grid;gap:13px}
+.bullets{list-style:none;margin-top:28px;display:grid;gap:13px;max-width:52ch}
 .bullets li{display:flex;gap:13px;align-items:flex-start;color:var(--muted);font-size:15.5px;line-height:1.55}
 .bullets svg{width:17px;height:17px;flex:none;margin-top:3px;stroke:var(--violet);fill:none;
   stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
@@ -217,6 +238,9 @@ nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
 .shot img{width:100%;height:100%;object-fit:cover;display:block}
 /* The tablet shot is landscape 16:10 - reusing the phone frame would squash it. */
 .shot--tab{width:var(--tab-w);aspect-ratio:var(--tablet);border-radius:24px;border-width:12px}
+/* the landscape tablet is wider, so its row gets a wider copy measure */
+.scene-grid:has(.shot--tab){max-width:1180px}
+.scene-grid:has(.shot--tab) .copy{max-width:30rem}
 
 /* --- pull quote ---------------------------------------------------- */
 .pull{padding:clamp(80px,12vh,150px) var(--edge);text-align:center}
@@ -225,22 +249,40 @@ nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
 
 /* --- gallery ------------------------------------------------------- */
 .gallery{padding:clamp(70px,10vh,130px) 0}
-.gallery .head{padding:0 var(--edge);margin-bottom:44px}
+.gallery .head{padding:0 var(--edge);margin-bottom:44px;
+  max-width:calc(1100px + 2*var(--edge));margin-inline:auto}
 .gallery h2{font-size:var(--step2);font-weight:700}
 .gallery p{color:var(--muted);margin-top:16px;font-size:var(--lead);max-width:44ch}
 .rail{display:flex;gap:20px;overflow-x:auto;padding:6px var(--edge) 28px;scrollbar-width:none;
-  /* proximity, not mandatory: mandatory snapping fights the finger mid-drag.
-     scroll-behavior is deliberately NOT smooth here - that makes touch dragging
-     feel laggy; the arrow buttons pass behavior:'smooth' per call instead. */
-  scroll-snap-type:x proximity;scroll-padding-inline:var(--edge);
+  /* No snapping with a mouse: the user drags to a spot and snapping would yank
+     the rail to the nearest card the moment they let go. scroll-behavior is
+     deliberately not smooth either - the arrow buttons pass behavior:'smooth'
+     per call, so dragging stays 1:1 with the cursor. */
+  scroll-padding-inline:var(--edge);
   overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+/* Touch has no drag-to-scroll of its own to preserve, so it keeps the snap. */
+@media(hover:none) and (pointer:coarse){
+  .rail{scroll-snap-type:x proximity}
+  .rail figure{scroll-snap-align:start}
+}
 .rail:focus-visible{outline:2px solid var(--violet-lt);outline-offset:6px}
+/* A mouse cannot scroll an overflow container sideways, and dragging just picks
+   the image up. So: no native image drag, and JS turns a drag into a scroll. */
+.rail{cursor:grab;-webkit-user-select:none;user-select:none;scroll-behavior:auto}
+.rail.dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+.rail.dragging figure{scroll-snap-align:none}
+.rail img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
 .rail::-webkit-scrollbar{display:none}
-.rail figure{flex:none;scroll-snap-align:start;text-align:center}
+.rail figure{flex:none;text-align:center}
 /* height-driven, so a whole phone screen fits on-screen at once */
-.rail .shot{box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.05) inset}
-@media(max-width:900px){:root{--dev-w:min(300px,68vw,calc(64vh*0.45));
-  --tab-w:min(460px,84vw,calc(52vh*1.6))}}
+.rail .shot{width:var(--dev-rail);
+  box-shadow:0 14px 32px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.05) inset;
+  transform:translateZ(0);backface-visibility:hidden}
+@media(max-width:900px){:root{
+  --dev-w:min(320px,72vw,calc(66vh*0.45));
+  --dev-hero:min(300px,66vw,calc(58vh*0.45));
+  --dev-rail:min(300px,66vw,calc(58vh*0.45));
+  --tab-w:min(560px,88vw,calc(50vh*1.6))}}
 .rail figcaption{margin-top:12px;font-size:12.5px;color:var(--dim);letter-spacing:.02em}
 .rail-nav{display:flex;align-items:center;gap:12px;padding:0 var(--edge)}
 .rail-nav button{width:42px;height:42px;flex:none;border:1px solid var(--line-strong);border-radius:50%;
@@ -255,7 +297,8 @@ nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
 
 /* --- faq ----------------------------------------------------------- */
 .faq{padding:clamp(80px,12vh,150px) var(--edge);display:grid;
-  grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,80px);align-items:start}
+  grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,80px);align-items:start;
+  max-width:calc(1100px + 2*var(--edge));margin-inline:auto}
 @media(max-width:900px){.faq{grid-template-columns:1fr;gap:36px}}
 .faq h2{font-size:var(--step2);font-weight:700;position:sticky;top:100px}
 @media(max-width:900px){.faq h2{position:static}}
@@ -282,12 +325,32 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
 .f-links{display:flex;flex-wrap:wrap;gap:24px;font-size:13.5px;color:var(--muted)}
 .f-links a:hover{color:var(--text)}
 .f-note{font-size:12.5px;color:var(--dim);max-width:52ch;line-height:1.6}
+.f-note a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.f-note a:hover{color:var(--text)}
 
 /* --- scroll reveal -------------------------------------------------- */
 .rv{opacity:0;transform:translateY(26px);
   transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
 .rv.in{opacity:1;transform:none}
 .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+
+/* --- print ---------------------------------------------------------- */
+@media print{
+  .aura,.grain,nav,.rail-nav,.hint,.skip,.badge,.btn,.stage{display:none!important}
+  *{background:#fff!important;color:#000!important;box-shadow:none!important;
+    text-shadow:none!important}
+  .grad{color:#000!important;-webkit-text-fill-color:#000!important}
+  body{font-size:11pt;line-height:1.45}
+  .hero{min-height:auto;padding:0;display:block}
+  .scene,.pull,.faq,.close,.gallery{padding:18pt 0;break-inside:avoid}
+  .scene-grid,.scene-grid.flip{display:block;max-width:none;width:auto}
+  .shot,.rail{display:none!important}
+  .faq details{border-color:#bbb}
+  .faq details p{display:block!important}
+  footer{border-color:#bbb}
+  /* a printed link is useless without its destination */
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;color:#444!important}
+}
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
@@ -470,25 +533,25 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
   <!-- ============ GALLERY ============ -->
   <section class="gallery" id="screens">
     <div class="head">
-      <h2 class="rv">Screens</h2>
+      <h2 class="rv">More screenshots</h2>
       <p class="rv d1">Dark by default, with light and white themes, an accent dial and swipe navigation.</p>
     </div>
     <div class="rail" tabindex="0" role="region" aria-label="App screenshots, scrollable">
-      <figure><div class="shot"><img src="assets/home.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="NakamaList home screen with new episodes and Continue Watching"/></div><figcaption>Home</figcaption></figure>
-      <figure><div class="shot"><img src="assets/friends.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Friends activity feed"/></div><figcaption>Friends</figcaption></figure>
-      <figure><div class="shot"><img src="assets/mylist.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="My List tracking anime and manga"/></div><figcaption>My List</figcaption></figure>
-      <figure><div class="shot"><img src="assets/detail.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Anime detail page with synopsis, characters and Friend Scores"/></div><figcaption>Details</figcaption></figure>
-      <figure><div class="shot"><img src="assets/friendlist.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Browsing a friend's anime and manga list"/></div><figcaption>A friend's list</figcaption></figure>
-      <figure><div class="shot"><img src="assets/discover.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Discover rankings and recommendations"/></div><figcaption>Discover</figcaption></figure>
-      <figure><div class="shot"><img src="assets/profile.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Profile statistics"/></div><figcaption>Profile</figcaption></figure>
-      <figure><div class="shot"><img src="assets/seasonal.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Seasonal anime browser"/></div><figcaption>Seasonal</figcaption></figure>
+      <figure><div class="shot"><img draggable="false" src="assets/home.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="NakamaList home screen with new episodes and Continue Watching"/></div><figcaption>Home</figcaption></figure>
+      <figure><div class="shot"><img draggable="false" src="assets/friends.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Friends activity feed"/></div><figcaption>Friends</figcaption></figure>
+      <figure><div class="shot"><img draggable="false" src="assets/mylist.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="My List tracking anime and manga"/></div><figcaption>My List</figcaption></figure>
+      <figure><div class="shot"><img draggable="false" src="assets/detail.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Anime detail page with synopsis, characters and Friend Scores"/></div><figcaption>Details</figcaption></figure>
+      <figure><div class="shot"><img draggable="false" src="assets/friendlist.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Browsing a friend's anime and manga list"/></div><figcaption>A friend's list</figcaption></figure>
+      <figure><div class="shot"><img draggable="false" src="assets/discover.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Discover rankings and recommendations"/></div><figcaption>Discover</figcaption></figure>
+      <figure><div class="shot"><img draggable="false" src="assets/profile.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Profile statistics"/></div><figcaption>Profile</figcaption></figure>
+      <figure><div class="shot"><img draggable="false" src="assets/seasonal.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Seasonal anime browser"/></div><figcaption>Seasonal</figcaption></figure>
     </div>
     <div class="rail-nav">
       <button type="button" data-rail="-1" aria-label="Previous screenshots">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
       <button type="button" data-rail="1" aria-label="Next screenshots">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
-      <span class="hint">Swipe or use the arrows</span>
+      <span class="hint">Drag sideways, or use the arrows</span>
     </div>
   </section>
 
@@ -537,6 +600,8 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
     <a href="mailto:nakamalist@proton.me">Contact</a>
   </div>
   <p class="f-note">
+    <b>Version 1.7.2</b> &middot; <a href="https://github.com/asa07-salihg/NakamaList/blob/main/CHANGELOG.md"
+    rel="noopener">what&rsquo;s new</a><br/>
     &copy; 2026 Ahmet Salih Golen. NakamaList is not affiliated with, endorsed by or connected to
     MyAnimeList, AniList or any related company. All trademarks belong to their respective owners.
   </p>
@@ -566,19 +631,79 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
   // --- gallery arrows; also keeps them disabled at either end
   var rail=document.querySelector('.rail');
   var arrows=document.querySelectorAll('.rail-nav button');
-  var syncArrows=function(){
-    var max=rail.scrollWidth-rail.clientWidth-2;
+  var railMax=0, syncQueued=false;
+  var measure=function(){ railMax=rail.scrollWidth-rail.clientWidth-2; };
+  var applyArrows=function(){
+    syncQueued=false;
+    var had=document.activeElement;
     arrows[0].disabled=rail.scrollLeft<=2;
-    arrows[1].disabled=rail.scrollLeft>=max;
+    arrows[1].disabled=rail.scrollLeft>=railMax;
+    // an arrow that disables itself must hand focus to its sibling, or the
+    // keyboard user is left with focus on nothing
+    if((had===arrows[0]||had===arrows[1])&&had.disabled){
+      var other=had===arrows[0]?arrows[1]:arrows[0];
+      if(!other.disabled) other.focus();
+    }
   };
+  // never read layout inside the scroll handler - measure once, then batch
+  var syncArrows=function(){
+    if(syncQueued) return;
+    syncQueued=true; requestAnimationFrame(applyArrows);
+  };
+  var noMotion=matchMedia('(prefers-reduced-motion: reduce)');
   arrows.forEach(function(b){
     b.addEventListener('click',function(){
       var step=(rail.querySelector('figure')||{}).offsetWidth||280;
-      rail.scrollBy({left:(+b.dataset.rail)*(step+20)*2,behavior:'smooth'});
+      rail.scrollBy({left:(+b.dataset.rail)*(step+20)*2,
+                     behavior:noMotion.matches?'auto':'smooth'});
     });
   });
+  // drag-to-scroll for mice; pointerType filter leaves touch to the browser
+  var drag=false,startX=0,startLeft=0;
+  rail.addEventListener('pointerdown',function(e){
+    if(e.pointerType!=='mouse'||e.button!==0) return;
+    drag=true; startX=e.clientX; startLeft=rail.scrollLeft;
+    rail.classList.add('dragging');
+    try{rail.setPointerCapture(e.pointerId);}catch(_){}
+  });
+  var wantLeft=0, frame=0;
+  var applyScroll=function(){ frame=0; rail.scrollLeft=wantLeft; };
+  rail.addEventListener('pointermove',function(e){
+    if(!drag) return;
+    wantLeft=startLeft-(e.clientX-startX);
+    if(!frame) frame=requestAnimationFrame(applyScroll);
+  },{passive:true});
+  var endDrag=function(e){
+    if(!drag) return;
+    drag=false;
+    if(frame){ cancelAnimationFrame(frame); frame=0; rail.scrollLeft=wantLeft; }
+    rail.classList.remove('dragging');
+    try{rail.releasePointerCapture(e.pointerId);}catch(_){}
+  };
+  rail.addEventListener('pointerup',endDrag);
+  rail.addEventListener('pointercancel',endDrag);
+  rail.addEventListener('pointerleave',endDrag);
+  rail.addEventListener('dragstart',function(e){e.preventDefault();});
+
+  // Lazy images decode as they enter the viewport, which lands as a hitch in the
+  // middle of a drag. Once the gallery is on screen, fetch and decode the whole
+  // strip up front so dragging never waits for an image.
+  if('IntersectionObserver' in window){
+    var warm=new IntersectionObserver(function(es,obs){
+      if(!es.some(function(e){return e.isIntersecting;})) return;
+      obs.disconnect();
+      [].forEach.call(rail.querySelectorAll('img'),function(im){
+        im.loading='eager';
+        if(im.decode) im.decode().catch(function(){});
+      });
+    },{rootMargin:'400px 0px'});
+    warm.observe(rail);
+  }
+
   rail.addEventListener('scroll',syncArrows,{passive:true});
-  addEventListener('resize',syncArrows); syncArrows();
+  addEventListener('resize',function(){ measure(); syncArrows(); });
+  addEventListener('load',function(){ measure(); syncArrows(); });
+  measure(); syncArrows();
 
   // --- highlight the section you are actually looking at
   if('IntersectionObserver' in window){
