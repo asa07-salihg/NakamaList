@@ -113,7 +113,8 @@ nav .bar{display:flex;align-items:center;justify-content:space-between;
   padding:18px var(--edge);gap:24px}
 .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:16px}
 .brand img{width:28px;height:28px;border-radius:8px}
-.nav-links{display:flex;gap:30px;font-size:13.5px;color:var(--muted);letter-spacing:.01em}
+.nav-links{display:flex;gap:clamp(20px,2vw,30px);font-size:13.5px;color:var(--muted);
+  letter-spacing:.01em}
 .nav-links a{position:relative;transition:color .2s}
 .nav-links a:hover,.nav-links a[aria-current]{color:var(--text)}
 .nav-links a[aria-current]::after{content:"";position:absolute;left:50%;bottom:-7px;
@@ -324,6 +325,10 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
   display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
 .f-links{display:flex;flex-wrap:wrap;gap:24px;font-size:13.5px;color:var(--muted)}
 .f-links a:hover{color:var(--text)}
+.to-top{display:inline-flex;align-items:center;gap:7px}
+.to-top svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;
+  stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.to-top:hover svg{transform:translateY(-2px)}
 .f-note{font-size:12.5px;color:var(--dim);max-width:52ch;line-height:1.6}
 .f-note a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 .f-note a:hover{color:var(--text)}
@@ -378,6 +383,7 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
       NakamaList
     </a>
     <div class="nav-links" id="nav-links">
+      <a href="#home">Home</a>
       <a href="#lists">Lists</a>
       <a href="#friends">Friends</a>
       <a href="#discover">Discover</a>
@@ -397,7 +403,7 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
 <main id="top">
 
   <!-- ============ HERO ============ -->
-  <section class="hero">
+  <section class="hero" id="home">
     <div>
       <span class="tag"><b></b>Free &middot; No ads &middot; 56 languages</span>
       <h1>
@@ -533,7 +539,7 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
   <!-- ============ GALLERY ============ -->
   <section class="gallery" id="screens">
     <div class="head">
-      <h2 class="rv">More screenshots</h2>
+      <h2 class="rv">More screenshots.</h2>
       <p class="rv d1">Dark by default, with light and white themes, an accent dial and swipe navigation.</p>
     </div>
     <div class="rail" tabindex="0" role="region" aria-label="App screenshots, scrollable">
@@ -598,6 +604,8 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
     <a href="https://github.com/asa07-salihg/NakamaList/blob/main/CHANGELOG.md" rel="noopener">Changelog</a>
     <a href="https://github.com/asa07-salihg/NakamaList/issues" rel="noopener">Report an issue</a>
     <a href="mailto:nakamalist@proton.me">Contact</a>
+    <a class="to-top" href="#home">Back to top
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
   </div>
   <p class="f-note">
     <b>Version 1.7.2</b> &middot; <a href="https://github.com/asa07-salihg/NakamaList/blob/main/CHANGELOG.md"
