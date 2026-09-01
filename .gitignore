@@ -33,9 +33,14 @@
 !/sitemap.xml
 !/404.html
 
-# Full-resolution screenshot sources - kept locally; only the .webp ships.
+# Everything under assets/ is published: the site's .webp, the full-resolution
+# source captures (phone and tablet), the device frames, and the finished Play
+# Store promo frames under assets/play/ and assets/play-tablet/. Nothing about
+# the store listing lives only on one laptop.
+#
+# assets/full/ was a temporary archive from the 2026-09 WebP conversion and is
+# the one thing here that should not come back.
 /assets/full/
-/assets/tablet-home.png
 
 # Belt and braces: even if the allowlist above is ever loosened, these must
 # never be committed to a public repository.
