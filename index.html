@@ -47,6 +47,9 @@
   --text:#f6f5fa; --muted:#918ca6; --dim:#615d75;
   --violet:#8b6cff; --violet-lt:#b79bff; --glow:rgba(139,108,255,.35);
   --edge:clamp(20px,5vw,80px);
+  --bezel:#16131f; --bezel-w:10px; --bezel-r:38px;
+  --phone:1080/2400;                 /* every screenshot is this ratio */
+  --dev-w:min(300px,72vw,calc(70vh*0.45));  /* one width for every device */
   --step:clamp(3.2rem,11vw,10rem);   /* display */
   --step2:clamp(2.2rem,6vw,4.8rem);  /* section head */
   --lead:clamp(1.05rem,1.5vw,1.35rem);
@@ -144,27 +147,24 @@ nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
     -webkit-background-clip:text;background-clip:text;color:transparent}
 }
 .hero p.lead{font-size:var(--lead);color:var(--muted);max-width:46ch;margin-top:28px;line-height:1.62}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:38px}
 .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;
   padding:15px 26px;border-radius:999px;transition:transform .2s,box-shadow .2s,border-color .2s}
-.btn.line{border:1px solid var(--line);color:var(--muted);height:56px;padding:0 26px}
+.btn.line{border:1px solid rgba(255,255,255,.17);color:var(--text);height:56px;padding:0 26px}
 /* Official Google Play badge - never recoloured or reshaped, per brand guidelines */
 .badge{display:inline-block;line-height:0;border-radius:10px;
   transition:transform .2s,filter .2s}
 .badge img{height:56px;width:auto}
 .badge:hover{transform:translateY(-2px);filter:drop-shadow(0 14px 34px var(--glow))}
-@media(max-width:520px){.badge img{height:50px}}
+@media(max-width:520px){.badge img{height:50px}.btn.line{height:50px;padding:0 22px;font-size:14.5px}}
 .btn.line:hover{border-color:var(--violet);color:var(--text)}
 .note{margin-top:26px;font-size:12.5px;color:var(--dim);max-width:44ch;line-height:1.6}
 
 .stage{position:relative;display:flex;justify-content:center;perspective:1400px}
 .stage::before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:50%;
   background:radial-gradient(circle,var(--glow),transparent 62%);filter:blur(20px)}
-.slab{position:relative;width:min(300px,72vw);aspect-ratio:1080/2400;border-radius:38px;
-  border:10px solid #16131f;background:#000;overflow:hidden;
-  box-shadow:0 50px 110px rgba(0,0,0,.72),0 0 0 1px rgba(255,255,255,.05) inset;
-  transform:rotateY(-13deg) rotateX(4deg) translateZ(0)}
-.slab img{width:100%;height:100%;object-fit:cover}
+.slab{transform:rotateY(-13deg) rotateX(4deg) translateZ(0);
+  box-shadow:0 50px 110px rgba(0,0,0,.72),0 0 0 1px rgba(255,255,255,.05) inset}
 
 /* --- section scaffolding ------------------------------------------ */
 .rule{height:1px;background:linear-gradient(90deg,transparent,var(--line) 12%,var(--line) 88%,transparent);
@@ -183,12 +183,17 @@ nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
 .bullets li{display:flex;gap:13px;align-items:flex-start;color:var(--muted);font-size:15.5px;line-height:1.55}
 .bullets svg{width:17px;height:17px;flex:none;margin-top:3px;stroke:var(--violet);fill:none;
   stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
-.shot{border-radius:26px;border:1px solid var(--line);overflow:hidden;background:var(--ink2);
-  box-shadow:0 40px 90px rgba(0,0,0,.55);display:flex;justify-content:center}
-/* a 1080x2400 shot is taller than any viewport - cap the image so the whole
-   scene (copy + screenshot) is readable without scrolling past it */
-.shot img{width:auto;height:auto;max-width:100%;max-height:min(74vh,760px)}
-@media(max-width:900px){.shot img{max-height:min(64vh,560px)}}
+/* same device frame as the hero; width is capped by column, viewport width AND
+   viewport height, so a whole phone screen is always visible at once */
+/* The single device frame - hero, scenes and gallery all use this, so they
+   can never drift apart in size or styling. width AND height are set on the
+   image because the width="1080" height="2400" attributes are presentational
+   hints; leaving height unset makes the browser use 2400px and ignore
+   aspect-ratio, which blows the screenshot up. */
+.shot{position:relative;width:var(--dev-w);margin-inline:auto;aspect-ratio:var(--phone);
+  border-radius:var(--bezel-r);border:var(--bezel-w) solid var(--bezel);background:#000;
+  overflow:hidden;box-shadow:0 44px 100px rgba(0,0,0,.66),0 0 0 1px rgba(255,255,255,.05) inset}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* --- pull quote ---------------------------------------------------- */
 .pull{padding:clamp(80px,12vh,150px) var(--edge);text-align:center}
@@ -208,9 +213,8 @@ nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
 .rail::-webkit-scrollbar{display:none}
 .rail figure{flex:none;scroll-snap-align:center;text-align:center}
 /* height-driven, so a whole phone screen fits on-screen at once */
-.rail img{height:auto;width:auto;max-width:min(64vw,300px);max-height:min(66vh,640px);
-  margin-inline:auto;border-radius:20px;border:1px solid var(--line);background:var(--ink2)}
-@media(max-width:760px){.rail img{max-height:min(58vh,500px);max-width:70vw}}
+.rail .shot{box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.05) inset}
+@media(max-width:900px){:root{--dev-w:min(280px,64vw,calc(60vh*0.45))}}
 .rail figcaption{margin-top:12px;font-size:12.5px;color:var(--dim);letter-spacing:.02em}
 .rail-nav{display:flex;align-items:center;gap:12px;padding:0 var(--edge)}
 .rail-nav button{width:42px;height:42px;flex:none;border:1px solid var(--line);border-radius:50%;
@@ -343,7 +347,7 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
     </div>
 
     <div class="stage">
-      <div class="slab">
+      <div class="shot slab">
         <img src="assets/home.webp" width="1080" height="2400" fetchpriority="high"
              alt="NakamaList home screen showing new episodes and Continue Watching"/>
       </div>
@@ -460,14 +464,14 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
       <p class="rv d1">Dark by default, with light and white themes, an accent dial and swipe navigation.</p>
     </div>
     <div class="rail" tabindex="0" role="region" aria-label="App screenshots, scrollable">
-      <figure><img src="assets/home.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="NakamaList home screen with new episodes and Continue Watching"/><figcaption>Home</figcaption></figure>
-      <figure><img src="assets/friends.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Friends activity feed"/><figcaption>Friends</figcaption></figure>
-      <figure><img src="assets/mylist.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="My List tracking anime and manga"/><figcaption>My List</figcaption></figure>
-      <figure><img src="assets/detail.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Anime detail page with synopsis, characters and Friend Scores"/><figcaption>Details</figcaption></figure>
-      <figure><img src="assets/friendlist.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Browsing a friend's anime and manga list"/><figcaption>A friend's list</figcaption></figure>
-      <figure><img src="assets/discover.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Discover rankings and recommendations"/><figcaption>Discover</figcaption></figure>
-      <figure><img src="assets/profile.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Profile statistics"/><figcaption>Profile</figcaption></figure>
-      <figure><img src="assets/seasonal.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Seasonal anime browser"/><figcaption>Seasonal</figcaption></figure>
+      <figure><div class="shot"><img src="assets/home.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="NakamaList home screen with new episodes and Continue Watching"/></div><figcaption>Home</figcaption></figure>
+      <figure><div class="shot"><img src="assets/friends.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Friends activity feed"/></div><figcaption>Friends</figcaption></figure>
+      <figure><div class="shot"><img src="assets/mylist.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="My List tracking anime and manga"/></div><figcaption>My List</figcaption></figure>
+      <figure><div class="shot"><img src="assets/detail.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Anime detail page with synopsis, characters and Friend Scores"/></div><figcaption>Details</figcaption></figure>
+      <figure><div class="shot"><img src="assets/friendlist.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Browsing a friend's anime and manga list"/></div><figcaption>A friend's list</figcaption></figure>
+      <figure><div class="shot"><img src="assets/discover.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Discover rankings and recommendations"/></div><figcaption>Discover</figcaption></figure>
+      <figure><div class="shot"><img src="assets/profile.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Profile statistics"/></div><figcaption>Profile</figcaption></figure>
+      <figure><div class="shot"><img src="assets/seasonal.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Seasonal anime browser"/></div><figcaption>Seasonal</figcaption></figure>
     </div>
     <div class="rail-nav">
       <button type="button" data-rail="-1" aria-label="Previous screenshots">
