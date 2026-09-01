@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="NakamaList" height="180" src="assets/nakamalist_icon_rounded.png"/>
+  <img alt="NakamaList" height="180" src="assets/icon-256.webp"/>
 
   # NakamaList
 
@@ -22,15 +22,15 @@
 ## Screenshots
 
 <div align="center">
-  <img src="assets/home.png" width="24%" alt="Home"/>
-  <img src="assets/mylist.png" width="24%" alt="My List"/>
-  <img src="assets/edit.png" width="24%" alt="Edit entry"/>
-  <img src="assets/detail.png" width="24%" alt="Detail page"/>
+  <img src="assets/home.webp" width="24%" alt="Home"/>
+  <img src="assets/mylist.webp" width="24%" alt="My List"/>
+  <img src="assets/edit.webp" width="24%" alt="Edit entry"/>
+  <img src="assets/detail.webp" width="24%" alt="Detail page"/>
   <br/>
-  <img src="assets/discover.png" width="24%" alt="Discover"/>
-  <img src="assets/profile.png" width="24%" alt="Profile"/>
-  <img src="assets/seasonal.png" width="24%" alt="Seasonal"/>
-  <img src="assets/forums.png" width="24%" alt="Forums"/>
+  <img src="assets/discover.webp" width="24%" alt="Discover"/>
+  <img src="assets/profile.webp" width="24%" alt="Profile"/>
+  <img src="assets/seasonal.webp" width="24%" alt="Seasonal"/>
+  <img src="assets/forums.webp" width="24%" alt="Forums"/>
 </div>
 
 ## Features
@@ -83,7 +83,9 @@ with a key that never leaves it. A mature-content (NSFW) toggle is off by defaul
 
 ## Download
 
-[Get it on Google Play](https://play.google.com/store/apps/details?id=com.nakamalist.app)
+<a href="https://play.google.com/store/apps/details?id=com.nakamalist.app">
+  <img alt="Get it on Google Play" height="64" src="assets/getitonplaystore.png"/>
+</a>
 
 ## Requirements
 

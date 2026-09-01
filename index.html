@@ -13,7 +13,8 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
 <meta name="theme-color" content="#08070d"/>
 <link rel="canonical" href="https://asa07-salihg.github.io/NakamaList/"/>
-<link rel="icon" href="assets/nakamalist_icon_rounded.png"/>
+<link rel="icon" href="assets/icon-256.webp" type="image/webp"/>
+<link rel="icon" href="assets/nakamalist_icon_rounded.png" sizes="any"/>
 <link rel="apple-touch-icon" href="assets/nakamalist_icon_rounded.png"/>
 
 <meta property="og:type" content="website"/>
@@ -37,154 +38,234 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
 
 <style>
-  :root{
-    --bg:#08070d; --panel:#100e1a; --card:#15121f; --line:#241f33;
-    --text:#f1f0f6; --muted:#9a95ad; --dim:#6f6a83;
-    --violet:#8b6cff; --violet2:#b394ff; --glow:rgba(139,108,255,.45);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--text);
-    -webkit-font-smoothing:antialiased;overflow-x:hidden}
-  h1,h2,h3,.brand{font-family:"Space Grotesk","Inter",sans-serif}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-  .grad{background:linear-gradient(110deg,var(--violet2),#e9a6ff 60%,#8b6cff);
+/* ============================================================
+   NakamaList - cinematic editorial landing
+   One file, no framework. Motion is opt-out via prefers-reduced-motion.
+   ============================================================ */
+:root{
+  --ink:#08070d; --ink2:#0c0a13; --line:#1d1929;
+  --text:#f6f5fa; --muted:#918ca6; --dim:#615d75;
+  --violet:#8b6cff; --violet-lt:#b79bff; --glow:rgba(139,108,255,.35);
+  --edge:clamp(20px,5vw,80px);
+  --step:clamp(3.2rem,11vw,10rem);   /* display */
+  --step2:clamp(2.2rem,6vw,4.8rem);  /* section head */
+  --lead:clamp(1.05rem,1.5vw,1.35rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+/* the nav is fixed, so anchored sections must clear it */
+:target,section[id],main[id]{scroll-margin-top:88px}
+body{background:var(--ink);color:var(--text);font-family:"Inter",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;line-height:1.5;
+  overflow-x:hidden}
+@supports (overflow:clip){body{overflow-x:clip}}
+h1,h2,h3,.display,.brand{font-family:"Space Grotesk","Inter",sans-serif;letter-spacing:-.03em;line-height:.94}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--violet-lt);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-9999px;top:0;z-index:60;background:var(--text);color:var(--ink);
+  padding:12px 18px;border-radius:0 0 10px 0;font-weight:600;font-size:14px}
+.skip:focus{left:0}
+img{display:block;max-width:100%}
+::selection{background:var(--violet);color:#fff}
+
+/* --- ambient light ------------------------------------------------ */
+.aura{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aura i{position:absolute;border-radius:50%;filter:blur(120px)}
+@media(max-width:760px){.aura i{filter:blur(70px)}}
+.aura i:nth-child(1){width:60vw;height:60vw;max-width:760px;max-height:760px;
+  background:#5b39d6;opacity:.28;top:-22vh;left:-14vw}
+.aura i:nth-child(2){width:46vw;height:46vw;max-width:560px;max-height:560px;
+  background:#8f2ea0;opacity:.2;top:52vh;right:-12vw}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E")}
+main,nav,footer{position:relative;z-index:2}
+
+/* --- nav ---------------------------------------------------------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:40;transition:background .3s,border-color .3s}
+nav.solid{background:rgba(8,7,13,.94);border-bottom:1px solid var(--line)}
+@supports (backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px)){
+  nav.solid{background:rgba(8,7,13,.72);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+}
+nav .bar{display:flex;align-items:center;justify-content:space-between;
+  padding:18px var(--edge);gap:24px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:16px}
+.brand img{width:28px;height:28px;border-radius:8px}
+.nav-links{display:flex;gap:30px;font-size:13.5px;color:var(--muted);letter-spacing:.01em}
+.nav-links a{transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;
+  padding:9px 18px;border-radius:999px;white-space:nowrap;
+  background:var(--text);color:var(--ink);transition:transform .2s,box-shadow .2s}
+.nav-cta img{width:15px;height:15px}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,255,255,.14)}
+.burger{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;
+  background:transparent;cursor:pointer;align-items:center;justify-content:center;flex:none}
+.burger span{display:block;width:17px;height:1.6px;background:var(--text);border-radius:2px;
+  position:relative;transition:background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:17px;height:1.6px;
+  background:var(--text);border-radius:2px;transition:transform .28s cubic-bezier(.16,1,.3,1)}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+nav.open .burger span{background:transparent}
+nav.open .burger span::before{transform:translateY(6px) rotate(45deg)}
+nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:820px){
+  .burger{display:flex}
+  .nav-cta{display:none}
+  .nav-links{position:fixed;inset:64px 0 auto;flex-direction:column;gap:0;
+    background:rgba(8,7,13,.98);border-bottom:1px solid var(--line);
+    padding:8px var(--edge) 22px;font-size:17px;color:var(--text);
+    opacity:0;visibility:hidden;transform:translateY(-10px);
+    transition:opacity .26s,transform .26s,visibility .26s}
+  nav.open .nav-links{opacity:1;visibility:visible;transform:none}
+  .nav-links a{padding:15px 0;border-bottom:1px solid var(--line)}
+  .nav-links .sheet-cta{display:flex;justify-content:center;margin-top:20px;border:0}
+  .nav-links .sheet-cta img{height:48px;width:auto}
+}
+@media(min-width:821px){.nav-links .sheet-cta{display:none}}
+
+/* --- hero --------------------------------------------------------- */
+.hero{min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1.15fr .85fr;
+  align-items:center;gap:clamp(24px,4vw,64px);padding:120px var(--edge) 80px}
+@media(max-width:960px){.hero{grid-template-columns:1fr;padding-top:110px;padding-bottom:56px}}
+.tag{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--violet-lt);font-weight:600}
+.tag b{width:5px;height:5px;border-radius:50%;background:var(--violet);
+  box-shadow:0 0 0 4px rgba(139,108,255,.16)}
+.hero h1{font-size:var(--step);font-weight:700;margin:26px 0 0}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln>span{display:block;transform:translateY(105%);
+  animation:rise .95s cubic-bezier(.16,1,.3,1) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.09s}
+.hero h1 .ln:nth-child(3)>span{animation-delay:.18s}
+@keyframes rise{to{transform:translateY(0)}}
+.grad{color:var(--violet-lt)}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .grad{background:linear-gradient(96deg,var(--violet-lt),#eab0ff 52%,var(--violet));
     -webkit-background-clip:text;background-clip:text;color:transparent}
+}
+.hero p.lead{font-size:var(--lead);color:var(--muted);max-width:46ch;margin-top:28px;line-height:1.62}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;
+  padding:15px 26px;border-radius:999px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.btn.line{border:1px solid var(--line);color:var(--muted);height:56px;padding:0 26px}
+/* Official Google Play badge - never recoloured or reshaped, per brand guidelines */
+.badge{display:inline-block;line-height:0;border-radius:10px;
+  transition:transform .2s,filter .2s}
+.badge img{height:56px;width:auto}
+.badge:hover{transform:translateY(-2px);filter:drop-shadow(0 14px 34px var(--glow))}
+@media(max-width:520px){.badge img{height:50px}}
+.btn.line:hover{border-color:var(--violet);color:var(--text)}
+.note{margin-top:26px;font-size:12.5px;color:var(--dim);max-width:44ch;line-height:1.6}
 
-  .bg-fx{position:fixed;inset:0;z-index:-1;pointer-events:none}
-  .bg-fx i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;will-change:transform}
-  .bg-fx i:nth-child(1){width:520px;height:520px;background:#5b39d6;top:-160px;left:-80px}
-  .bg-fx i:nth-child(2){width:440px;height:440px;background:#7a2ea0;top:240px;right:-120px;opacity:.35}
-  .bg-fx::after{content:"";position:absolute;inset:0;
-    background:radial-gradient(circle at 50% 0,transparent,var(--bg) 70%)}
+.stage{position:relative;display:flex;justify-content:center;perspective:1400px}
+.stage::before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,var(--glow),transparent 62%);filter:blur(20px)}
+.slab{position:relative;width:min(300px,72vw);aspect-ratio:1080/2400;border-radius:38px;
+  border:10px solid #16131f;background:#000;overflow:hidden;
+  box-shadow:0 50px 110px rgba(0,0,0,.72),0 0 0 1px rgba(255,255,255,.05) inset;
+  transform:rotateY(-13deg) rotateX(4deg) translateZ(0)}
+.slab img{width:100%;height:100%;object-fit:cover}
 
-  nav{position:sticky;top:0;z-index:30;background:rgba(8,7,13,.6);backdrop-filter:blur(14px);
-    border-bottom:1px solid transparent;transition:.2s}
-  nav.scrolled{border-color:var(--line);background:rgba(8,7,13,.82)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px}
-  .brand img{width:30px;height:30px;border-radius:9px}
-  .nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
-  .nav-links a:hover{color:var(--text)}
-  .nav-cta{font-size:14px;font-weight:600;border:1px solid var(--line);padding:8px 16px;border-radius:10px}
-  .nav-cta:hover{border-color:var(--violet)}
-  @media(max-width:760px){.nav-links,.nav-cta{display:none}}
+/* --- section scaffolding ------------------------------------------ */
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--line) 12%,var(--line) 88%,transparent);
+  margin:0 var(--edge)}
+.scene{padding:clamp(90px,13vh,170px) var(--edge)}
+.scene-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.scene-grid.flip .copy{order:2}
+@media(max-width:900px){.scene-grid{grid-template-columns:1fr;gap:44px}
+  .scene-grid.flip .copy{order:0}}
+.idx{font-family:"Space Grotesk";font-size:13px;font-weight:600;letter-spacing:.16em;
+  color:var(--dim)}
+.idx s{text-decoration:none;color:var(--violet)}
+.scene h2{font-size:var(--step2);font-weight:700;margin:20px 0 22px}
+.scene p{color:var(--muted);font-size:var(--lead);max-width:48ch;line-height:1.65}
+.bullets{list-style:none;margin-top:28px;display:grid;gap:13px}
+.bullets li{display:flex;gap:13px;align-items:flex-start;color:var(--muted);font-size:15.5px;line-height:1.55}
+.bullets svg{width:17px;height:17px;flex:none;margin-top:3px;stroke:var(--violet);fill:none;
+  stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.shot{border-radius:26px;border:1px solid var(--line);overflow:hidden;background:var(--ink2);
+  box-shadow:0 40px 90px rgba(0,0,0,.55);display:flex;justify-content:center}
+/* a 1080x2400 shot is taller than any viewport - cap the image so the whole
+   scene (copy + screenshot) is readable without scrolling past it */
+.shot img{width:auto;height:auto;max-width:100%;max-height:min(74vh,760px)}
+@media(max-width:900px){.shot img{max-height:min(64vh,560px)}}
 
-  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:84px 0 70px}
-  @media(max-width:880px){.hero{grid-template-columns:1fr;text-align:center;padding:60px 0 50px}}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--violet2);
-    border:1px solid var(--line);background:var(--panel);padding:6px 13px;border-radius:999px;font-weight:500}
-  .eyebrow b{width:6px;height:6px;border-radius:50%;background:var(--violet);box-shadow:0 0 10px var(--violet)}
-  .hero h1{font-size:54px;line-height:1.05;letter-spacing:-1.8px;margin:22px 0 18px;font-weight:700}
-  @media(max-width:880px){.hero h1{font-size:38px}}
-  .hero p.lead{font-size:18px;color:var(--muted);max-width:520px;line-height:1.6}
-  @media(max-width:880px){.hero p.lead{margin:0 auto}}
-  .cta{display:flex;gap:12px;margin-top:30px}
-  @media(max-width:880px){.cta{justify-content:center;flex-wrap:wrap}}
-  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;
-    padding:13px 22px;border-radius:13px;transition:.18s;border:1px solid var(--line)}
-  .btn.primary{background:linear-gradient(135deg,var(--violet),#a17bff);border:none;color:#fff;
-    box-shadow:0 12px 30px var(--glow)}
-  .btn.primary:hover{transform:translateY(-2px);box-shadow:0 16px 38px var(--glow)}
-  .btn.ghost:hover{border-color:var(--violet);color:var(--violet2)}
-  .btn svg{width:18px;height:18px}
-  .affil{margin-top:22px;font-size:13px;color:var(--dim);max-width:520px}
-  @media(max-width:880px){.affil{margin-left:auto;margin-right:auto}}
+/* --- pull quote ---------------------------------------------------- */
+.pull{padding:clamp(80px,12vh,150px) var(--edge);text-align:center}
+.pull p{font-family:"Space Grotesk";font-size:clamp(1.7rem,4.4vw,3.6rem);font-weight:600;
+  line-height:1.18;letter-spacing:-.03em;max-width:19ch;margin:0 auto}
 
-  .phone-stage{display:flex;justify-content:center;position:relative}
-  .phone-stage::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;
-    background:radial-gradient(circle,var(--glow),transparent 64%);top:50%;left:50%;
-    transform:translate(-50%,-50%);filter:blur(10px)}
-  .device{position:relative;width:288px;aspect-ratio:1080/2400;border-radius:44px;
-    border:11px solid #1b1828;background:#000;overflow:hidden;
-    box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.04) inset;
-    animation:float 6s ease-in-out infinite;transform:translateZ(0)}
-  .device img{width:100%;height:100%;object-fit:cover;display:block;backface-visibility:hidden}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-  @media(max-width:880px){.device{width:250px}}
+/* --- gallery ------------------------------------------------------- */
+.gallery{padding:clamp(70px,10vh,130px) 0}
+.gallery .head{padding:0 var(--edge);margin-bottom:44px}
+.gallery h2{font-size:var(--step2);font-weight:700}
+.gallery p{color:var(--muted);margin-top:16px;font-size:var(--lead);max-width:44ch}
+.rail{display:flex;gap:20px;overflow-x:auto;padding:6px var(--edge) 28px;
+  scroll-snap-type:x mandatory;scrollbar-width:none;
+  /* focusable so it can be scrolled with the arrow keys, not just dragged */
+  scroll-behavior:smooth}
+.rail:focus-visible{outline:2px solid var(--violet-lt);outline-offset:6px}
+.rail::-webkit-scrollbar{display:none}
+.rail figure{flex:none;scroll-snap-align:center;text-align:center}
+/* height-driven, so a whole phone screen fits on-screen at once */
+.rail img{height:auto;width:auto;max-width:min(64vw,300px);max-height:min(66vh,640px);
+  margin-inline:auto;border-radius:20px;border:1px solid var(--line);background:var(--ink2)}
+@media(max-width:760px){.rail img{max-height:min(58vh,500px);max-width:70vw}}
+.rail figcaption{margin-top:12px;font-size:12.5px;color:var(--dim);letter-spacing:.02em}
+.rail-nav{display:flex;align-items:center;gap:12px;padding:0 var(--edge)}
+.rail-nav button{width:42px;height:42px;flex:none;border:1px solid var(--line);border-radius:50%;
+  background:transparent;color:var(--muted);cursor:pointer;display:grid;place-items:center;
+  transition:border-color .2s,color .2s,transform .2s}
+.rail-nav button:hover:not(:disabled){border-color:var(--violet);color:var(--text);transform:translateY(-1px)}
+.rail-nav button:disabled{opacity:.32;cursor:default}
+.rail-nav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.1;
+  stroke-linecap:round;stroke-linejoin:round}
+.hint{font-size:12.5px;color:var(--dim);margin-left:6px}
+@media(hover:none){.rail-nav button{display:none}.hint{margin-left:0}}
 
-  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel)}
-  .strip .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;padding:22px 24px}
-  .stat{display:flex;flex-direction:column;gap:2px;min-width:130px}
-  .stat .n{font-family:"Space Grotesk";font-size:24px;font-weight:700;letter-spacing:-.5px}
-  .stat .l{font-size:13px;color:var(--muted)}
+/* --- faq ----------------------------------------------------------- */
+.faq{padding:clamp(80px,12vh,150px) var(--edge);display:grid;
+  grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,80px);align-items:start}
+@media(max-width:900px){.faq{grid-template-columns:1fr;gap:36px}}
+.faq h2{font-size:var(--step2);font-weight:700;position:sticky;top:100px}
+@media(max-width:900px){.faq h2{position:static}}
+.faq details{border-top:1px solid var(--line);padding:22px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;
+  gap:20px;font-weight:600;font-size:17px;transition:color .2s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--violet-lt)}
+.faq summary::after{content:"+";color:var(--violet);font-size:22px;font-weight:400;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq p{color:var(--muted);font-size:15.5px;line-height:1.68;margin-top:14px;max-width:60ch;
+  animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 
-  section{padding:84px 0}
-  .head{max-width:660px;margin-bottom:46px}
-  .head.center{margin-left:auto;margin-right:auto;text-align:center}
-  .head h2{font-size:36px;letter-spacing:-1px;margin-bottom:14px;font-weight:700;line-height:1.12}
-  @media(max-width:880px){.head h2{font-size:28px}}
-  .head p{color:var(--muted);font-size:16px}
+/* --- close --------------------------------------------------------- */
+.close{padding:clamp(100px,16vh,200px) var(--edge);text-align:center}
+.close h2{font-size:var(--step);font-weight:700}
+.close p{color:var(--muted);font-size:var(--lead);margin:26px auto 0;max-width:42ch}
+.close .cta{justify-content:center;margin-top:40px}
 
-  .bento{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-  @media(max-width:880px){.bento{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:520px){.bento{grid-template-columns:1fr}}
-  .tile{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;
-    position:relative;overflow:hidden;transition:.2s;transform:translateZ(0)}
-  .tile:hover{border-color:#3a3252;transform:translateY(-3px)}
-  .tile.lg{grid-column:span 2}
-  @media(max-width:520px){.tile.lg{grid-column:span 1}}
-  .tile .ico{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;
-    background:rgba(139,108,255,.12);color:var(--violet2);margin-bottom:16px}
-  .tile .ico svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7}
-  .tile h3{font-size:18px;margin-bottom:7px;letter-spacing:-.3px}
-  .tile p{font-size:14.5px;color:var(--muted);line-height:1.55}
+footer{border-top:1px solid var(--line);padding:44px var(--edge);
+  display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+.f-links{display:flex;flex-wrap:wrap;gap:24px;font-size:13.5px;color:var(--muted)}
+.f-links a:hover{color:var(--text)}
+.f-note{font-size:12.5px;color:var(--dim);max-width:52ch;line-height:1.6}
 
-  .shots{background:var(--panel)}
-  .rail{display:flex;gap:22px;overflow-x:auto;padding:8px 4px 26px;scroll-snap-type:x mandatory}
-  .rail::-webkit-scrollbar{height:7px}
-  .rail::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
-  .frame{flex:0 0 auto;scroll-snap-align:center;width:228px;aspect-ratio:1080/2400;border-radius:34px;
-    border:9px solid #1b1828;background:#000;overflow:hidden;box-shadow:0 22px 50px rgba(0,0,0,.5);
-    transform:translateZ(0)}
-  .frame img{width:100%;height:100%;object-fit:cover;display:block;backface-visibility:hidden}
-  .hint{text-align:center;color:var(--dim);font-size:13px;margin-top:4px}
+/* --- scroll reveal -------------------------------------------------- */
+.rv{opacity:0;transform:translateY(26px);
+  transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
 
-  .closing{text-align:center}
-  .closing h2{font-size:34px;letter-spacing:-1px;margin-bottom:14px}
-  .closing p{color:var(--muted);max-width:460px;margin:0 auto 26px}
-  .closing .cta{justify-content:center}
-
-  footer{border-top:1px solid var(--line);padding:50px 0 64px;color:var(--muted);font-size:14px;margin-top:30px}
-  .foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:26px;margin-bottom:26px}
-  .foot-links{display:flex;gap:22px;flex-wrap:wrap}
-  .foot-links a:hover{color:var(--text)}
-  .made{font-size:13px;color:var(--dim);max-width:430px;margin-top:10px;line-height:1.6}
-  .legal{font-size:12.5px;color:#615d74;line-height:1.7;border-top:1px solid var(--line);padding-top:22px}
-
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
-  .reveal.in{opacity:1;transform:none}
-
-  section,
-  .strip,
-  footer{
-    content-visibility:auto;
-    contain-intrinsic-size:1px 900px;
-  }
-
-  @media(max-width:880px){
-    .bg-fx i{filter:blur(60px)}
-    .phone-stage::before{filter:blur(6px)}
-    .device{box-shadow:0 28px 60px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.04) inset}
-    .frame{box-shadow:0 16px 36px rgba(0,0,0,.45)}
-  }
-
-  @media(prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    .device{animation:none}
-    .reveal{opacity:1;transform:none}
-    *{transition:none!important}
-  }
-
-  .faq{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
-  .faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;transition:.2s}
-  .faq details[open]{border-color:#3a3252}
-  .faq summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:"+";color:var(--violet2);font-size:20px;font-weight:400}
-  .faq details[open] summary::after{content:"\2212"}
-  .faq p{color:var(--muted);font-size:14.5px;line-height:1.65;margin-top:12px}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero h1 .ln>span{transform:none;animation:none}
+  .slab{transform:none}
+}
 </style>
 
 <script type="application/ld+json">
@@ -209,395 +290,289 @@
 </head>
 
 <body>
-<div class="bg-fx"><i></i><i></i></div>
+<a class="skip" href="#top">Skip to content</a>
+<div class="aura" aria-hidden="true"><i></i><i></i></div>
+<div class="grain" aria-hidden="true"></div>
 
 <nav id="nav" aria-label="Primary">
-  <div class="wrap">
+  <div class="bar">
     <a class="brand" href="#top">
-      <img src="assets/nakamalist_icon_rounded.png" alt="" decoding="async"/>
+      <img src="assets/icon-256.webp" alt="" width="28" height="28"/>
       NakamaList
     </a>
-
-    <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#screens">Screenshots</a>
+    <div class="nav-links" id="nav-links">
+      <a href="#lists">Lists</a>
+      <a href="#friends">Friends</a>
+      <a href="#discover">Discover</a>
+      <a href="#screens">Screens</a>
       <a href="#faq">FAQ</a>
-      <a href="https://github.com/asa07-salihg/NakamaList/blob/main/CHANGELOG.md">Changelog</a>
-      <a href="https://github.com/asa07-salihg/NakamaList">GitHub</a>
+      <a class="sheet-cta" href="https://play.google.com/store/apps/details?id=com.nakamalist.app"
+         rel="noopener" aria-label="Get NakamaList on Google Play"><img src="assets/getitonplaystore.png"
+         width="646" height="250" alt="Get it on Google Play" loading="lazy" decoding="async"/></a>
     </div>
-
-    <a class="nav-cta" href="#top">Get the app</a>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false"
+            aria-controls="nav-links"><span></span></button>
+    <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.nakamalist.app"
+       rel="noopener"><img src="assets/playstore.png" width="512" height="512" alt="" aria-hidden="true"/>Get the app</a>
   </div>
 </nav>
 
-<header id="top">
-  <div class="wrap hero">
-    <div class="reveal in">
-      <span class="eyebrow"><b></b>Unofficial MyAnimeList client for Android</span>
+<main id="top">
 
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div>
+      <span class="tag"><b></b>Free &middot; No ads &middot; 56 languages</span>
       <h1>
-        Track anime and manga<br/>
-        in <span class="grad">one Android app.</span>
+        <span class="ln"><span>Your anime.</span></span>
+        <span class="ln"><span>Your friends.</span></span>
+        <span class="ln"><span class="grad">One app.</span></span>
       </h1>
-
       <p class="lead">
-        Sign in with MyAnimeList or AniList to track, rate and organize your anime and manga.
-        Follow your friends, see what they are watching, and discover new series - on your phone,
-        tablet and TV. Free, with no ads.
+        Sign in with MyAnimeList or AniList to track, rate and organise everything you watch and read -
+        then see what everyone you follow is watching, and how they scored it.
       </p>
-
-      <div class="cta" id="get">
-        <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.nakamalist.app">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M3 3l16 9-16 9V3z"/>
-          </svg>
-          Get it on Google Play
-        </a>
-
-        <a class="btn ghost" href="https://github.com/asa07-salihg/NakamaList">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.38.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/>
-          </svg>
-          View on GitHub
-        </a>
+      <div class="cta">
+        <a class="badge" href="https://play.google.com/store/apps/details?id=com.nakamalist.app" rel="noopener" aria-label="Get NakamaList on Google Play"><img src="assets/getitonplaystore.png" width="646" height="250" alt="Get it on Google Play" decoding="async"/></a>
+        <a class="btn line" href="#friends">See what's new</a>
       </div>
-
-      <p class="affil">
-        Unofficial app. Uses the official MyAnimeList API with your own account.
+      <p class="note">
+        Independent and unofficial. Not affiliated with MyAnimeList or AniList - it signs in through
+        their official APIs with your own account.
       </p>
     </div>
 
-    <div class="phone-stage reveal in">
-      <div class="device">
-        <img src="assets/home.png" alt="NakamaList Home screen" fetchpriority="high" decoding="async"/>
+    <div class="stage">
+      <div class="slab">
+        <img src="assets/home.webp" width="1080" height="2400" fetchpriority="high"
+             alt="NakamaList home screen showing new episodes and Continue Watching"/>
       </div>
     </div>
-  </div>
-</header>
+  </section>
 
-<main>
+  <div class="rule"></div>
 
-<div class="strip">
-  <div class="wrap">
-    <div class="stat">
-      <span class="n grad">Free</span>
-      <span class="l">no ads, no tracking</span>
-    </div>
+  <!-- ============ PULL QUOTE ============ -->
+  <section class="pull">
+    <p class="rv">A tracker is only half of it. The other half is <span class="grad">who you watch with.</span></p>
+  </section>
 
-    <div class="stat">
-      <span class="n grad">Anime + Manga</span>
-      <span class="l">tracked in one place</span>
-    </div>
-
-    <div class="stat">
-      <span class="n grad">MAL + AniList</span>
-      <span class="l">your lists, kept in sync</span>
-    </div>
-
-    <div class="stat">
-      <span class="n grad">56</span>
-      <span class="l">languages, with RTL</span>
-    </div>
-  </div>
-</div>
-
-<section id="features">
-  <div class="wrap">
-    <div class="head reveal">
-      <h2>Everything you need to track anime and manga.</h2>
-      <p>
-        Update your progress, rate and organize your list, and keep track of every anime and manga you watch or read.
-      </p>
-    </div>
-
-    <div class="bento">
-
-      <div class="tile lg reveal">
-        <div class="ico">
-          <svg viewBox="0 0 24 24">
-            <path d="M4 6h16M4 12h16M4 18h10"/>
-            <path d="M18 16l2 2 3-3" stroke-width="2"/>
-          </svg>
-        </div>
-        <h3>Your list</h3>
-        <p>
-          Update status, score, episodes, chapters, dates, tags and notes.
+  <!-- ============ 01 LISTS ============ -->
+  <section class="scene" id="lists">
+    <div class="scene-grid">
+      <div class="copy">
+        <span class="idx rv"><s>01</s> &mdash; Your lists</span>
+        <h2 class="rv d1">Every edit,<br/>everywhere,<br/>at once.</h2>
+        <p class="rv d2">
+          Status, score, episodes, chapters, volumes, dates, tags and notes - with a one-tap "+1".
+          Change something on a title's page and it is already updated on Home and in your list
+          before you get back.
         </p>
+        <ul class="bullets rv d3">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>List or poster-grid layout, status tabs, filters and sorts</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Your score scale: 100-point, decimal, 5 stars or smileys</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Titles in romaji or English, your choice</li>
+        </ul>
       </div>
-
-      <div class="tile reveal">
-        <div class="ico">
-          <svg viewBox="0 0 24 24">
-            <path d="M3 11l9-7 9 7"/>
-            <path d="M5 10v9h14v-9"/>
-          </svg>
-        </div>
-        <h3>Home</h3>
-        <p>
-          Continue watching or reading, see new episodes and check seasonal anime.
-        </p>
+      <div class="shot rv d1">
+        <img src="assets/mylist.webp" width="1080" height="2400" loading="lazy" decoding="async"
+             alt="My List in NakamaList, tracking anime and manga"/>
       </div>
-
-      <div class="tile reveal">
-        <div class="ico">
-          <svg viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9"/>
-            <path d="M15 9l-2 5-5 2 2-5 5-2z"/>
-          </svg>
-        </div>
-        <h3>Discover</h3>
-        <p>
-          Browse rankings, recommendations, search results and random picks.
-        </p>
-      </div>
-
-      <div class="tile reveal">
-        <div class="ico">
-          <svg viewBox="0 0 24 24">
-            <path d="M6 3h9l5 5v13H6z"/>
-            <path d="M15 3v5h5"/>
-            <path d="M9 13h6M9 17h6"/>
-          </svg>
-        </div>
-        <h3>Details</h3>
-        <p>
-          View synopsis, score, rank, characters, staff, trailers and related titles.
-        </p>
-      </div>
-
-      <div class="tile reveal">
-        <div class="ico">
-          <svg viewBox="0 0 24 24">
-            <path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>
-          </svg>
-        </div>
-        <h3>Stats</h3>
-        <p>
-          See anime and manga statistics with simple on-device charts.
-        </p>
-      </div>
-
-      <div class="tile lg reveal">
-        <div class="ico">
-          <svg viewBox="0 0 24 24">
-            <path d="M16 20v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M22 20v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-          </svg>
-        </div>
-        <h3>Friends</h3>
-        <p>
-          Follow people on MyAnimeList and AniList, see one merged activity feed, read their lists,
-          and compare Friend Scores on any title.
-        </p>
-      </div>
-
-      <div class="tile reveal">
-        <div class="ico">
-          <svg viewBox="0 0 24 24">
-            <path d="M4 5h16v14H4z"/>
-            <path d="M8 9h8M8 13h5"/>
-          </svg>
-        </div>
-        <h3>Community</h3>
-        <p>
-          Read MAL news, browse forums and check clubs.
-        </p>
-      </div>
-
-      <div class="tile reveal">
-        <div class="ico">
-          <svg viewBox="0 0 24 24">
-            <rect x="2" y="4" width="20" height="13" rx="2"/>
-            <path d="M8 21h8M12 17v4"/>
-          </svg>
-        </div>
-        <h3>Phone, tablet and TV</h3>
-        <p>
-          Fills a tablet screen, and runs on Android TV and Google TV with full remote control.
-        </p>
-      </div>
-
-      <div class="tile reveal">
-        <div class="ico">
-          <svg viewBox="0 0 24 24">
-            <path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9z"/>
-            <path d="M10 21a2 2 0 004 0"/>
-          </svg>
-        </div>
-        <h3>Notifications</h3>
-        <p>
-          Get notified when a tracked anime has a new episode.
-        </p>
-      </div>
-
-      <div class="tile lg reveal">
-        <div class="ico">
-          <svg viewBox="0 0 24 24">
-            <path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1"/>
-            <path d="M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/>
-          </svg>
-        </div>
-        <h3>AniList support</h3>
-        <p>
-          Sign in with AniList on its own, or link it alongside MyAnimeList to read reviews and keep
-          both lists in sync.
-        </p>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="shots" id="screens">
-  <div class="wrap">
-    <div class="head center reveal">
-      <h2>Screenshots</h2>
-      <p>
-        Dark, light and white themes, accent colors, swipe navigation and widgets.
-      </p>
+  <!-- ============ 02 FRIENDS ============ -->
+  <section class="scene" id="friends">
+    <div class="scene-grid flip">
+      <div class="copy">
+        <span class="idx rv"><s>02</s> &mdash; Friends</span>
+        <h2 class="rv d1">See what<br/>everyone is<br/><span class="grad">watching.</span></h2>
+        <p class="rv d2">
+          Add people by MyAnimeList username or follow AniList accounts - both sets, side by side.
+          Their activity arrives in one merged feed, and every title page shows what your friends
+          scored it, next to your own.
+        </p>
+        <ul class="bullets rv d3">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>One feed, swipeable across anime, episodes, manga and chapters</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Browse a friend's list on the same screen as your own</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Friend Scores and their average, on any title</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Export and import your friends list</li>
+        </ul>
+      </div>
+      <div class="shot rv d1">
+        <img src="assets/friends.webp" width="1080" height="2400" loading="lazy" decoding="async"
+             alt="Friends activity feed showing what people are watching and reading"/>
+      </div>
     </div>
+  </section>
 
-    <div class="rail reveal">
-      <div class="frame"><img src="assets/home.png" alt="NakamaList home screen with new episodes and Continue Watching" width="1080" height="2400" loading="lazy" decoding="async"/></div>
-      <div class="frame"><img src="assets/friends.png" alt="Friends activity feed showing what people are watching and reading" width="1080" height="2400" loading="lazy" decoding="async"/></div>
-      <div class="frame"><img src="assets/mylist.png" alt="NakamaList My List tracking anime and manga" width="1080" height="2400" loading="lazy" decoding="async"/></div>
-      <div class="frame"><img src="assets/detail.png" alt="Anime detail page with synopsis, characters and Friend Scores" width="1080" height="2400" loading="lazy" decoding="async"/></div>
-      <div class="frame"><img src="assets/friendlist.png" alt="Browsing a friend's anime and manga list" width="1080" height="2400" loading="lazy" decoding="async"/></div>
-      <div class="frame"><img src="assets/discover.png" alt="Discover anime rankings and recommendations" width="1080" height="2400" loading="lazy" decoding="async"/></div>
-      <div class="frame"><img src="assets/profile.png" alt="Profile with anime and manga statistics" width="1080" height="2400" loading="lazy" decoding="async"/></div>
-      <div class="frame"><img src="assets/seasonal.png" alt="Seasonal anime browser in NakamaList" width="1080" height="2400" loading="lazy" decoding="async"/></div>
+  <!-- ============ 03 DISCOVER ============ -->
+  <section class="scene" id="discover">
+    <div class="scene-grid">
+      <div class="copy">
+        <span class="idx rv"><s>03</s> &mdash; Discover</span>
+        <h2 class="rv d1">Find the next one.</h2>
+        <p class="rv d2">
+          Every official ranking, Top Anime and Manga, Suggested-for-You, full-screen search, and a
+          random pick for the nights you cannot decide. Seasonal goes back to 1917.
+        </p>
+        <ul class="bullets rv d3">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Synopsis, score, rank, characters, staff and trailers</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Opening and ending themes, playable in the app</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Per-episode discussions from the MyAnimeList forums</li>
+        </ul>
+      </div>
+      <div class="shot rv d1">
+        <img src="assets/discover.webp" width="1080" height="2400" loading="lazy" decoding="async"
+             alt="Discover rankings and recommendations in NakamaList"/>
+      </div>
     </div>
+  </section>
 
-    <p class="hint">Drag sideways to browse</p>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="wrap">
-    <div class="head center reveal">
-      <h2>Frequently asked questions</h2>
-      <p>Quick answers about NakamaList, the free MyAnimeList client for Android.</p>
+  <!-- ============ 04 EVERYWHERE ============ -->
+  <section class="scene" id="everywhere">
+    <div class="scene-grid flip">
+      <div class="copy">
+        <span class="idx rv"><s>04</s> &mdash; Everywhere</span>
+        <h2 class="rv d1">Phone.<br/>Tablet.<br/>Television.</h2>
+        <p class="rv d2">
+          It fills a tablet screen instead of sitting in a portrait strip, and it runs on Android TV
+          and Google TV with its own launcher banner and full remote control.
+        </p>
+        <ul class="bullets rv d3">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>56 languages, including right-to-left</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Light, dark and white themes with an accent colour dial</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Home-screen Continue widgets and airing notifications</li>
+        </ul>
+      </div>
+      <div class="shot rv d1">
+        <img src="assets/profile.webp" width="1080" height="2400" loading="lazy" decoding="async"
+             alt="Profile with anime and manga statistics"/>
+      </div>
     </div>
+  </section>
 
-    <div class="faq reveal">
-      <details>
-        <summary>Is NakamaList free?</summary>
-        <p>Yes. NakamaList is completely free, with no ads and no third-party tracking.</p>
-      </details>
-      <details>
-        <summary>Is NakamaList an official MyAnimeList app?</summary>
-        <p>No. NakamaList is an independent, unofficial MyAnimeList client. It uses the official MyAnimeList API with your own account and is not affiliated with MyAnimeList.</p>
-      </details>
-      <details>
-        <summary>Does NakamaList track manga as well as anime?</summary>
-        <p>Yes. You can track both anime and manga, including status, score, episodes, chapters, volumes, dates, tags and notes.</p>
-      </details>
-      <details>
-        <summary>Can I sync with AniList?</summary>
-        <p>Yes. You can sign in with AniList on its own, or link it alongside MyAnimeList to read reviews and keep both lists in sync.</p>
-      </details>
-      <details>
-        <summary>Can I follow my friends?</summary>
-        <p>Yes. Add people by MyAnimeList username or follow AniList accounts, then see everyone in one activity feed, browse their lists, and compare Friend Scores on any title.</p>
-      </details>
-      <details>
-        <summary>Does NakamaList work on tablets and Android TV?</summary>
-        <p>Yes. It fills a tablet screen instead of running in a portrait strip, and it runs on Android TV and Google TV with full remote control.</p>
-      </details>
-      <details>
-        <summary>What Android version do I need?</summary>
-        <p>NakamaList runs on Android 8.0 and newer.</p>
-      </details>
-      <details>
-        <summary>Does NakamaList show seasonal anime and rankings?</summary>
-        <p>Yes. You can browse seasonal anime back to 1917, official rankings, recommendations, news, forums and clubs.</p>
-      </details>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="gallery" id="screens">
+    <div class="head">
+      <h2 class="rv">Screens</h2>
+      <p class="rv d1">Dark by default, with light and white themes, an accent dial and swipe navigation.</p>
     </div>
-  </div>
-</section>
-
-<section class="closing">
-  <div class="wrap reveal">
-    <h2>Get NakamaList today!</h2>
-    <p>
-      NakamaList is out now on Google Play. Download it free and track your anime and manga in one app.
-    </p>
-
-    <div class="cta">
-      <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.nakamalist.app">Get it on Google Play</a>
-      <a class="btn ghost" href="https://github.com/asa07-salihg/NakamaList">View on GitHub</a>
+    <div class="rail" tabindex="0" role="region" aria-label="App screenshots, scrollable">
+      <figure><img src="assets/home.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="NakamaList home screen with new episodes and Continue Watching"/><figcaption>Home</figcaption></figure>
+      <figure><img src="assets/friends.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Friends activity feed"/><figcaption>Friends</figcaption></figure>
+      <figure><img src="assets/mylist.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="My List tracking anime and manga"/><figcaption>My List</figcaption></figure>
+      <figure><img src="assets/detail.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Anime detail page with synopsis, characters and Friend Scores"/><figcaption>Details</figcaption></figure>
+      <figure><img src="assets/friendlist.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Browsing a friend's anime and manga list"/><figcaption>A friend's list</figcaption></figure>
+      <figure><img src="assets/discover.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Discover rankings and recommendations"/><figcaption>Discover</figcaption></figure>
+      <figure><img src="assets/profile.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Profile statistics"/><figcaption>Profile</figcaption></figure>
+      <figure><img src="assets/seasonal.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Seasonal anime browser"/><figcaption>Seasonal</figcaption></figure>
     </div>
-  </div>
-</section>
+    <div class="rail-nav">
+      <button type="button" data-rail="-1" aria-label="Previous screenshots">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button type="button" data-rail="1" aria-label="Next screenshots">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+      <span class="hint">Swipe or use the arrows</span>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq" id="faq">
+    <h2 class="rv">Questions,<br/>answered.</h2>
+    <div>
+      <details class="rv"><summary>Is NakamaList free?</summary>
+        <p>Yes. NakamaList is completely free, with no ads and no third-party tracking.</p></details>
+      <details class="rv"><summary>Is NakamaList an official MyAnimeList app?</summary>
+        <p>No. NakamaList is an independent, unofficial client. It uses the official MyAnimeList API with your own account and is not affiliated with MyAnimeList.</p></details>
+      <details class="rv"><summary>Does NakamaList track manga as well as anime?</summary>
+        <p>Yes. You can track both anime and manga, including status, score, episodes, chapters, volumes, dates, tags and notes.</p></details>
+      <details class="rv"><summary>Can I sync with AniList?</summary>
+        <p>Yes. You can sign in with AniList on its own, or link it alongside MyAnimeList to read reviews and keep both lists in sync.</p></details>
+      <details class="rv"><summary>Can I follow my friends?</summary>
+        <p>Yes. Add people by MyAnimeList username or follow AniList accounts, then see everyone in one activity feed, browse their lists, and compare Friend Scores on any title.</p></details>
+      <details class="rv"><summary>Does NakamaList work on tablets and Android TV?</summary>
+        <p>Yes. It fills a tablet screen instead of running in a portrait strip, and it runs on Android TV and Google TV with full remote control.</p></details>
+      <details class="rv"><summary>What Android version do I need?</summary>
+        <p>NakamaList runs on Android 8.0 and newer.</p></details>
+      <details class="rv"><summary>Does NakamaList show seasonal anime and rankings?</summary>
+        <p>Yes. You can browse seasonal anime back to 1917, official rankings, recommendations, news, forums and clubs.</p></details>
+    </div>
+  </section>
+
+  <!-- ============ CLOSE ============ -->
+  <section class="close">
+    <h2 class="rv">Start <span class="grad">tracking.</span></h2>
+    <p class="rv d1">Free, ad-free, and it keeps your list wherever you already keep it.</p>
+    <div class="cta rv d2">
+      <a class="badge" href="https://play.google.com/store/apps/details?id=com.nakamalist.app" rel="noopener" aria-label="Get NakamaList on Google Play"><img src="assets/getitonplaystore.png" width="646" height="250" alt="Get it on Google Play" loading="lazy" decoding="async"/></a>
+    </div>
+  </section>
 
 </main>
 
 <footer>
-  <div class="wrap">
-    <div class="foot-top">
-      <div>
-        <a class="brand" href="#top">
-          <img src="assets/nakamalist_icon_rounded.png" alt="" style="width:26px;height:26px" loading="lazy" decoding="async"/>
-          NakamaList
-        </a>
-
-        <p class="made">
-          Made by one developer for people who use MyAnimeList.
-        </p>
-      </div>
-
-      <div class="foot-links">
-        <a href="https://github.com/asa07-salihg/NakamaList/blob/main/PRIVACY_POLICY.md">Privacy</a>
-        <a href="https://github.com/asa07-salihg/NakamaList/blob/main/TERMS_OF_USE.md">Terms</a>
-        <a href="https://github.com/asa07-salihg/NakamaList/blob/main/CHANGELOG.md">Changelog</a>
-        <a href="https://github.com/asa07-salihg/NakamaList">GitHub</a>
-        <a href="https://buymeacoffee.com/asa07salihg">Sponsor</a>
-      </div>
-    </div>
-
-    <p class="legal">
-      NakamaList is an unofficial app. It is not affiliated with MyAnimeList, AniList,
-      or any related company. All trademarks belong to their owners.
-      Copyright © 2026 Ahmet Salih Golen.
-    </p>
+  <div class="f-links">
+    <a href="https://github.com/asa07-salihg/NakamaList/blob/main/PRIVACY_POLICY.md" rel="noopener">Privacy</a>
+    <a href="https://github.com/asa07-salihg/NakamaList/blob/main/TERMS_OF_USE.md" rel="noopener">Terms</a>
+    <a href="https://github.com/asa07-salihg/NakamaList/blob/main/CHANGELOG.md" rel="noopener">Changelog</a>
+    <a href="https://github.com/asa07-salihg/NakamaList" rel="noopener">GitHub</a>
   </div>
+  <p class="f-note">
+    &copy; 2026 Ahmet Salih Golen. NakamaList is not affiliated with, endorsed by or connected to
+    MyAnimeList, AniList or any related company. All trademarks belong to their respective owners.
+  </p>
 </footer>
 
 <script>
-  const nav=document.getElementById('nav');
-  let ticking=false;
+(function(){
+  var nav=document.getElementById('nav');
+  var onScroll=function(){ nav.classList.toggle('solid', window.scrollY>12); };
+  onScroll(); addEventListener('scroll',onScroll,{passive:true});
 
-  function updateNav(){
-    nav.classList.toggle('scrolled',window.scrollY>8);
-    ticking=false;
+  // --- mobile menu
+  var burger=document.querySelector('.burger'), links=document.getElementById('nav-links');
+  var setMenu=function(open){
+    nav.classList.toggle('open',open);
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    document.body.style.overflow=open?'hidden':'';
+  };
+  burger.addEventListener('click',function(){ setMenu(!nav.classList.contains('open')); });
+  links.addEventListener('click',function(e){ if(e.target.closest('a')) setMenu(false); });
+  addEventListener('keydown',function(e){ if(e.key==='Escape') setMenu(false); });
+  addEventListener('resize',function(){ if(innerWidth>820) setMenu(false); });
+
+  // --- gallery arrows; also keeps them disabled at either end
+  var rail=document.querySelector('.rail');
+  var arrows=document.querySelectorAll('.rail-nav button');
+  var syncArrows=function(){
+    var max=rail.scrollWidth-rail.clientWidth-2;
+    arrows[0].disabled=rail.scrollLeft<=2;
+    arrows[1].disabled=rail.scrollLeft>=max;
+  };
+  arrows.forEach(function(b){
+    b.addEventListener('click',function(){
+      var step=(rail.querySelector('figure')||{}).offsetWidth||280;
+      rail.scrollBy({left:(+b.dataset.rail)*(step+20)*2,behavior:'smooth'});
+    });
+  });
+  rail.addEventListener('scroll',syncArrows,{passive:true});
+  addEventListener('resize',syncArrows); syncArrows();
+
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items=document.querySelectorAll('.rv');
+  if(reduce||!('IntersectionObserver' in window)){
+    items.forEach(function(el){el.classList.add('in');});
+    return;
   }
-
-  window.addEventListener('scroll',()=>{
-    if(!ticking){
-      requestAnimationFrame(updateNav);
-      ticking=true;
-    }
-  },{passive:true});
-
-  updateNav();
-
-  const revealEls=document.querySelectorAll('.reveal:not(.in)');
-
-  if('IntersectionObserver' in window){
-    const io=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
-      });
-    },{threshold:.12,rootMargin:'80px 0px'});
-
-    revealEls.forEach(el=>io.observe(el));
-  }else{
-    revealEls.forEach(el=>el.classList.add('in'));
-  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{rootMargin:'0px 0px -12% 0px',threshold:.12});
+  items.forEach(function(el){io.observe(el);});
+})();
 </script>
 </body>
 </html>
