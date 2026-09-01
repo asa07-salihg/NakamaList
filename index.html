@@ -21,21 +21,25 @@
 <meta property="og:site_name" content="NakamaList"/>
 <meta property="og:title" content="NakamaList - MyAnimeList Anime &amp; Manga Tracker for Android"/>
 <meta property="og:description" content="Free, ad-free MyAnimeList and AniList client for Android, tablet and TV. Track anime and manga, follow friends and compare scores, and discover seasonal anime and rankings."/>
-<meta property="og:image" content="https://asa07-salihg.github.io/NakamaList/assets/home.png"/>
-<meta property="og:image:alt" content="NakamaList home screen on Android"/>
-<meta property="og:image:width" content="1080"/>
-<meta property="og:image:height" content="2400"/>
+<meta property="og:image" content="https://asa07-salihg.github.io/NakamaList/assets/og-card.png"/>
+<meta property="og:image:secure_url" content="https://asa07-salihg.github.io/NakamaList/assets/og-card.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:alt" content="NakamaList - your anime, your friends, one app"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <meta property="og:url" content="https://asa07-salihg.github.io/NakamaList/"/>
 <meta property="og:locale" content="en_US"/>
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="NakamaList - MyAnimeList Anime &amp; Manga Tracker for Android"/>
 <meta name="twitter:description" content="Free, ad-free MyAnimeList and AniList client for Android, tablet and TV. Track anime and manga, follow friends and compare scores, and discover seasonal anime and rankings."/>
-<meta name="twitter:image" content="https://asa07-salihg.github.io/NakamaList/assets/home.png"/>
-<meta name="twitter:image:alt" content="NakamaList home screen on Android"/>
+<meta name="twitter:image" content="https://asa07-salihg.github.io/NakamaList/assets/og-card.png"/>
+<meta name="twitter:image:alt" content="NakamaList - your anime, your friends, one app"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"/></noscript>
 
 <style>
 /* ============================================================
@@ -44,12 +48,16 @@
    ============================================================ */
 :root{
   --ink:#08070d; --ink2:#0c0a13; --line:#1d1929;
-  --text:#f6f5fa; --muted:#918ca6; --dim:#615d75;
+  --text:#f6f5fa; --muted:#918ca6;
+  --dim:#7a7692;        /* 4.62:1 on --ink - carries the legal disclaimers, must pass AA */
+  --line:#1d1929;       /* decorative dividers only */
+  --line-strong:#615986;/* 3.14:1 - anything the user can click */
   --violet:#8b6cff; --violet-lt:#b79bff; --glow:rgba(139,108,255,.35);
   --edge:clamp(20px,5vw,80px);
   --bezel:#16131f; --bezel-w:10px; --bezel-r:38px;
   --phone:1080/2400;                 /* every screenshot is this ratio */
   --dev-w:min(300px,72vw,calc(70vh*0.45));  /* one width for every device */
+  --badge-h:clamp(56px,4.4vw,68px);         /* Play badge, and the button beside it */
   --step:clamp(3.2rem,11vw,10rem);   /* display */
   --step2:clamp(2.2rem,6vw,4.8rem);  /* section head */
   --lead:clamp(1.05rem,1.5vw,1.35rem);
@@ -58,11 +66,14 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 /* the nav is fixed, so anchored sections must clear it */
 :target,section[id],main[id]{scroll-margin-top:88px}
-body{background:var(--ink);color:var(--text);font-family:"Inter",system-ui,sans-serif;
+body{background:var(--ink);color:var(--text);
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   -webkit-font-smoothing:antialiased;line-height:1.5;
   overflow-x:hidden}
 @supports (overflow:clip){body{overflow-x:clip}}
-h1,h2,h3,.display,.brand{font-family:"Space Grotesk","Inter",sans-serif;letter-spacing:-.03em;line-height:.94}
+h1,h2,h3,.display,.brand{
+  font-family:"Space Grotesk","Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  letter-spacing:-.03em;line-height:.94}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--violet-lt);outline-offset:3px;border-radius:6px}
 .skip{position:absolute;left:-9999px;top:0;z-index:60;background:var(--text);color:var(--ink);
@@ -94,14 +105,19 @@ nav .bar{display:flex;align-items:center;justify-content:space-between;
 .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:16px}
 .brand img{width:28px;height:28px;border-radius:8px}
 .nav-links{display:flex;gap:30px;font-size:13.5px;color:var(--muted);letter-spacing:.01em}
-.nav-links a{transition:color .2s}
-.nav-links a:hover{color:var(--text)}
+.nav-links a{position:relative;transition:color .2s}
+.nav-links a:hover,.nav-links a[aria-current]{color:var(--text)}
+.nav-links a[aria-current]::after{content:"";position:absolute;left:50%;bottom:-7px;
+  width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--violet)}
+@media(max-width:820px){.nav-links a[aria-current]::after{left:auto;right:0;bottom:50%;
+  transform:translateY(50%);margin:0}}
+.faq p a{color:var(--violet-lt);text-decoration:underline;text-underline-offset:3px}
 .nav-cta{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;
   padding:9px 18px;border-radius:999px;white-space:nowrap;
   background:var(--text);color:var(--ink);transition:transform .2s,box-shadow .2s}
 .nav-cta img{width:15px;height:15px}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,255,255,.14)}
-.burger{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;
+.burger{display:none;width:42px;height:42px;border:1px solid var(--line-strong);border-radius:12px;
   background:transparent;cursor:pointer;align-items:center;justify-content:center;flex:none}
 .burger span{display:block;width:17px;height:1.6px;background:var(--text);border-radius:2px;
   position:relative;transition:background .2s}
@@ -150,13 +166,16 @@ nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
 .cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:38px}
 .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;
   padding:15px 26px;border-radius:999px;transition:transform .2s,box-shadow .2s,border-color .2s}
-.btn.line{border:1px solid rgba(255,255,255,.17);color:var(--text);height:56px;padding:0 26px}
+.btn.line{border:1px solid rgba(255,255,255,.17);color:var(--text);
+  height:var(--badge-h);padding:0 clamp(22px,2vw,30px)}
 /* Official Google Play badge - never recoloured or reshaped, per brand guidelines */
 .badge{display:inline-block;line-height:0;border-radius:10px;
   transition:transform .2s,filter .2s}
-.badge img{height:56px;width:auto}
+.badge img{height:var(--badge-h);width:auto}
 .badge:hover{transform:translateY(-2px);filter:drop-shadow(0 14px 34px var(--glow))}
-@media(max-width:520px){.badge img{height:50px}.btn.line{height:50px;padding:0 22px;font-size:14.5px}}
+@media(max-width:520px){:root{--badge-h:52px}.btn.line{font-size:14.5px}}
+/* the closing headline is display-sized, so its badge is scaled to match */
+.close .badge img{height:clamp(64px,6.4vw,84px)}
 .btn.line:hover{border-color:var(--violet);color:var(--text)}
 .note{margin-top:26px;font-size:12.5px;color:var(--dim);max-width:44ch;line-height:1.6}
 
@@ -205,19 +224,21 @@ nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
 .gallery .head{padding:0 var(--edge);margin-bottom:44px}
 .gallery h2{font-size:var(--step2);font-weight:700}
 .gallery p{color:var(--muted);margin-top:16px;font-size:var(--lead);max-width:44ch}
-.rail{display:flex;gap:20px;overflow-x:auto;padding:6px var(--edge) 28px;
-  scroll-snap-type:x mandatory;scrollbar-width:none;
-  /* focusable so it can be scrolled with the arrow keys, not just dragged */
-  scroll-behavior:smooth}
+.rail{display:flex;gap:20px;overflow-x:auto;padding:6px var(--edge) 28px;scrollbar-width:none;
+  /* proximity, not mandatory: mandatory snapping fights the finger mid-drag.
+     scroll-behavior is deliberately NOT smooth here - that makes touch dragging
+     feel laggy; the arrow buttons pass behavior:'smooth' per call instead. */
+  scroll-snap-type:x proximity;scroll-padding-inline:var(--edge);
+  overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
 .rail:focus-visible{outline:2px solid var(--violet-lt);outline-offset:6px}
 .rail::-webkit-scrollbar{display:none}
-.rail figure{flex:none;scroll-snap-align:center;text-align:center}
+.rail figure{flex:none;scroll-snap-align:start;text-align:center}
 /* height-driven, so a whole phone screen fits on-screen at once */
 .rail .shot{box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.05) inset}
 @media(max-width:900px){:root{--dev-w:min(280px,64vw,calc(60vh*0.45))}}
 .rail figcaption{margin-top:12px;font-size:12.5px;color:var(--dim);letter-spacing:.02em}
 .rail-nav{display:flex;align-items:center;gap:12px;padding:0 var(--edge)}
-.rail-nav button{width:42px;height:42px;flex:none;border:1px solid var(--line);border-radius:50%;
+.rail-nav button{width:42px;height:42px;flex:none;border:1px solid var(--line-strong);border-radius:50%;
   background:transparent;color:var(--muted);cursor:pointer;display:grid;place-items:center;
   transition:border-color .2s,color .2s,transform .2s}
 .rail-nav button:hover:not(:disabled){border-color:var(--violet);color:var(--text);transform:translateY(-1px)}
@@ -273,23 +294,7 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
 </style>
 
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {"@type":"WebSite","@id":"https://asa07-salihg.github.io/NakamaList/#website","name":"NakamaList","url":"https://asa07-salihg.github.io/NakamaList/","inLanguage":"en"},
-    {"@type":"SoftwareApplication","name":"NakamaList","operatingSystem":"Android 8.0+","applicationCategory":"EntertainmentApplication","url":"https://asa07-salihg.github.io/NakamaList/","downloadUrl":"https://play.google.com/store/apps/details?id=com.nakamalist.app","installUrl":"https://play.google.com/store/apps/details?id=com.nakamalist.app","image":"https://asa07-salihg.github.io/NakamaList/assets/home.png","inLanguage":"en","description":"Free, ad-free MyAnimeList and AniList client for Android, tablet and TV. Track anime and manga, follow friends and compare their scores, and browse seasonal anime, rankings, news and forums.","author":{"@type":"Person","name":"Ahmet Salih Golen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"screenshot":["https://asa07-salihg.github.io/NakamaList/assets/home.png","https://asa07-salihg.github.io/NakamaList/assets/friends.png","https://asa07-salihg.github.io/NakamaList/assets/mylist.png","https://asa07-salihg.github.io/NakamaList/assets/detail.png"],"featureList":["Track anime and manga","Friends activity feed and Friend Scores","Sign in with MyAnimeList or AniList","Optional AniList sync","Seasonal anime","Rankings and recommendations","News, forums and clubs","New-episode notifications","Android tablet and Android TV support","56 languages"]},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"Is NakamaList free?","acceptedAnswer":{"@type":"Answer","text":"Yes. NakamaList is completely free, with no ads and no third-party tracking."}},
-      {"@type":"Question","name":"Is NakamaList an official MyAnimeList app?","acceptedAnswer":{"@type":"Answer","text":"No. NakamaList is an independent, unofficial MyAnimeList client. It uses the official MyAnimeList API with your own account and is not affiliated with MyAnimeList."}},
-      {"@type":"Question","name":"Does NakamaList track manga as well as anime?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can track both anime and manga, including status, score, episodes, chapters, volumes, dates, tags and notes."}},
-      {"@type":"Question","name":"Can I sync with AniList?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can sign in with AniList on its own, or link it alongside MyAnimeList to read reviews and keep both lists in sync."}},
-      {"@type":"Question","name":"Can I follow my friends?","acceptedAnswer":{"@type":"Answer","text":"Yes. Add people by MyAnimeList username or follow AniList accounts, then see everyone in one activity feed, browse their lists, and compare Friend Scores on any title."}},
-      {"@type":"Question","name":"Does NakamaList work on tablets and Android TV?","acceptedAnswer":{"@type":"Answer","text":"Yes. It fills a tablet screen instead of running in a portrait strip, and it runs on Android TV and Google TV with full remote control."}},
-      {"@type":"Question","name":"What Android version do I need?","acceptedAnswer":{"@type":"Answer","text":"NakamaList runs on Android 8.0 and newer."}},
-      {"@type":"Question","name":"Does NakamaList show seasonal anime and rankings?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can browse seasonal anime back to 1917, official rankings, recommendations, news, forums and clubs."}}
-    ]}
-  ]
-}
+{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://asa07-salihg.github.io/NakamaList/#website","name":"NakamaList","url":"https://asa07-salihg.github.io/NakamaList/","inLanguage":"en"},{"@type":"SoftwareApplication","name":"NakamaList","softwareVersion":"1.7.2","dateModified":"2026-09-01","operatingSystem":"Android 8.0+","applicationCategory":"EntertainmentApplication","url":"https://asa07-salihg.github.io/NakamaList/","downloadUrl":"https://play.google.com/store/apps/details?id=com.nakamalist.app","installUrl":"https://play.google.com/store/apps/details?id=com.nakamalist.app","image":"https://asa07-salihg.github.io/NakamaList/assets/og-card.png","inLanguage":"en","description":"Free, ad-free MyAnimeList and AniList client for Android, tablet and TV. Track anime and manga, follow friends and compare their scores, and browse seasonal anime, rankings, news and forums.","author":{"@type":"Person","name":"Ahmet Salih Golen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"screenshot":["https://asa07-salihg.github.io/NakamaList/assets/home.webp","https://asa07-salihg.github.io/NakamaList/assets/friends.webp","https://asa07-salihg.github.io/NakamaList/assets/mylist.webp","https://asa07-salihg.github.io/NakamaList/assets/detail.webp"],"featureList":["Track anime and manga","Friends activity feed and Friend Scores","Sign in with MyAnimeList or AniList","Optional AniList sync","Seasonal anime","Rankings and recommendations","News, forums and clubs","New-episode notifications","Android tablet and Android TV support","56 languages"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is NakamaList free?","acceptedAnswer":{"@type":"Answer","text":"Yes. NakamaList is completely free, with no ads and no third-party tracking."}},{"@type":"Question","name":"Is NakamaList an official MyAnimeList app?","acceptedAnswer":{"@type":"Answer","text":"No. NakamaList is an independent, unofficial MyAnimeList client. It uses the official MyAnimeList API with your own account and is not affiliated with MyAnimeList."}},{"@type":"Question","name":"Does NakamaList track manga as well as anime?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can track both anime and manga, including status, score, episodes, chapters, volumes, dates, tags and notes."}},{"@type":"Question","name":"Can I sync with AniList?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can sign in with AniList on its own, or link it alongside MyAnimeList to read reviews and keep both lists in sync."}},{"@type":"Question","name":"Can I follow my friends?","acceptedAnswer":{"@type":"Answer","text":"Yes. Add people by MyAnimeList username or follow AniList accounts, then see everyone in one activity feed, browse their lists, and compare Friend Scores on any title."}},{"@type":"Question","name":"Does NakamaList work on tablets and Android TV?","acceptedAnswer":{"@type":"Answer","text":"Yes. It fills a tablet screen instead of running in a portrait strip, and it runs on Android TV and Google TV with full remote control."}},{"@type":"Question","name":"What Android version do I need?","acceptedAnswer":{"@type":"Answer","text":"NakamaList runs on Android 8.0 and newer."}},{"@type":"Question","name":"Does NakamaList show seasonal anime and rankings?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can browse seasonal anime back to 1917, official rankings, recommendations, news, forums and clubs."}},{"@type":"Question","name":"How do I report a bug or ask for a feature?","acceptedAnswer":{"@type":"Answer","text":"Open an issue on GitHub at https://github.com/asa07-salihg/NakamaList/issues, or email nakamalist@proton.me. Bug reports and feature requests both have a template ready."}}]}]}
 </script>
 </head>
 
@@ -502,6 +507,8 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
         <p>NakamaList runs on Android 8.0 and newer.</p></details>
       <details class="rv"><summary>Does NakamaList show seasonal anime and rankings?</summary>
         <p>Yes. You can browse seasonal anime back to 1917, official rankings, recommendations, news, forums and clubs.</p></details>
+      <details class="rv"><summary>How do I report a bug or ask for a feature?</summary>
+        <p>Open an issue on <a href="https://github.com/asa07-salihg/NakamaList/issues" rel="noopener">GitHub</a>, or email <a href="mailto:nakamalist@proton.me">nakamalist@proton.me</a>. Bug reports and feature requests both have a template ready.</p></details>
     </div>
   </section>
 
@@ -521,7 +528,8 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
     <a href="https://github.com/asa07-salihg/NakamaList/blob/main/PRIVACY_POLICY.md" rel="noopener">Privacy</a>
     <a href="https://github.com/asa07-salihg/NakamaList/blob/main/TERMS_OF_USE.md" rel="noopener">Terms</a>
     <a href="https://github.com/asa07-salihg/NakamaList/blob/main/CHANGELOG.md" rel="noopener">Changelog</a>
-    <a href="https://github.com/asa07-salihg/NakamaList" rel="noopener">GitHub</a>
+    <a href="https://github.com/asa07-salihg/NakamaList/issues" rel="noopener">Report an issue</a>
+    <a href="mailto:nakamalist@proton.me">Contact</a>
   </div>
   <p class="f-note">
     &copy; 2026 Ahmet Salih Golen. NakamaList is not affiliated with, endorsed by or connected to
@@ -537,10 +545,13 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
 
   // --- mobile menu
   var burger=document.querySelector('.burger'), links=document.getElementById('nav-links');
+  var behind=[document.querySelector('main'),document.querySelector('footer')];
   var setMenu=function(open){
     nav.classList.toggle('open',open);
     burger.setAttribute('aria-expanded',open?'true':'false');
     document.body.style.overflow=open?'hidden':'';
+    // keep Tab inside the sheet instead of letting it walk the page behind it
+    behind.forEach(function(el){ if(el) open?el.setAttribute('inert',''):el.removeAttribute('inert'); });
   };
   burger.addEventListener('click',function(){ setMenu(!nav.classList.contains('open')); });
   links.addEventListener('click',function(e){ if(e.target.closest('a')) setMenu(false); });
@@ -563,6 +574,22 @@ footer{border-top:1px solid var(--line);padding:44px var(--edge);
   });
   rail.addEventListener('scroll',syncArrows,{passive:true});
   addEventListener('resize',syncArrows); syncArrows();
+
+  // --- highlight the section you are actually looking at
+  if('IntersectionObserver' in window){
+    var navA=[].slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+    var secs=navA.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+    var spy=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var i=secs.indexOf(e.target);
+        navA.forEach(function(a,j){
+          j===i ? a.setAttribute('aria-current','true') : a.removeAttribute('aria-current');
+        });
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(t){ if(t) spy.observe(t); });
+  }
 
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var items=document.querySelectorAll('.rv');

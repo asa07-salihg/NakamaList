@@ -1,0 +1,20 @@
+# Normalise line endings on commit.
+#
+# Several files in this branch are committed with LF but sit on disk with CRLF,
+# because Windows editors rewrite them on save. Without this file, simply
+# opening CHANGELOG.md would make Git report it as modified and a commit would
+# carry hundreds of lines of pure line-ending churn.
+#
+# text=auto eol=lf: store LF in the repository, leave the working copy alone.
+* text=auto eol=lf
+
+# Binary - never touch these.
+*.png  binary
+*.webp binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.jks  binary
+*.keystore binary

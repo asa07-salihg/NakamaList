@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asa07-salihg.github.io/NakamaList/sitemap.xml

@@ -1,0 +1,47 @@
+# =============================================================================
+#  .gitignore for the PUBLIC 'site' branch (github.com/asa07-salihg/NakamaList)
+# =============================================================================
+#  This repository shares ONE working tree with the private code branch 'main'.
+#  When 'site' is checked out, every file belonging to 'main' - the app source,
+#  the release keystore, local.properties, the Play review credentials - is
+#  still sitting in this folder, merely untracked.
+#
+#  So this file denies everything by default and re-allows only the handful of
+#  files that belong on the public site. A stray `git add -A`, or the "Stage
+#  All Changes" button in an editor, then cannot publish anything private.
+#  Adding a new private file to the folder needs no change here: it is already
+#  ignored, because everything is.
+#
+#  Adding a new PUBLIC file does need a line below (or a one-off `git add -f`).
+# =============================================================================
+
+# Deny everything at the top level ...
+/*
+
+# ... then allow only what the public site is made of.
+!/.gitignore
+!/.gitattributes
+!/.github/
+!/index.html
+!/README.md
+!/CHANGELOG.md
+!/PRIVACY_POLICY.md
+!/TERMS_OF_USE.md
+!/FUNDING.yml
+!/assets/
+!/robots.txt
+!/sitemap.xml
+!/404.html
+
+# Full-resolution screenshot archive - kept locally, never published.
+/assets/full/
+
+# Belt and braces: even if the allowlist above is ever loosened, these must
+# never be committed to a public repository.
+*.jks
+*.keystore
+*.pem
+*.p12
+keystore.properties
+local.properties
+play-review-account.txt
