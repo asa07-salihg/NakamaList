@@ -1,3 +1,9 @@
+## 1.7.3
+**Two episodes in one minute**
+
+- Recent Activity could close the app while showing your own history. MyAnimeList records the time only down to the minute, so marking two episodes of the same show inside one minute arrived as two entries that looked identical in every way, and the list could not show both. It tells them apart by episode now.
+- Your friends' activity, News and the Discover rows read their feeds the same way, so they were open to the same thing. An entry that arrives twice is shown once now, rather than being left to close the app.
+
 ## 1.7.2
 **Friend Scores, in one place and kept properly**
 
