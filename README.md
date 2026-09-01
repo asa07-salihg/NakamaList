@@ -68,16 +68,16 @@ on your phone, tablet and TV, in 56 languages.
 
 Sign in with **MyAnimeList or AniList** - either one works on its own, and linking both unlocks sync.
 
-|  |  |
-|---|---|
-| **Everything is editable** | Status, score, progress, volumes, dates, rewatches, priority, tags, notes - and a one-tap `+1` |
-| **One feed for everyone** | Friends from MyAnimeList and AniList, merged, newest first |
-| **Friend Scores** | What each person gave a title, next to your own, on every page |
-| **Discover** | Official rankings, Suggested-for-You, search, and a random pick |
-| **Seasonal** | Every season back to 1917 |
-| **Phone, tablet and TV** | Real tablet layouts; Android TV and Google TV by remote |
-| **56 languages** | Including right-to-left: Arabic, Hebrew, Persian, Urdu |
-| **Private by design** | No ads, no third-party analytics, no tracking |
+<table>
+<tr><td width="30%"><b>Everything is editable</b></td><td>Status, score, progress, volumes, dates, rewatches, priority, tags, notes - and a one-tap <code>+1</code></td></tr>
+<tr><td width="30%"><b>One feed for everyone</b></td><td>Friends from MyAnimeList and AniList, merged, newest first</td></tr>
+<tr><td width="30%"><b>Friend Scores</b></td><td>What each person gave a title, next to your own, on every page</td></tr>
+<tr><td width="30%"><b>Discover</b></td><td>Official rankings, Suggested-for-You, search, and a random pick</td></tr>
+<tr><td width="30%"><b>Seasonal</b></td><td>Every season back to 1917</td></tr>
+<tr><td width="30%"><b>Phone, tablet and TV</b></td><td>Real tablet layouts; Android TV and Google TV by remote</td></tr>
+<tr><td width="30%"><b>56 languages</b></td><td>Including right-to-left: Arabic, Hebrew, Persian, Urdu</td></tr>
+<tr><td width="30%"><b>Private by design</b></td><td>No ads, no third-party analytics, no tracking</td></tr>
+</table>
 
 ### Your lists
 
@@ -154,13 +154,13 @@ write-through so an edit on one side lands on the other.
 
 ### Requirements
 
-| | |
-|---|---|
-| **Android** | 8.0 (API 26) or newer |
-| **Phones** | Portrait and landscape |
-| **Tablets** | Multi-pane layouts that use the full screen |
-| **TV** | Android TV and Google TV, with its own launcher banner and full remote navigation |
-| **Account** | A MyAnimeList or AniList account to track; browsing works without one |
+<table>
+<tr><td width="24%"><b>Android</b></td><td>8.0 (API 26) or newer</td></tr>
+<tr><td width="24%"><b>Phones</b></td><td>Portrait and landscape</td></tr>
+<tr><td width="24%"><b>Tablets</b></td><td>Multi-pane layouts that use the full screen</td></tr>
+<tr><td width="24%"><b>TV</b></td><td>Android TV and Google TV, with its own launcher banner and full remote navigation</td></tr>
+<tr><td width="24%"><b>Account</b></td><td>A MyAnimeList or AniList account to track; browsing works without one</td></tr>
+</table>
 
 ### Languages
 
@@ -172,11 +172,11 @@ Change it any time in Settings.
 
 ## Support
 
-| | |
-|---|---|
-| **Found a bug** | [Report it](https://github.com/asa07-salihg/NakamaList/issues/new?template=bug_report.md) - the template asks for the device, Android version and steps |
-| **Want a feature** | [Suggest it](https://github.com/asa07-salihg/NakamaList/issues/new?template=feature_request.md) |
-| **Anything else** | [nakamalist@proton.me](mailto:nakamalist@proton.me) |
+<table>
+<tr><td width="26%"><b>Found a bug</b></td><td><a href="https://github.com/asa07-salihg/NakamaList/issues/new?template=bug_report.md">Report it</a> - the template asks for the device, Android version and steps</td></tr>
+<tr><td width="26%"><b>Want a feature</b></td><td><a href="https://github.com/asa07-salihg/NakamaList/issues/new?template=feature_request.md">Suggest it</a></td></tr>
+<tr><td width="26%"><b>Anything else</b></td><td><a href="mailto:nakamalist@proton.me">nakamalist@proton.me</a></td></tr>
+</table>
 
 If you would like to support development, use the **Sponsor** button at the top of this page
 (see [`FUNDING.yml`](FUNDING.yml)). It is entirely optional and always appreciated.
