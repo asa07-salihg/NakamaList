@@ -4,26 +4,25 @@
 
 <br/>
 
-**An unofficial, mobile-first MyAnimeList and AniList client for anime and manga.**
+**An unofficial, mobile-first MyAnimeList client for anime and manga.**
 
 Track your lists, follow your friends, and keep up with the community,<br/>
 on your phone, tablet and TV, in 56 languages.
 
 <br/>
 
+[![Version](https://img.shields.io/badge/version-1.7.4-8b6cff?labelColor=27303D&style=flat)](CHANGELOG.md)
+[![Android](https://img.shields.io/badge/Android%20%C2%B7%20Tablet%20%C2%B7%20TV-8.0%2B-3ddc84?labelColor=27303D&style=flat)](#requirements)
+[![Languages](https://img.shields.io/badge/languages-56-b79bff?labelColor=27303D&style=flat)](#languages)
+[![No ads](https://img.shields.io/badge/free-no%20ads%2C%20no%20tracking-4c9f70?labelColor=27303D&style=flat)](PRIVACY_POLICY.md)
+
 <a href="https://play.google.com/store/apps/details?id=com.nakamalist.app">
-  <img src="assets/getitonplaystore.png" height="56" alt="Get it on Google Play"/>
+  <img src="assets/getitonplaystore.png" height="62" alt="Get it on Google Play"/>
 </a>
 
-<br/><br/>
+<br/>
 
-[![Version](https://img.shields.io/badge/version-1.7.4-8b6cff?style=flat-square&labelColor=1d1929)](CHANGELOG.md)
-[![Platform](https://img.shields.io/badge/Android%20%C2%B7%20Tablet%20%C2%B7%20TV-8.0%2B-3ddc84?style=flat-square&labelColor=1d1929)](#requirements)
-[![Languages](https://img.shields.io/badge/languages-56-b79bff?style=flat-square&labelColor=1d1929)](#languages)
-[![Price](https://img.shields.io/badge/free-no%20ads%2C%20no%20tracking-4c9f70?style=flat-square&labelColor=1d1929)](#download)
-[![Website](https://img.shields.io/badge/website-nakamalist-615986?style=flat-square&labelColor=1d1929)](https://asa07-salihg.github.io/NakamaList/)
-
-[Website](https://asa07-salihg.github.io/NakamaList/) · [Screens](#screens) · [Features](#features) · [Download](#download) · [Support](#support)
+[Website](https://asa07-salihg.github.io/NakamaList/)&nbsp;&nbsp;·&nbsp;&nbsp;[Screenshots](#screenshots)&nbsp;&nbsp;·&nbsp;&nbsp;[Features](#features)&nbsp;&nbsp;·&nbsp;&nbsp;[Download](#download)&nbsp;&nbsp;·&nbsp;&nbsp;[Support](#support)
 
 </div>
 
@@ -32,52 +31,40 @@ on your phone, tablet and TV, in 56 languages.
 > Sign-in and all reading and writing happen through those services' official APIs, with your own
 > account and only your own data.
 
----
-
-## Screens
+## Screenshots
 
 <div align="center">
-  <img src="assets/home.webp"       width="18%" alt="Home - new episodes and Continue Watching"/>
-  <img src="assets/mylist.webp"     width="18%" alt="My List - anime and manga with filters and sorts"/>
-  <img src="assets/detail.webp"     width="18%" alt="Title page - synopsis, score, characters, Friend Scores"/>
-  <img src="assets/friends.webp"    width="18%" alt="Friends - one merged activity feed"/>
-  <img src="assets/friendlist.webp" width="18%" alt="A friend's list, browsed like your own"/>
+  <img src="assets/home.webp"     width="19%" alt="Home - new episodes and Continue Watching"/>
+  <img src="assets/mylist.webp"   width="19%" alt="My List - anime and manga with filters and sorts"/>
+  <img src="assets/friends.webp"  width="19%" alt="Friends - one merged activity feed"/>
+  <img src="assets/detail.webp"   width="19%" alt="Title page - synopsis, score, characters, Friend Scores"/>
+  <img src="assets/news.webp"     width="19%" alt="News - read in the app"/>
   <br/>
-  <sub>Home &nbsp;·&nbsp; My List &nbsp;·&nbsp; Title page &nbsp;·&nbsp; Friends &nbsp;·&nbsp; A friend's list</sub>
+  <img src="assets/friendlist.webp" width="19%" alt="A friend's list, browsed like your own"/>
+  <img src="assets/discover.webp"   width="19%" alt="Discover - rankings and recommendations"/>
+  <img src="assets/seasonal.webp"   width="19%" alt="Seasonal anime"/>
+  <img src="assets/profile.webp"    width="19%" alt="Profile - full anime and manga statistics"/>
+  <img src="assets/news-article.webp" width="19%" alt="A news article in the in-app reader"/>
   <br/><br/>
-  <img src="assets/discover.webp"   width="18%" alt="Discover - rankings and recommendations"/>
-  <img src="assets/seasonal.webp"   width="18%" alt="Seasonal anime, back to 1917"/>
-  <img src="assets/edit.webp"       width="18%" alt="Edit entry - status, score, progress, dates, tags"/>
-  <img src="assets/forums.webp"     width="18%" alt="Forums - read-only MyAnimeList discussions"/>
-  <img src="assets/profile.webp"    width="18%" alt="Profile - full anime and manga statistics"/>
-  <br/>
-  <sub>Discover &nbsp;·&nbsp; Seasonal &nbsp;·&nbsp; Edit entry &nbsp;·&nbsp; Forums &nbsp;·&nbsp; Profile</sub>
-</div>
-
-<br/>
-
-<div align="center">
-  <img src="assets/tablet-home.webp" width="86%" alt="NakamaList on an Android tablet, filling the screen in landscape"/>
+  <img src="assets/tablet-home.webp"   width="44%" alt="NakamaList on an Android tablet, in landscape"/>
+  <img src="assets/tablet-mylist.webp" width="44%" alt="My List on a tablet, two panes side by side"/>
   <br/>
   <sub><b>On a tablet it fills the screen</b> - not a portrait strip stretched sideways.</sub>
 </div>
-
----
 
 ## Features
 
 Sign in with **MyAnimeList or AniList** - either one works on its own, and linking both unlocks sync.
 
-<table>
-<tr><td width="30%"><b>Everything is editable</b></td><td>Status, score, progress, volumes, dates, rewatches, priority, tags, notes - and a one-tap <code>+1</code></td></tr>
-<tr><td width="30%"><b>One feed for everyone</b></td><td>Friends from MyAnimeList and AniList, merged, newest first</td></tr>
-<tr><td width="30%"><b>Friend Scores</b></td><td>What each person gave a title, next to your own, on every page</td></tr>
-<tr><td width="30%"><b>Discover</b></td><td>Official rankings, Suggested-for-You, search, and a random pick</td></tr>
-<tr><td width="30%"><b>Seasonal</b></td><td>Every season back to 1917</td></tr>
-<tr><td width="30%"><b>Phone, tablet and TV</b></td><td>Real tablet layouts; Android TV and Google TV by remote</td></tr>
-<tr><td width="30%"><b>56 languages</b></td><td>Including right-to-left: Arabic, Hebrew, Persian, Urdu</td></tr>
-<tr><td width="30%"><b>Private by design</b></td><td>No ads, no third-party analytics, no tracking</td></tr>
-</table>
+- **Everything is editable** - status, score, progress, volumes, dates, rewatches, priority, tags, notes, and a one-tap `+1`
+- **One feed for everyone** - friends from MyAnimeList and AniList, merged, newest first
+- **Friend Scores** - what each person gave a title, next to your own, on every page
+- **Discover** - official rankings, Suggested-for-You, search, and a random pick
+- **Seasonal** - every anime season, sortable, with Plan to Watch straight from the grid
+- **News, forums and clubs** - read inside the app, not in a browser tab
+- **Phone, tablet and TV** - real tablet layouts; Android TV and Google TV by remote
+- **56 languages** - including right-to-left: Arabic, Hebrew, Persian, Urdu
+- **Private by design** - no ads, no third-party analytics, no tracking
 
 ### Your lists
 
@@ -115,7 +102,7 @@ search, and a random pick.
 with their own pages, the trailer, opening and ending themes, status bars, per-episode discussions,
 and Share.
 
-**Seasonal.** Browse every season back to 1917.
+**Seasonal.** Browse every anime season, sorted the way you want.
 
 **News and community.** MyAnimeList news with an in-app reader, read-only Forums, and a Clubs browser.
 
@@ -138,29 +125,25 @@ write-through so an edit on one side lands on the other.
 > **Privacy-first.** No ads, no third-party analytics, no tracking. Your sign-in is encrypted on your
 > device with a key that never leaves it. A mature-content (NSFW) toggle is off by default.
 
----
-
 ## Download
 
 <div align="center">
 
 <a href="https://play.google.com/store/apps/details?id=com.nakamalist.app">
-  <img src="assets/getitonplaystore.png" height="56" alt="Get it on Google Play"/>
+  <img src="assets/getitonplaystore.png" height="62" alt="Get it on Google Play"/>
 </a>
-
-<sub>Free. No account needed to browse - sign in only when you want to track.</sub>
 
 </div>
 
+*Free. No account needed to browse - sign in only when you want to track.*
+
 ### Requirements
 
-<table>
-<tr><td width="24%"><b>Android</b></td><td>8.0 (API 26) or newer</td></tr>
-<tr><td width="24%"><b>Phones</b></td><td>Portrait and landscape</td></tr>
-<tr><td width="24%"><b>Tablets</b></td><td>Multi-pane layouts that use the full screen</td></tr>
-<tr><td width="24%"><b>TV</b></td><td>Android TV and Google TV, with its own launcher banner and full remote navigation</td></tr>
-<tr><td width="24%"><b>Account</b></td><td>A MyAnimeList or AniList account to track; browsing works without one</td></tr>
-</table>
+- **Android** 8.0 (API 26) or newer
+- **Phones** in portrait and landscape
+- **Tablets** with multi-pane layouts that use the full screen
+- **TV** on Android TV and Google TV, with its own launcher banner and full remote navigation
+- **Account** on MyAnimeList or AniList to track; browsing works without one
 
 ### Languages
 
@@ -168,15 +151,11 @@ NakamaList is available in **56 languages**, including right-to-left support for
 Persian and Urdu. The primary language is English, with Turkish as a first-class localization.
 Change it any time in Settings.
 
----
-
 ## Support
 
-<table>
-<tr><td width="26%"><b>Found a bug</b></td><td><a href="https://github.com/asa07-salihg/NakamaList/issues/new?template=bug_report.md">Report it</a> - the template asks for the device, Android version and steps</td></tr>
-<tr><td width="26%"><b>Want a feature</b></td><td><a href="https://github.com/asa07-salihg/NakamaList/issues/new?template=feature_request.md">Suggest it</a></td></tr>
-<tr><td width="26%"><b>Anything else</b></td><td><a href="mailto:nakamalist@proton.me">nakamalist@proton.me</a></td></tr>
-</table>
+- **Found a bug?** [Report it](https://github.com/asa07-salihg/NakamaList/issues/new?template=bug_report.md) - the template asks for the device, Android version and steps
+- **Want a feature?** [Suggest it](https://github.com/asa07-salihg/NakamaList/issues/new?template=feature_request.md)
+- **Anything else?** [nakamalist@proton.me](mailto:nakamalist@proton.me)
 
 If you would like to support development, use the **Sponsor** button at the top of this page
 (see [`FUNDING.yml`](FUNDING.yml)). It is entirely optional and always appreciated.
@@ -204,4 +183,10 @@ documentation are proprietary; no license to reuse them is granted.
 
 <sub>Built and maintained by <b>Ahmet Salih Golen</b> · <a href="https://github.com/asa07-salihg">@asa07-salihg</a></sub>
 
+</div>
+
+<div align="right">
+<table><td>
+<a href="#start-of-content">Back to top</a>
+</td></table>
 </div>

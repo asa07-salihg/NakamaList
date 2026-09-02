@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>NakamaList - MyAnimeList Anime &amp; Manga Tracker for Android</title>
-  <meta name="description" content="NakamaList is a free, ad-free MyAnimeList and AniList client for Android, tablet and TV. Track anime and manga, follow friends and compare scores, and discover seasonal anime, rankings and recommendations."/>
+  <meta name="description" content="NakamaList is a free, ad-free MyAnimeList client for Android, tablet and TV. Track anime and manga, follow friends and compare scores, and discover seasonal anime, rankings and recommendations."/>
   <meta name="keywords" content="anime tracker, anime tracking app, manga tracker, MyAnimeList app, MyAnimeList client, unofficial MAL client, track anime and manga, anime list app, MAL client Android, AniList Android, anime friends activity, seasonal anime, anime tracker for Android TV, rate and organize anime and manga"/>
   <meta name="author" content="Ahmet Salih Golen"/>
   <meta name="application-name" content="NakamaList"/>
@@ -22,7 +22,7 @@
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="NakamaList"/>
   <meta property="og:title" content="NakamaList - MyAnimeList Anime &amp; Manga Tracker for Android"/>
-  <meta property="og:description" content="Free, ad-free MyAnimeList and AniList client for Android, tablet and TV. Track anime and manga, follow friends and compare scores, and discover seasonal anime and rankings."/>
+  <meta property="og:description" content="Free, ad-free MyAnimeList client for Android, tablet and TV. Track anime and manga, follow friends and compare scores, and discover seasonal anime and rankings."/>
   <meta property="og:image" content="https://asa07-salihg.github.io/NakamaList/assets/og-card.png"/>
   <meta property="og:image:secure_url" content="https://asa07-salihg.github.io/NakamaList/assets/og-card.png"/>
   <meta property="og:image:type" content="image/png"/>
@@ -34,53 +34,62 @@
 
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="NakamaList - MyAnimeList Anime &amp; Manga Tracker for Android"/>
-  <meta name="twitter:description" content="Free, ad-free MyAnimeList and AniList client for Android, tablet and TV. Track anime and manga, follow friends and compare scores, and discover seasonal anime and rankings."/>
+  <meta name="twitter:description" content="Free, ad-free MyAnimeList client for Android, tablet and TV. Track anime and manga, follow friends and compare scores, and discover seasonal anime and rankings."/>
   <meta name="twitter:image" content="https://asa07-salihg.github.io/NakamaList/assets/og-card.png"/>
   <meta name="twitter:image:alt" content="NakamaList - your anime, your friends, one app"/>
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" media="print" onload="this.media='all'"/>
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"/></noscript>
+  <link rel="preload" as="image" href="assets/home.webp" fetchpriority="high"/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Manrope:wght@400..700&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Manrope:wght@400..700&display=swap" media="print" onload="this.media='all'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Manrope:wght@400..700&display=swap"/></noscript>
 
   <style>
     /* ============================================================
-       NakamaList - cinematic editorial landing
+       NakamaList - a numbered walk through the app.
        One file, no framework. Motion is opt-out via prefers-reduced-motion.
        ============================================================ */
     :root{
-      --ink:#08070d; --ink2:#0c0a13; --line:#1d1929;
+      --ink:#08070d; --ink2:#0c0a13;
       --text:#f6f5fa; --muted:#918ca6;
       --dim:#7a7692;        /* 4.62:1 on --ink - carries the legal disclaimers, must pass AA */
       --line:#1d1929;       /* decorative dividers only */
       --line-strong:#615986;/* 3.14:1 - anything the user can click */
       --violet:#8b6cff; --violet-lt:#b79bff; --glow:rgba(139,108,255,.35);
       --edge:clamp(20px,5vw,80px);
+
       --bezel:#16131f; --bezel-w:10px; --bezel-r:38px;
-      --phone:1080/2400;                 /* every screenshot is this ratio */
-      --dev-w:min(408px,80vw,calc(84vh*0.45));   /* scenes - the device is the showcase */
-      --dev-hero:min(348px,72vw,calc(68vh*0.45));/* hero - shares the fold with the copy */
-      --dev-rail:min(360px,70vw,calc(66vh*0.45));/* gallery - heading and caption must fit */
-      --tab-w:min(620px,44vw,calc(76vh*1.6));    /* landscape tablet 16:10 - the 44vw
-                                                 cap leaves the headline its room */
-      --tablet:2560/1600;
-      --badge-h:clamp(56px,4.4vw,68px);         /* Play badge, and the button beside it */
-      --step:clamp(2.8rem,min(10vw,12.5vh),8.5rem);  /* display - height-aware */
-      --step2:clamp(2rem,min(5.4vw,7vh),4.4rem);     /* section head */
-      --lead:clamp(1.05rem,1.5vw,1.35rem);
+      --phone:1080/2400;                 /* every phone screenshot is this ratio */
+      --tablet:2560/1600;                /* every tablet screenshot is this ratio */
+      /* Each cap is a width, and the third term is a height budget written as a
+         width: 62vh*0.45 is the width of a phone standing 62vh tall. That plus the
+         section's 2 x 9.5vh padding keeps a whole scene inside the fold when the
+         nav jumps to it. */
+      --dev-w:min(405px,87vw,calc(71vh*0.45));    /* a feature device */
+      --dev-hero:min(391px,80vw,calc(72vh*0.45)); /* hero, shares the fold with the copy */
+      --dev-duo:min(267px,43vw,calc(57vh*0.45));  /* the pair, two abreast */
+      --tab-w:min(660px,48vw,calc(60vh*1.6));     /* landscape tablet - the cap keeps
+                                       section 07, which also carries the tablet grid, inside the fold */
+
+      --badge-h:clamp(56px,4.4vw,68px);
+      --step:clamp(2.7rem,min(9.4vw,12vh),7.6rem);   /* display - height-aware */
+      --step2:clamp(1.9rem,min(5vw,6.6vh),4rem);     /* section head */
+      --lead:clamp(1.02rem,1.45vw,1.3rem);
+      --pad:clamp(64px,8.5vh,126px);                 /* section padding, top and bottom */
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     /* the nav is fixed, so anchored sections must clear it */
-    :target,section[id],main[id]{scroll-margin-top:88px}
+    /* the floating pills sit in the top corners, so anchors clear them */
+    :target,section[id],main[id]{scroll-margin-top:84px}
     body{background:var(--ink);color:var(--text);
-      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-      -webkit-font-smoothing:antialiased;line-height:1.5;
-      overflow-x:hidden}
+      font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
     @supports (overflow:clip){body{overflow-x:clip}}
-    h1,h2,h3,.display,.brand{
-      font-family:"Space Grotesk","Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-      letter-spacing:-.03em;line-height:.94}
+    h1,h2,h3,.mark,.num,.ghost{
+      font-family:"Bricolage Grotesque","Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+      letter-spacing:-.022em;line-height:.97}
     a{color:inherit;text-decoration:none}
     :focus-visible{outline:2px solid var(--violet-lt);outline-offset:3px;border-radius:6px}
     .skip{position:absolute;left:-9999px;top:0;z-index:60;background:var(--text);color:var(--ink);
@@ -90,78 +99,61 @@
     ::selection{background:var(--violet);color:#fff}
 
     /* --- ambient light ------------------------------------------------ */
-    .aura{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
-      transform:translateZ(0)}
-    .aura i{position:absolute;border-radius:50%;filter:blur(120px)}
+    .aura{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;transform:translateZ(0)}
+    /* the blobs are moved by transform only, so the browser can keep them on their
+       own compositor layer and never repaint the blur while you scroll */
+    .aura i{position:absolute;border-radius:50%;filter:blur(120px);will-change:transform}
     @media(max-width:760px){.aura i{filter:blur(70px)}}
     .aura i:nth-child(1){width:60vw;height:60vw;max-width:760px;max-height:760px;
       background:#5b39d6;opacity:.28;top:-22vh;left:-14vw}
     .aura i:nth-child(2){width:46vw;height:46vw;max-width:560px;max-height:560px;
       background:#8f2ea0;opacity:.2;top:52vh;right:-12vw}
-    .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;
-      transform:translateZ(0);
+    .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;transform:translateZ(0);
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E")}
-    main,nav,footer{position:relative;z-index:2}
+    main,footer{position:relative;z-index:2}
 
-    /* --- nav ---------------------------------------------------------- */
-    nav{position:fixed;top:0;left:0;right:0;z-index:40;transition:background .3s,border-color .3s}
-    nav.solid{background:rgba(8,7,13,.94);border-bottom:1px solid var(--line)}
+    /* --- floating brand and call to action ----------------------------
+       There is no bar: just these two, pinned to the corners. Both carry
+       their own blurred pill so they stay readable over any content. */
+    .mark,.get{position:fixed;top:clamp(14px,2.2vh,24px);z-index:40;
+      display:inline-flex;align-items:center;gap:10px;border-radius:999px;
+      padding:9px 16px 9px 10px;background:rgba(12,10,19,.62);
+      border:1px solid rgba(255,255,255,.08);
+      transition:transform .22s,border-color .22s,box-shadow .22s}
     @supports (backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px)){
-      nav.solid{background:rgba(8,7,13,.72);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
-    }
-    nav .bar{display:flex;align-items:center;justify-content:space-between;
-      padding:18px var(--edge);gap:24px}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:16px}
-    .brand img{width:28px;height:28px;border-radius:8px}
-    .nav-links{display:flex;gap:clamp(20px,2vw,30px);font-size:13.5px;color:var(--muted);
-      letter-spacing:.01em}
-    .nav-links a{position:relative;transition:color .2s}
-    .nav-links a:hover,.nav-links a[aria-current]{color:var(--text)}
-    .nav-links a[aria-current]::after{content:"";position:absolute;left:50%;bottom:-7px;
-      width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--violet)}
-    @media(max-width:820px){.nav-links a[aria-current]::after{left:auto;right:0;bottom:50%;
-      transform:translateY(50%);margin:0}}
-    .faq p a{color:var(--violet-lt);text-decoration:underline;text-underline-offset:3px}
-    .nav-cta{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;
-      padding:9px 18px;border-radius:999px;white-space:nowrap;
-      background:var(--text);color:var(--ink);transition:transform .2s,box-shadow .2s}
-    .nav-cta img{width:15px;height:15px}
-    .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,255,255,.14)}
-    .burger{display:none;width:42px;height:42px;border:1px solid var(--line-strong);border-radius:12px;
-      background:transparent;cursor:pointer;align-items:center;justify-content:center;flex:none}
-    .burger span{display:block;width:17px;height:1.6px;background:var(--text);border-radius:2px;
-      position:relative;transition:background .2s}
-    .burger span::before,.burger span::after{content:"";position:absolute;left:0;width:17px;height:1.6px;
-      background:var(--text);border-radius:2px;transition:transform .28s cubic-bezier(.16,1,.3,1)}
-    .burger span::before{top:-6px}.burger span::after{top:6px}
-    nav.open .burger span{background:transparent}
-    nav.open .burger span::before{transform:translateY(6px) rotate(45deg)}
-    nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
-    @media(max-width:820px){
-      .burger{display:flex}
-      .nav-cta{display:none}
-      .nav-links{position:fixed;inset:64px 0 auto;flex-direction:column;gap:0;
-        background:rgba(8,7,13,.98);border-bottom:1px solid var(--line);
-        padding:8px var(--edge) 22px;font-size:17px;color:var(--text);
-        opacity:0;visibility:hidden;transform:translateY(-10px);
-        transition:opacity .26s,transform .26s,visibility .26s}
-      nav.open .nav-links{opacity:1;visibility:visible;transform:none}
-      .nav-links a{padding:15px 0;border-bottom:1px solid var(--line)}
-      .nav-links .sheet-cta{display:flex;justify-content:center;margin-top:20px;border:0}
-      .nav-links .sheet-cta img{height:48px;width:auto}
-    }
-    @media(min-width:821px){.nav-links .sheet-cta{display:none}}
+      .mark,.get{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}}
+    .mark{left:var(--edge);font-weight:700;font-size:15px;letter-spacing:-.02em}
+    .mark img{width:26px;height:26px;border-radius:8px}
+    .mark:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.18)}
+    .get{right:var(--edge);font-weight:600;font-size:13.5px;padding:10px 18px 10px 13px;
+      background:var(--text);color:var(--ink);border-color:transparent}
+    .get img{width:16px;height:16px}
+    .get:hover{transform:translateY(-1px);box-shadow:0 10px 30px rgba(255,255,255,.16)}
+    @media(max-width:560px){
+      .mark span{display:none}
+      .mark{padding:9px}
+      .get{font-size:12.5px;padding:9px 14px 9px 10px}}
+
+    /* --- the numbered index down the left edge -------------------------- */
+    .index{position:fixed;top:50%;transform:translateY(-50%);z-index:30;
+      left:max(14px,calc((100vw - 1210px)/2 - 76px));
+      display:none;flex-direction:column;gap:13px}
+    @media(min-width:1240px){.index{display:flex}}
+    .index a{display:flex;align-items:center;gap:10px;font-size:10.5px;font-weight:700;
+      letter-spacing:.16em;color:var(--dim);transition:color .25s}
+    .index i{display:block;width:16px;height:1px;background:var(--line-strong);flex:none;
+      transition:width .3s cubic-bezier(.16,1,.3,1),background .25s}
+    .index a:hover{color:var(--text)}
+    .index a:hover i{background:var(--violet-lt)}
+    .index a[aria-current]{color:var(--text)}
+    .index a[aria-current] i{width:32px;background:var(--violet)}
 
     /* --- hero --------------------------------------------------------- */
-    .hero{min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1.15fr .85fr;
+    .hero{min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1.12fr .88fr;
       align-items:center;gap:clamp(24px,4vw,64px);
-      padding:clamp(96px,13vh,124px) var(--edge) clamp(44px,7vh,80px);
+      padding:clamp(92px,12vh,120px) var(--edge) clamp(40px,6vh,72px);
       max-width:1240px;margin-inline:auto}
-    @media(max-width:960px){.hero{grid-template-columns:1fr;padding-top:110px;padding-bottom:56px}}
-    .tag{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.09em;
-      text-transform:uppercase;color:var(--violet-lt);font-weight:600}
-    .tag b{width:5px;height:5px;border-radius:50%;background:var(--violet);
-      box-shadow:0 0 0 4px rgba(139,108,255,.16)}
+    @media(max-width:960px){.hero{grid-template-columns:1fr;padding-top:106px;padding-bottom:52px}}
     .hero h1{font-size:var(--step);font-weight:700;margin:clamp(16px,2.4vh,26px) 0 0}
     .hero h1 .ln{display:block;overflow:hidden}
     .hero h1 .ln>span{display:block;transform:translateY(105%);
@@ -175,155 +167,119 @@
         -webkit-background-clip:text;background-clip:text;color:transparent}
     }
     .hero p.lead{font-size:var(--lead);color:var(--muted);max-width:46ch;
-      margin-top:clamp(16px,2.6vh,28px);line-height:1.62}
-    .cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:clamp(22px,3.4vh,38px)}
+      margin-top:clamp(14px,2.4vh,26px);line-height:1.62}
+    .cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:clamp(20px,3.2vh,36px)}
     .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;
-      padding:15px 26px;border-radius:999px;transition:transform .2s,box-shadow .2s,border-color .2s}
+      border-radius:999px;transition:transform .2s,box-shadow .2s,border-color .2s}
     .btn.line{border:1px solid rgba(255,255,255,.17);color:var(--text);
       height:var(--badge-h);padding:0 clamp(22px,2vw,30px)}
+    .btn.line:hover{border-color:var(--violet)}
     /* Official Google Play badge - never recoloured or reshaped, per brand guidelines */
-    .badge{display:inline-block;line-height:0;border-radius:10px;
-      transition:transform .2s,filter .2s}
+    .badge{display:inline-block;line-height:0;border-radius:10px;transition:transform .2s,filter .2s}
     .badge img{height:var(--badge-h);width:auto}
     .badge:hover{transform:translateY(-2px);filter:drop-shadow(0 14px 34px var(--glow))}
     @media(max-width:520px){:root{--badge-h:52px}.btn.line{font-size:14.5px}}
-    /* the closing headline is display-sized, so its badge is scaled to match */
-    .close .badge img{height:clamp(64px,6.4vw,84px)}
-    .btn.line:hover{border-color:var(--violet);color:var(--text)}
-    .note{margin-top:clamp(16px,2.4vh,26px);font-size:12.5px;color:var(--dim);max-width:44ch;line-height:1.6}
+    .close .badge img{height:clamp(60px,6vw,78px)}
+    .note{margin-top:clamp(14px,2.2vh,24px);font-size:12.5px;color:var(--dim);max-width:44ch;line-height:1.6}
 
     .stage{position:relative;display:flex;justify-content:center;perspective:1400px}
-    .stage::before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:50%;
+    .stage::before{content:"";position:absolute;width:72%;aspect-ratio:1;border-radius:50%;
       background:radial-gradient(circle,var(--glow),transparent 62%);filter:blur(20px)}
+
+    /* --- the device -----------------------------------------------------
+       One frame class for the hero and every section, so they can never drift
+       apart. width AND height are set on the image because the width/height
+       attributes are presentational hints; leaving height unset makes the
+       browser use the intrinsic pixel height and ignore aspect-ratio, which
+       blows the screenshot up. */
+    .shot{position:relative;width:var(--dev-w);margin-inline:auto;aspect-ratio:var(--phone);
+      border-radius:var(--bezel-r);border:var(--bezel-w) solid var(--bezel);background:#000;
+      overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.64),0 0 0 1px rgba(255,255,255,.05) inset}
+    .shot img{width:100%;height:100%;object-fit:cover;display:block}
     .slab{width:var(--dev-hero);transform:rotateY(-13deg) rotateX(4deg) translateZ(0);
       box-shadow:0 50px 110px rgba(0,0,0,.72),0 0 0 1px rgba(255,255,255,.05) inset}
+    /* The tablet shot is landscape - reusing the phone frame would squash it. */
+    .shot--tab{width:var(--tab-w);aspect-ratio:var(--tablet);border-radius:24px;border-width:12px}
+    /* Two frames abreast, so the page does not read as the same single row
+       repeated eight times. */
+    .duo{display:flex;justify-content:center;align-items:flex-start;gap:clamp(10px,1.4vw,20px)}
+    .duo .shot{width:var(--dev-duo);margin:0}
+    .duo .shot:last-child{margin-top:clamp(22px,4.4vw,54px)}
 
     /* --- section scaffolding ------------------------------------------ */
     .rule{height:1px;background:linear-gradient(90deg,transparent,var(--line) 12%,var(--line) 88%,transparent);
       margin:0 var(--edge)}
-    .scene{padding:clamp(90px,13vh,170px) var(--edge)}
-    .scene-grid{display:grid;grid-template-columns:minmax(min(100%,400px),1fr) auto;
-      gap:clamp(32px,4vw,72px);align-items:center;
-      /* keep the copy and the device as one composed spread instead of letting
-         them drift to opposite edges of a wide screen */
-      width:fit-content;max-width:1100px;margin-inline:auto}
-    .scene-grid.flip{grid-template-columns:auto minmax(min(100%,400px),1fr)}
+    .scene{padding:var(--pad) var(--edge);position:relative}
+    .scene-grid{display:grid;grid-template-columns:minmax(min(100%,380px),1fr) auto;
+      gap:clamp(30px,4vw,68px);align-items:center;
+      width:fit-content;max-width:1120px;margin-inline:auto}
+    .scene-grid.flip{grid-template-columns:auto minmax(min(100%,380px),1fr)}
     .scene-grid.flip .copy{order:2}
+    .scene-grid:has(.shot--tab),.scene-grid:has(.duo){max-width:1180px}
     @media(max-width:900px){
-      .scene-grid,.scene-grid.flip{grid-template-columns:1fr;gap:44px;justify-items:center;
+      .scene-grid,.scene-grid.flip{grid-template-columns:1fr;gap:40px;justify-items:center;
         width:auto;max-width:none}
-      .scene-grid:has(.shot--tab){max-width:none}
-      .scene .copy,.scene-grid:has(.shot--tab) .copy{max-width:none}
-      .scene-grid .copy{justify-self:stretch}
+      .scene-grid .copy{justify-self:stretch;max-width:none}
       .scene-grid.flip .copy{order:0}}
-    .idx{font-family:"Space Grotesk";font-size:13px;font-weight:600;letter-spacing:.16em;
-      color:var(--dim)}
-    .idx s{text-decoration:none;color:var(--violet)}
-    .scene h2{font-size:var(--step2);font-weight:700;margin:20px 0 22px}
-    .scene .copy{max-width:34rem}
+    /* the oversized outline number is the section marker, sitting behind its heading */
+    .copy{max-width:33rem;position:relative}
+    .copy>*{position:relative;z-index:1}
+    .ghost{position:absolute;z-index:0;top:-.30em;left:-.05em;font-size:clamp(6rem,15vw,13rem);
+      font-weight:800;line-height:1;color:transparent;pointer-events:none;
+      -webkit-user-select:none;user-select:none;
+      -webkit-text-stroke:1px rgba(139,108,255,.13)}
+    @supports not ((-webkit-text-stroke:1px red) or (text-stroke:1px red)){.ghost{display:none}}
+    .num{font-size:12.5px;font-weight:700;letter-spacing:.18em;color:var(--violet)}
+    .num s{text-decoration:none;color:var(--dim);margin-left:9px}
+    .scene h2{font-size:var(--step2);font-weight:700;margin:18px 0 20px}
     .scene p{color:var(--muted);font-size:var(--lead);max-width:48ch;line-height:1.65}
-    .bullets{list-style:none;margin-top:28px;display:grid;gap:13px;max-width:52ch}
+    .bullets{list-style:none;margin-top:26px;display:grid;gap:12px;max-width:52ch}
     .bullets li{display:flex;gap:13px;align-items:flex-start;color:var(--muted);font-size:15.5px;line-height:1.55}
     .bullets svg{width:17px;height:17px;flex:none;margin-top:3px;stroke:var(--violet);fill:none;
       stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
-    /* same device frame as the hero; width is capped by column, viewport width AND
-       viewport height, so a whole phone screen is always visible at once */
-    /* The single device frame - hero, scenes and gallery all use this, so they
-       can never drift apart in size or styling. width AND height are set on the
-       image because the width="1080" height="2400" attributes are presentational
-       hints; leaving height unset makes the browser use 2400px and ignore
-       aspect-ratio, which blows the screenshot up. */
-    .shot{position:relative;width:var(--dev-w);margin-inline:auto;aspect-ratio:var(--phone);
-      border-radius:var(--bezel-r);border:var(--bezel-w) solid var(--bezel);background:#000;
-      overflow:hidden;box-shadow:0 44px 100px rgba(0,0,0,.66),0 0 0 1px rgba(255,255,255,.05) inset}
-    .shot img{width:100%;height:100%;object-fit:cover;display:block}
-    /* The tablet shot is landscape 16:10 - reusing the phone frame would squash it. */
-    .shot--tab{width:var(--tab-w);aspect-ratio:var(--tablet);border-radius:24px;border-width:12px}
-    /* the landscape tablet is wider, so its row gets a wider copy measure */
-    .scene-grid:has(.shot--tab){max-width:1180px}
-    .scene-grid:has(.shot--tab) .copy{max-width:30rem}
 
     /* --- pull quote ---------------------------------------------------- */
-    .pull{padding:clamp(80px,12vh,150px) var(--edge);text-align:center}
-    .pull p{font-family:"Space Grotesk";font-size:clamp(1.7rem,4.4vw,3.6rem);font-weight:600;
+    .pull{padding:clamp(70px,10vh,130px) var(--edge);text-align:center}
+    .pull p{font-family:"Bricolage Grotesque";font-size:clamp(1.6rem,4.2vw,3.4rem);font-weight:600;
       line-height:1.18;letter-spacing:-.03em;max-width:19ch;margin:0 auto}
 
-    /* --- gallery ------------------------------------------------------- */
-    .gallery{padding:clamp(70px,10vh,130px) 0}
-    .gallery .head{padding:0 var(--edge);margin-bottom:44px;
-      max-width:calc(1100px + 2*var(--edge));margin-inline:auto}
-    .gallery h2{font-size:var(--step2);font-weight:700}
-    .gallery p{color:var(--muted);margin-top:16px;font-size:var(--lead);max-width:44ch}
-    .rail{display:flex;gap:20px;overflow-x:auto;padding:6px var(--edge) 28px;scrollbar-width:none;
-      /* No snapping with a mouse: the user drags to a spot and snapping would yank
-         the rail to the nearest card the moment they let go. scroll-behavior is
-         deliberately not smooth either - the arrow buttons pass behavior:'smooth'
-         per call, so dragging stays 1:1 with the cursor. */
-      scroll-padding-inline:var(--edge);
-      overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
-    /* Touch has no drag-to-scroll of its own to preserve, so it keeps the snap. */
-    @media(hover:none) and (pointer:coarse){
-      .rail{scroll-snap-type:x proximity}
-      .rail figure{scroll-snap-align:start}
-    }
-    .rail:focus-visible{outline:2px solid var(--violet-lt);outline-offset:6px}
-    /* A mouse cannot scroll an overflow container sideways, and dragging just picks
-       the image up. So: no native image drag, and JS turns a drag into a scroll. */
-    .rail{cursor:grab;-webkit-user-select:none;user-select:none;scroll-behavior:auto}
-    .rail.dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
-    .rail.dragging figure{scroll-snap-align:none}
-    .rail img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
-    .rail::-webkit-scrollbar{display:none}
-    .rail figure{flex:none;text-align:center}
-    /* height-driven, so a whole phone screen fits on-screen at once */
-    .rail .shot{width:var(--dev-rail);
-      box-shadow:0 14px 32px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.05) inset;
-      transform:translateZ(0);backface-visibility:hidden}
-    @media(max-width:900px){:root{
-      --dev-w:min(320px,72vw,calc(66vh*0.45));
-      --dev-hero:min(300px,66vw,calc(58vh*0.45));
-      --dev-rail:min(300px,66vw,calc(58vh*0.45));
-      --tab-w:min(560px,88vw,calc(50vh*1.6))}}
-    .rail figcaption{margin-top:12px;font-size:12.5px;color:var(--dim);letter-spacing:.02em}
-    .rail-nav{display:flex;align-items:center;gap:12px;padding:0 var(--edge)}
-    .rail-nav button{width:42px;height:42px;flex:none;border:1px solid var(--line-strong);border-radius:50%;
-      background:transparent;color:var(--muted);cursor:pointer;display:grid;place-items:center;
-      transition:border-color .2s,color .2s,transform .2s}
-    .rail-nav button:hover:not(:disabled){border-color:var(--violet);color:var(--text);transform:translateY(-1px)}
-    .rail-nav button:disabled{opacity:.32;cursor:default}
-    .rail-nav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.1;
-      stroke-linecap:round;stroke-linejoin:round}
-    .hint{font-size:12.5px;color:var(--dim);margin-left:6px}
-    @media(hover:none){.rail-nav button{display:none}.hint{margin-left:0}}
+    /* --- the tablet spread --------------------------------------------- */
+    .tabgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,22px);
+      max-width:1120px;margin:clamp(28px,4vh,56px) auto 0}
+    .tabgrid .shot--tab{width:100%;border-width:8px;border-radius:16px;
+      box-shadow:0 14px 34px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.05) inset}
+    @media(max-width:760px){.tabgrid{grid-template-columns:1fr;max-width:520px}}
+
 
     /* --- faq ----------------------------------------------------------- */
-    .faq{padding:clamp(80px,12vh,150px) var(--edge);display:grid;
-      grid-template-columns:.8fr 1.2fr;gap:clamp(30px,5vw,80px);align-items:start;
-      max-width:calc(1100px + 2*var(--edge));margin-inline:auto}
-    @media(max-width:900px){.faq{grid-template-columns:1fr;gap:36px}}
-    .faq h2{font-size:var(--step2);font-weight:700;position:sticky;top:100px}
+    .faq{padding:clamp(72px,10vh,140px) var(--edge);display:grid;
+      grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,76px);align-items:start;
+      max-width:calc(1120px + 2*var(--edge));margin-inline:auto}
+    @media(max-width:900px){.faq{grid-template-columns:1fr;gap:32px}}
+    .faq h2{font-size:var(--step2);font-weight:700;position:sticky;top:92px}
     @media(max-width:900px){.faq h2{position:static}}
-    .faq details{border-top:1px solid var(--line);padding:22px 0}
+    .faq details{border-top:1px solid var(--line);padding:20px 0}
     .faq details:last-child{border-bottom:1px solid var(--line)}
     .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;
-      gap:20px;font-weight:600;font-size:17px;transition:color .2s}
+      gap:20px;font-weight:600;font-size:16.5px;transition:color .2s}
     .faq summary::-webkit-details-marker{display:none}
     .faq summary:hover{color:var(--violet-lt)}
     .faq summary::after{content:"+";color:var(--violet);font-size:22px;font-weight:400;line-height:1}
     .faq details[open] summary::after{content:"\2212"}
-    .faq p{color:var(--muted);font-size:15.5px;line-height:1.68;margin-top:14px;max-width:60ch;
+    .faq p{color:var(--muted);font-size:15.5px;line-height:1.68;margin-top:13px;max-width:60ch;
       animation:fade .3s ease}
+    .faq p a{color:var(--violet-lt);text-decoration:underline;text-underline-offset:3px}
     @keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 
     /* --- close --------------------------------------------------------- */
-    .close{padding:clamp(100px,16vh,200px) var(--edge);text-align:center}
+    .close{padding:clamp(90px,14vh,180px) var(--edge);text-align:center}
     .close h2{font-size:var(--step);font-weight:700}
-    .close p{color:var(--muted);font-size:var(--lead);margin:26px auto 0;max-width:42ch}
-    .close .cta{justify-content:center;margin-top:40px}
+    .close p{color:var(--muted);font-size:var(--lead);margin:24px auto 0;max-width:42ch}
+    .close .cta{justify-content:center;margin-top:36px}
 
-    footer{border-top:1px solid var(--line);padding:44px var(--edge);
+    footer{border-top:1px solid var(--line);padding:42px var(--edge);
       display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
-    .f-links{display:flex;flex-wrap:wrap;gap:24px;font-size:13.5px;color:var(--muted)}
+    .f-links{display:flex;flex-wrap:wrap;gap:22px;font-size:13.5px;color:var(--muted)}
     .f-links a:hover{color:var(--text)}
     .to-top{display:inline-flex;align-items:center;gap:7px}
     .to-top svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;
@@ -334,26 +290,25 @@
     .f-note a:hover{color:var(--text)}
 
     /* --- scroll reveal -------------------------------------------------- */
-    .rv{opacity:0;transform:translateY(26px);
-      transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+    .rv{opacity:0;transform:translateY(24px);
+      transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
     .rv.in{opacity:1;transform:none}
-    .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+    .rv.d1{transition-delay:.07s}.rv.d2{transition-delay:.14s}.rv.d3{transition-delay:.21s}
 
     /* --- print ---------------------------------------------------------- */
     @media print{
-      .aura,.grain,nav,.rail-nav,.hint,.skip,.badge,.btn,.stage{display:none!important}
+      .aura,.grain,.mark,.get,.index,.skip,.badge,.btn,.stage,.ghost{display:none!important}
       *{background:#fff!important;color:#000!important;box-shadow:none!important;
-        text-shadow:none!important}
+        text-shadow:none!important;filter:none!important}
       .grad{color:#000!important;-webkit-text-fill-color:#000!important}
       body{font-size:11pt;line-height:1.45}
       .hero{min-height:auto;padding:0;display:block}
-      .scene,.pull,.faq,.close,.gallery{padding:18pt 0;break-inside:avoid}
+      .scene,.pull,.faq,.close{padding:18pt 0;break-inside:avoid}
       .scene-grid,.scene-grid.flip{display:block;max-width:none;width:auto}
-      .shot,.rail{display:none!important}
+      .shot,.tabgrid{display:none!important}
       .faq details{border-color:#bbb}
       .faq details p{display:block!important}
       footer{border-color:#bbb}
-      /* a printed link is useless without its destination */
       a[href^="http"]::after{content:" (" attr(href) ")";font-size:9pt;color:#444!important}
     }
 
@@ -367,7 +322,7 @@
   </style>
 
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://asa07-salihg.github.io/NakamaList/#website","name":"NakamaList","url":"https://asa07-salihg.github.io/NakamaList/","inLanguage":"en"},{"@type":"SoftwareApplication","name":"NakamaList","softwareVersion":"1.7.4","dateModified":"2026-09-02","operatingSystem":"Android 8.0+","applicationCategory":"EntertainmentApplication","url":"https://asa07-salihg.github.io/NakamaList/","downloadUrl":"https://play.google.com/store/apps/details?id=com.nakamalist.app","installUrl":"https://play.google.com/store/apps/details?id=com.nakamalist.app","image":"https://asa07-salihg.github.io/NakamaList/assets/og-card.png","inLanguage":"en","description":"Free, ad-free MyAnimeList and AniList client for Android, tablet and TV. Track anime and manga, follow friends and compare their scores, and browse seasonal anime, rankings, news and forums.","author":{"@type":"Person","name":"Ahmet Salih Golen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"screenshot":["https://asa07-salihg.github.io/NakamaList/assets/home.webp","https://asa07-salihg.github.io/NakamaList/assets/friends.webp","https://asa07-salihg.github.io/NakamaList/assets/mylist.webp","https://asa07-salihg.github.io/NakamaList/assets/detail.webp","https://asa07-salihg.github.io/NakamaList/assets/tablet-home.webp"],"featureList":["Track anime and manga","Friends activity feed and Friend Scores","Sign in with MyAnimeList or AniList","Optional AniList sync","Seasonal anime","Rankings and recommendations","News, forums and clubs","New-episode notifications","Android tablet and Android TV support","56 languages"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is NakamaList free?","acceptedAnswer":{"@type":"Answer","text":"Yes. NakamaList is completely free, with no ads and no third-party tracking."}},{"@type":"Question","name":"Is NakamaList an official MyAnimeList app?","acceptedAnswer":{"@type":"Answer","text":"No. NakamaList is an independent, unofficial MyAnimeList client. It uses the official MyAnimeList API with your own account and is not affiliated with MyAnimeList."}},{"@type":"Question","name":"Does NakamaList track manga as well as anime?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can track both anime and manga, including status, score, episodes, chapters, volumes, dates, tags and notes."}},{"@type":"Question","name":"Can I sync with AniList?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can sign in with AniList on its own, or link it alongside MyAnimeList to read reviews and keep both lists in sync."}},{"@type":"Question","name":"Can I follow my friends?","acceptedAnswer":{"@type":"Answer","text":"Yes. Add people by MyAnimeList username or follow AniList accounts, then see everyone in one activity feed, browse their lists, and compare Friend Scores on any title."}},{"@type":"Question","name":"Does NakamaList work on tablets and Android TV?","acceptedAnswer":{"@type":"Answer","text":"Yes. It fills a tablet screen instead of running in a portrait strip, and it runs on Android TV and Google TV with full remote control."}},{"@type":"Question","name":"What Android version do I need?","acceptedAnswer":{"@type":"Answer","text":"NakamaList runs on Android 8.0 and newer."}},{"@type":"Question","name":"Does NakamaList show seasonal anime and rankings?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can browse seasonal anime back to 1917, official rankings, recommendations, news, forums and clubs."}},{"@type":"Question","name":"How do I report a bug or ask for a feature?","acceptedAnswer":{"@type":"Answer","text":"Open an issue on GitHub at https://github.com/asa07-salihg/NakamaList/issues, or email nakamalist@proton.me. Bug reports and feature requests both have a template ready."}}]}]}
+    {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://asa07-salihg.github.io/NakamaList/#website","name":"NakamaList","url":"https://asa07-salihg.github.io/NakamaList/","inLanguage":"en"},{"@type":"SoftwareApplication","name":"NakamaList","softwareVersion":"1.7.4","dateModified":"2026-09-02","operatingSystem":"Android 8.0+","applicationCategory":"EntertainmentApplication","url":"https://asa07-salihg.github.io/NakamaList/","downloadUrl":"https://play.google.com/store/apps/details?id=com.nakamalist.app","installUrl":"https://play.google.com/store/apps/details?id=com.nakamalist.app","image":"https://asa07-salihg.github.io/NakamaList/assets/og-card.png","inLanguage":"en","description":"Free, ad-free MyAnimeList client for Android, tablet and TV. Track anime and manga, follow friends and compare their scores, and browse seasonal anime, rankings, news and forums.","author":{"@type":"Person","name":"Ahmet Salih Golen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"screenshot":["https://asa07-salihg.github.io/NakamaList/assets/home.webp","https://asa07-salihg.github.io/NakamaList/assets/friends.webp","https://asa07-salihg.github.io/NakamaList/assets/friendlist.webp","https://asa07-salihg.github.io/NakamaList/assets/mylist.webp","https://asa07-salihg.github.io/NakamaList/assets/detail.webp","https://asa07-salihg.github.io/NakamaList/assets/discover.webp","https://asa07-salihg.github.io/NakamaList/assets/seasonal.webp","https://asa07-salihg.github.io/NakamaList/assets/news.webp","https://asa07-salihg.github.io/NakamaList/assets/profile.webp","https://asa07-salihg.github.io/NakamaList/assets/tablet-home.webp","https://asa07-salihg.github.io/NakamaList/assets/tablet-mylist.webp","https://asa07-salihg.github.io/NakamaList/assets/tablet-detail.webp","https://asa07-salihg.github.io/NakamaList/assets/tablet-seasonal.webp"],"featureList":["Track anime and manga","Friends activity feed and Friend Scores","Sign in with MyAnimeList or AniList","Optional AniList sync","Seasonal anime","Rankings and recommendations","News, forums and clubs","New-episode notifications","Profile statistics","Android tablet and Android TV support","56 languages"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is NakamaList free?","acceptedAnswer":{"@type":"Answer","text":"Yes. NakamaList is completely free, with no ads and no third-party tracking."}},{"@type":"Question","name":"Is NakamaList an official MyAnimeList app?","acceptedAnswer":{"@type":"Answer","text":"No. NakamaList is an independent, unofficial MyAnimeList client. It uses the official MyAnimeList API with your own account and is not affiliated with MyAnimeList."}},{"@type":"Question","name":"Does NakamaList track manga as well as anime?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can track both anime and manga, including status, score, episodes, chapters, volumes, dates, tags and notes."}},{"@type":"Question","name":"Can I sync with AniList?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can sign in with AniList on its own, or link it alongside MyAnimeList to read reviews and keep both lists in sync."}},{"@type":"Question","name":"Can I follow my friends?","acceptedAnswer":{"@type":"Answer","text":"Yes. Add people by MyAnimeList username or follow AniList accounts, then see everyone in one activity feed, browse their lists, and compare Friend Scores on any title."}},{"@type":"Question","name":"Does NakamaList work on tablets and Android TV?","acceptedAnswer":{"@type":"Answer","text":"Yes. It fills a tablet screen instead of running in a portrait strip, and it runs on Android TV and Google TV with full remote control."}},{"@type":"Question","name":"What Android version do I need?","acceptedAnswer":{"@type":"Answer","text":"NakamaList runs on Android 8.0 and newer."}},{"@type":"Question","name":"Does NakamaList show seasonal anime and rankings?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can browse every anime season, official rankings, recommendations, news, forums and clubs."}},{"@type":"Question","name":"How do I report a bug or ask for a feature?","acceptedAnswer":{"@type":"Answer","text":"Open an issue on GitHub at https://github.com/asa07-salihg/NakamaList/issues, or email nakamalist@proton.me. Bug reports and feature requests both have a template ready."}}]}]}
   </script>
 </head>
 
@@ -376,36 +331,32 @@
 <div class="aura" aria-hidden="true"><i></i><i></i></div>
 <div class="grain" aria-hidden="true"></div>
 
-<nav id="nav" aria-label="Primary">
-  <div class="bar">
-    <a class="brand" href="#top">
-      <img src="assets/icon-256.webp" alt="" width="28" height="28"/>
-      NakamaList
-    </a>
-    <div class="nav-links" id="nav-links">
-      <a href="#home">Home</a>
-      <a href="#lists">Lists</a>
-      <a href="#friends">Friends</a>
-      <a href="#discover">Discover</a>
-      <a href="#screens">Screenshots</a>
-      <a href="#faq">FAQ</a>
-      <a class="sheet-cta" href="https://play.google.com/store/apps/details?id=com.nakamalist.app"
-         rel="noopener" aria-label="Get NakamaList on Google Play"><img src="assets/getitonplaystore.png"
-                                                                        width="646" height="250" alt="Get it on Google Play" loading="lazy" decoding="async"/></a>
-    </div>
-    <button class="burger" type="button" aria-label="Menu" aria-expanded="false"
-            aria-controls="nav-links"><span></span></button>
-    <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.nakamalist.app"
-       rel="noopener"><img src="assets/playstore.png" width="512" height="512" alt="" aria-hidden="true"/>Get the app</a>
-  </div>
-</nav>
+<a class="mark" href="#top">
+  <img src="assets/icon-256.webp" alt="" width="256" height="256"/><span>NakamaList</span>
+</a>
+<a class="get" href="https://play.google.com/store/apps/details?id=com.nakamalist.app" rel="noopener">
+  <img src="assets/playstore.png" width="512" height="512" alt="" aria-hidden="true"/>Get the app
+</a>
+
+<aside class="index" id="index" aria-label="Sections">
+  <a href="#home"><i></i>00</a>
+  <a href="#lists"><i></i>01</a>
+  <a href="#friends"><i></i>02</a>
+  <a href="#discover"><i></i>03</a>
+  <a href="#seasonal"><i></i>04</a>
+  <a href="#community"><i></i>05</a>
+  <a href="#profile"><i></i>06</a>
+  <a href="#everywhere"><i></i>07</a>
+  <a href="#faq"><i></i>FAQ</a>
+  <a href="#get"><i></i>GET</a>
+</aside>
 
 <main id="top">
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="home">
     <div>
-      <span class="tag"><b></b>Free &middot; No ads &middot; 56 languages</span>
+      <span class="num rv">00<s>Unofficial MyAnimeList client for Android</s></span>
       <h1>
         <span class="ln"><span>Your anime.</span></span>
         <span class="ln"><span>Your friends.</span></span>
@@ -417,7 +368,7 @@
       </p>
       <div class="cta">
         <a class="badge" href="https://play.google.com/store/apps/details?id=com.nakamalist.app" rel="noopener" aria-label="Get NakamaList on Google Play"><img src="assets/getitonplaystore.png" width="646" height="250" alt="Get it on Google Play" decoding="async"/></a>
-        <a class="btn line" href="#friends">See what's new</a>
+        <a class="btn line" href="#lists">Take the tour</a>
       </div>
       <p class="note">
         Independent and unofficial. Not affiliated with MyAnimeList or AniList - it signs in through
@@ -426,10 +377,8 @@
     </div>
 
     <div class="stage">
-      <div class="shot slab">
-        <img src="assets/home.webp" width="1080" height="2400" fetchpriority="high"
-             alt="NakamaList home screen showing new episodes and Continue Watching"/>
-      </div>
+      <div class="shot slab"><img src="assets/home.webp" width="640" height="1422" fetchpriority="high"
+           decoding="async" alt="NakamaList home screen showing new episodes and Continue Watching"/></div>
     </div>
   </section>
 
@@ -444,7 +393,8 @@
   <section class="scene" id="lists">
     <div class="scene-grid">
       <div class="copy">
-        <span class="idx rv"><s>01</s> &mdash; Your lists</span>
+        <span class="ghost" aria-hidden="true">01</span>
+        <span class="num rv">01<s>Anime and manga lists</s></span>
         <h2 class="rv d1">Every edit,<br/>everywhere,<br/>at once.</h2>
         <p class="rv d2">
           Status, score, episodes, chapters, volumes, dates, tags and notes - with a one-tap "+1".
@@ -452,23 +402,28 @@
           before you get back.
         </p>
         <ul class="bullets rv d3">
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>List or poster-grid layout, status tabs, filters and sorts</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Your score scale: 100-point, decimal, 5 stars or smileys</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Titles in romaji or English, your choice</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>List or poster-grid layout, status tabs, filters and sorts</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Your score scale: 100-point, decimal, 5 stars or smileys</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Titles in romaji or English, your choice</li>
         </ul>
       </div>
-      <div class="shot rv d1">
-        <img src="assets/mylist.webp" width="1080" height="2400" loading="lazy" decoding="async"
-             alt="My List in NakamaList, tracking anime and manga"/>
+      <div class="duo rv d1">
+        <div class="shot"><img src="assets/mylist.webp" width="640" height="1422" loading="lazy" decoding="async"
+             alt="My List in NakamaList, tracking anime and manga"/></div>
+        <div class="shot"><img src="assets/home.webp" width="640" height="1422" loading="lazy" decoding="async"
+             alt="Home, already updated the moment a list entry changes"/></div>
       </div>
     </div>
   </section>
+
+  <div class="rule"></div>
 
   <!-- ============ 02 FRIENDS ============ -->
   <section class="scene" id="friends">
     <div class="scene-grid flip">
       <div class="copy">
-        <span class="idx rv"><s>02</s> &mdash; Friends</span>
+        <span class="ghost" aria-hidden="true">02</span>
+        <span class="num rv">02<s>Friends and Friend Scores</s></span>
         <h2 class="rv d1">See what<br/>everyone is<br/><span class="grad">watching.</span></h2>
         <p class="rv d2">
           Add people by MyAnimeList username or follow AniList accounts - both sets, side by side.
@@ -476,90 +431,159 @@
           scored it, next to your own.
         </p>
         <ul class="bullets rv d3">
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>One feed, swipeable across anime, episodes, manga and chapters</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Browse a friend's list on the same screen as your own</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Friend Scores and their average, on any title</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Export and import your friends list</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>One feed, swipeable across anime, episodes, manga and chapters</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Browse a friend's list on the same screen as your own</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Friend Scores and their average, on any title</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Export and import your friends list</li>
         </ul>
       </div>
-      <div class="shot rv d1">
-        <img src="assets/friends.webp" width="1080" height="2400" loading="lazy" decoding="async"
-             alt="Friends activity feed showing what people are watching and reading"/>
+      <div class="duo rv d1">
+        <div class="shot"><img src="assets/friends.webp" width="640" height="1422" loading="lazy" decoding="async"
+             alt="Friends activity feed showing what people are watching and reading"/></div>
+        <div class="shot"><img src="assets/friendlist.webp" width="640" height="1422" loading="lazy" decoding="async"
+             alt="A friend's anime list, browsed with the same tabs and toolbar as your own"/></div>
       </div>
     </div>
   </section>
+
+  <div class="rule"></div>
 
   <!-- ============ 03 DISCOVER ============ -->
   <section class="scene" id="discover">
     <div class="scene-grid">
       <div class="copy">
-        <span class="idx rv"><s>03</s> &mdash; Discover</span>
+        <span class="ghost" aria-hidden="true">03</span>
+        <span class="num rv">03<s>Discover and rankings</s></span>
         <h2 class="rv d1">Find the next one.</h2>
         <p class="rv d2">
           Every official ranking, Top Anime and Manga, Suggested-for-You, full-screen search, and a
-          random pick for the nights you cannot decide. Seasonal goes back to 1917.
+          random pick for the nights you cannot decide.
         </p>
         <ul class="bullets rv d3">
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Synopsis, score, rank, characters, staff and trailers</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Opening and ending themes, playable in the app</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Per-episode discussions from the MyAnimeList forums</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Synopsis, score, rank, characters, staff and trailers</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Opening and ending themes, playable in the app</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Per-episode discussions from the MyAnimeList forums</li>
         </ul>
       </div>
-      <div class="shot rv d1">
-        <img src="assets/discover.webp" width="1080" height="2400" loading="lazy" decoding="async"
-             alt="Discover rankings and recommendations in NakamaList"/>
+      <div class="duo rv d1">
+        <div class="shot"><img src="assets/discover.webp" width="640" height="1422" loading="lazy" decoding="async"
+             alt="Discover rankings and recommendations in NakamaList"/></div>
+        <div class="shot"><img src="assets/detail.webp" width="640" height="1422" loading="lazy" decoding="async"
+             alt="A title page with synopsis, score, characters and Friend Scores"/></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 04 EVERYWHERE ============ -->
+  <div class="rule"></div>
+
+  <!-- ============ 04 SEASONAL ============ -->
+  <section class="scene" id="seasonal">
+    <div class="scene-grid flip">
+      <div class="copy">
+        <span class="ghost" aria-hidden="true">04</span>
+        <span class="num rv">04<s>Seasonal anime</s></span>
+        <h2 class="rv d1">Never miss<br/>a new <span class="grad">season.</span></h2>
+        <p class="rv d2">
+          Winter, spring, summer and autumn. The season airing now, the one coming next, and the
+          archive behind them, each opening as a grid you can sort and add from.
+        </p>
+        <ul class="bullets rv d3">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>This season, next season and the archive, one tap apart</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Sort by score, members or start date</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Add straight to Plan to Watch from the grid</li>
+        </ul>
+      </div>
+      <div class="shot rv d1"><img src="assets/seasonal.webp" width="640" height="1422" loading="lazy" decoding="async"
+           alt="The seasonal anime browser, showing a season as a grid of posters"/></div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ============ 05 COMMUNITY ============ -->
+  <section class="scene" id="community">
+    <div class="scene-grid">
+      <div class="copy">
+        <span class="ghost" aria-hidden="true">05</span>
+        <span class="num rv">05<s>News, forums and clubs</s></span>
+        <h2 class="rv d1">The news,<br/>in the app.</h2>
+        <p class="rv d2">
+          MyAnimeList news opens and reads inside the app, not in a browser tab. The forums and the
+          clubs browser are here too, and every episode has its own discussion linked from the title
+          it belongs to.
+        </p>
+        <ul class="bullets rv d3">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>MyAnimeList news, read without leaving the app</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Boards, threads and per-episode discussions</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>A clubs browser for the corners you already follow</li>
+        </ul>
+      </div>
+      <div class="duo rv d1">
+        <div class="shot"><img src="assets/news.webp" width="640" height="1422" loading="lazy" decoding="async"
+             alt="MyAnimeList news in NakamaList, listed as cards"/></div>
+        <div class="shot"><img src="assets/news-article.webp" width="640" height="1422" loading="lazy" decoding="async"
+             alt="A news article open in the in-app reader"/></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ============ 06 PROFILE ============ -->
+  <section class="scene" id="profile">
+    <div class="scene-grid flip">
+      <div class="copy">
+        <span class="ghost" aria-hidden="true">06</span>
+        <span class="num rv">06<s>Profile and statistics</s></span>
+        <h2 class="rv d1">Your taste<br/>in <span class="grad">numbers.</span></h2>
+        <p class="rv d2">
+          Days watched and chapters read, mean score, and how your list breaks down by status, for
+          anime and for manga. Anyone you follow has the same page, so comparing is just a matter of
+          opening theirs.
+        </p>
+        <ul class="bullets rv d3">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Anime and manga statistics, kept apart</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Watching, completed, on hold, dropped and planned, counted</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>The same page for every friend</li>
+        </ul>
+      </div>
+      <div class="shot rv d1"><img src="assets/profile.webp" width="640" height="1422" loading="lazy" decoding="async"
+           alt="A profile page with full anime and manga statistics"/></div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ============ 07 EVERYWHERE ============ -->
   <section class="scene" id="everywhere">
     <div class="scene-grid flip">
       <div class="copy">
-        <span class="idx rv"><s>04</s> &mdash; Everywhere</span>
+        <span class="ghost" aria-hidden="true">07</span>
+        <span class="num rv">07<s>Phone, tablet and Android TV</s></span>
         <h2 class="rv d1">Phone.<br/>Tablet.<br/>Television.</h2>
         <p class="rv d2">
           It fills a tablet screen instead of sitting in a portrait strip, and it runs on Android TV
           and Google TV with its own launcher banner and full remote control.
         </p>
         <ul class="bullets rv d3">
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>56 languages, including right-to-left</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Light, dark and white themes with an accent colour dial</li>
-          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Home-screen Continue widgets and airing notifications</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>56 languages, including right-to-left</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Light, dark and white themes with an accent colour dial</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Home-screen Continue widgets and airing notifications</li>
         </ul>
       </div>
-      <div class="shot shot--tab rv d1">
-        <img src="assets/tablet-home.webp" width="2560" height="1600" loading="lazy" decoding="async"
-             alt="NakamaList on an Android tablet, filling the screen in landscape with Continue Watching and Plan to Watch rows"/>
-      </div>
+      <div class="shot shot--tab rv d1"><img src="assets/tablet-home.webp" width="1280" height="800" loading="lazy" decoding="async"
+           alt="NakamaList on an Android tablet, filling the screen in landscape with Continue Watching and Plan to Watch rows"/></div>
+    </div>
+    <div class="tabgrid rv d2">
+      <div class="shot shot--tab"><img src="assets/tablet-mylist.webp" width="1280" height="800" loading="lazy" decoding="async"
+           alt="My List on a tablet, the list and a title side by side"/></div>
+      <div class="shot shot--tab"><img src="assets/tablet-detail.webp" width="1280" height="800" loading="lazy" decoding="async"
+           alt="A title page on a tablet, laid out across two panes"/></div>
+      <div class="shot shot--tab"><img src="assets/tablet-seasonal.webp" width="1280" height="800" loading="lazy" decoding="async"
+           alt="Seasonal anime on a tablet, as a wide grid of posters"/></div>
     </div>
   </section>
 
-
-  <!-- ============ GALLERY ============ -->
-  <section class="gallery" id="screens">
-    <div class="head">
-      <h2 class="rv">More screenshots.</h2>
-      <p class="rv d1">Dark by default, with light and white themes, an accent dial and swipe navigation.</p>
-    </div>
-    <div class="rail" tabindex="0" role="region" aria-label="App screenshots, scrollable">
-      <figure><div class="shot"><img draggable="false" src="assets/home.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="NakamaList home screen with new episodes and Continue Watching"/></div><figcaption>Home</figcaption></figure>
-      <figure><div class="shot"><img draggable="false" src="assets/friends.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Friends activity feed"/></div><figcaption>Friends</figcaption></figure>
-      <figure><div class="shot"><img draggable="false" src="assets/mylist.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="My List tracking anime and manga"/></div><figcaption>My List</figcaption></figure>
-      <figure><div class="shot"><img draggable="false" src="assets/detail.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Anime detail page with synopsis, characters and Friend Scores"/></div><figcaption>Details</figcaption></figure>
-      <figure><div class="shot"><img draggable="false" src="assets/friendlist.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Browsing a friend's anime and manga list"/></div><figcaption>A friend's list</figcaption></figure>
-      <figure><div class="shot"><img draggable="false" src="assets/discover.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Discover rankings and recommendations"/></div><figcaption>Discover</figcaption></figure>
-      <figure><div class="shot"><img draggable="false" src="assets/profile.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Profile statistics"/></div><figcaption>Profile</figcaption></figure>
-      <figure><div class="shot"><img draggable="false" src="assets/seasonal.webp" width="1080" height="2400" loading="lazy" decoding="async" alt="Seasonal anime browser"/></div><figcaption>Seasonal</figcaption></figure>
-    </div>
-    <div class="rail-nav">
-      <button type="button" data-rail="-1" aria-label="Previous screenshots">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
-      <button type="button" data-rail="1" aria-label="Next screenshots">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
-      <span class="hint">Drag sideways, or use the arrows</span>
-    </div>
-  </section>
 
   <!-- ============ FAQ ============ -->
   <section class="faq" id="faq">
@@ -580,14 +604,14 @@
       <details class="rv"><summary>What Android version do I need?</summary>
         <p>NakamaList runs on Android 8.0 and newer.</p></details>
       <details class="rv"><summary>Does NakamaList show seasonal anime and rankings?</summary>
-        <p>Yes. You can browse seasonal anime back to 1917, official rankings, recommendations, news, forums and clubs.</p></details>
+        <p>Yes. You can browse every anime season, official rankings, recommendations, news, forums and clubs.</p></details>
       <details class="rv"><summary>How do I report a bug or ask for a feature?</summary>
         <p>Open an issue on <a href="https://github.com/asa07-salihg/NakamaList/issues" rel="noopener">GitHub</a>, or email <a href="mailto:nakamalist@proton.me">nakamalist@proton.me</a>. Bug reports and feature requests both have a template ready.</p></details>
     </div>
   </section>
 
   <!-- ============ CLOSE ============ -->
-  <section class="close">
+  <section class="close" id="get">
     <h2 class="rv">Start <span class="grad">tracking.</span></h2>
     <p class="rv d1">Free, ad-free, and it keeps your list wherever you already keep it.</p>
     <div class="cta rv d2">
@@ -617,122 +641,55 @@
 
 <script>
   (function(){
-    var nav=document.getElementById('nav');
-    var onScroll=function(){ nav.classList.toggle('solid', window.scrollY>12); };
-    onScroll(); addEventListener('scroll',onScroll,{passive:true});
+    var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // --- mobile menu
-    var burger=document.querySelector('.burger'), links=document.getElementById('nav-links');
-    var behind=[document.querySelector('main'),document.querySelector('footer')];
-    var setMenu=function(open){
-      nav.classList.toggle('open',open);
-      burger.setAttribute('aria-expanded',open?'true':'false');
-      document.body.style.overflow=open?'hidden':'';
-      // keep Tab inside the sheet instead of letting it walk the page behind it
-      behind.forEach(function(el){ if(el) open?el.setAttribute('inert',''):el.removeAttribute('inert'); });
-    };
-    burger.addEventListener('click',function(){ setMenu(!nav.classList.contains('open')); });
-    links.addEventListener('click',function(e){ if(e.target.closest('a')) setMenu(false); });
-    addEventListener('keydown',function(e){ if(e.key==='Escape') setMenu(false); });
-    addEventListener('resize',function(){ if(innerWidth>820) setMenu(false); });
-
-    // --- gallery arrows; also keeps them disabled at either end
-    var rail=document.querySelector('.rail');
-    var arrows=document.querySelectorAll('.rail-nav button');
-    var railMax=0, syncQueued=false;
-    var measure=function(){ railMax=rail.scrollWidth-rail.clientWidth-2; };
-    var applyArrows=function(){
-      syncQueued=false;
-      var had=document.activeElement;
-      arrows[0].disabled=rail.scrollLeft<=2;
-      arrows[1].disabled=rail.scrollLeft>=railMax;
-      // an arrow that disables itself must hand focus to its sibling, or the
-      // keyboard user is left with focus on nothing
-      if((had===arrows[0]||had===arrows[1])&&had.disabled){
-        var other=had===arrows[0]?arrows[1]:arrows[0];
-        if(!other.disabled) other.focus();
-      }
-    };
-    // never read layout inside the scroll handler - measure once, then batch
-    var syncArrows=function(){
-      if(syncQueued) return;
-      syncQueued=true; requestAnimationFrame(applyArrows);
-    };
-    var noMotion=matchMedia('(prefers-reduced-motion: reduce)');
-    arrows.forEach(function(b){
-      b.addEventListener('click',function(){
-        var step=(rail.querySelector('figure')||{}).offsetWidth||280;
-        rail.scrollBy({left:(+b.dataset.rail)*(step+20)*2,
-          behavior:noMotion.matches?'auto':'smooth'});
-      });
-    });
-    // drag-to-scroll for mice; pointerType filter leaves touch to the browser
-    var drag=false,startX=0,startLeft=0;
-    rail.addEventListener('pointerdown',function(e){
-      if(e.pointerType!=='mouse'||e.button!==0) return;
-      drag=true; startX=e.clientX; startLeft=rail.scrollLeft;
-      rail.classList.add('dragging');
-      try{rail.setPointerCapture(e.pointerId);}catch(_){}
-    });
-    var wantLeft=0, frame=0;
-    var applyScroll=function(){ frame=0; rail.scrollLeft=wantLeft; };
-    rail.addEventListener('pointermove',function(e){
-      if(!drag) return;
-      wantLeft=startLeft-(e.clientX-startX);
-      if(!frame) frame=requestAnimationFrame(applyScroll);
-    },{passive:true});
-    var endDrag=function(e){
-      if(!drag) return;
-      drag=false;
-      if(frame){ cancelAnimationFrame(frame); frame=0; rail.scrollLeft=wantLeft; }
-      rail.classList.remove('dragging');
-      try{rail.releasePointerCapture(e.pointerId);}catch(_){}
-    };
-    rail.addEventListener('pointerup',endDrag);
-    rail.addEventListener('pointercancel',endDrag);
-    rail.addEventListener('pointerleave',endDrag);
-    rail.addEventListener('dragstart',function(e){e.preventDefault();});
-
-    // Lazy images decode as they enter the viewport, which lands as a hitch in the
-    // middle of a drag. Once the gallery is on screen, fetch and decode the whole
-    // strip up front so dragging never waits for an image.
-    if('IntersectionObserver' in window){
-      var warm=new IntersectionObserver(function(es,obs){
-        if(!es.some(function(e){return e.isIntersecting;})) return;
-        obs.disconnect();
-        [].forEach.call(rail.querySelectorAll('img'),function(im){
-          im.loading='eager';
-          if(im.decode) im.decode().catch(function(){});
-        });
-      },{rootMargin:'400px 0px'});
-      warm.observe(rail);
+    // --- the background follows you: blobs drift on scroll and lean toward the
+    //     pointer. Transform only, batched into one frame, so it stays cheap.
+    if(!reduce){
+      var blobs=document.querySelectorAll('.aura i');
+      var px=0,py=0,sy=0,queued=false;
+      var draw=function(){
+        queued=false;
+        var y=sy*0.06;
+        blobs[0].style.transform='translate3d('+(px*26)+'px,'+(y+py*22)+'px,0)';
+        blobs[1].style.transform='translate3d('+(px*-34)+'px,'+(-y*1.6+py*-28)+'px,0)';
+      };
+      var queue=function(){ if(!queued){ queued=true; requestAnimationFrame(draw); } };
+      addEventListener('scroll',function(){ sy=window.scrollY; queue(); },{passive:true});
+      addEventListener('pointermove',function(e){
+        if(e.pointerType==='touch') return;
+        px=e.clientX/innerWidth-0.5;
+        py=e.clientY/innerHeight-0.5;
+        queue();
+      },{passive:true});
+      queue();
     }
 
-    rail.addEventListener('scroll',syncArrows,{passive:true});
-    addEventListener('resize',function(){ measure(); syncArrows(); });
-    addEventListener('load',function(){ measure(); syncArrows(); });
-    measure(); syncArrows();
-
-    // --- highlight the section you are actually looking at
+    // --- highlight whichever section you are looking at, in the left index
     if('IntersectionObserver' in window){
-      var navA=[].slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
-      var secs=navA.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+      var marks=[].slice.call(document.querySelectorAll('.index a[href^="#"]'));
+      var targets=[];
+      marks.forEach(function(a){
+        var el=document.getElementById(a.getAttribute('href').slice(1));
+        if(el && targets.indexOf(el)<0) targets.push(el);
+      });
       var spy=new IntersectionObserver(function(es){
         es.forEach(function(e){
           if(!e.isIntersecting) return;
-          var i=secs.indexOf(e.target);
-          navA.forEach(function(a,j){
-            j===i ? a.setAttribute('aria-current','true') : a.removeAttribute('aria-current');
+          marks.forEach(function(a){
+            a.getAttribute('href')==='#'+e.target.id
+              ? a.setAttribute('aria-current','true')
+              : a.removeAttribute('aria-current');
           });
         });
       },{rootMargin:'-45% 0px -50% 0px'});
-      secs.forEach(function(t){ if(t) spy.observe(t); });
+      targets.forEach(function(t){ spy.observe(t); });
     }
 
-    var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // --- reveal on scroll
     var items=document.querySelectorAll('.rv');
     if(reduce||!('IntersectionObserver' in window)){
-      items.forEach(function(el){el.classList.add('in');});
+      items.forEach(function(el){ el.classList.add('in'); });
       return;
     }
     var io=new IntersectionObserver(function(entries){
@@ -740,7 +697,7 @@
         if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
       });
     },{rootMargin:'0px 0px -12% 0px',threshold:.12});
-    items.forEach(function(el){io.observe(el);});
+    items.forEach(function(el){ io.observe(el); });
   })();
 </script>
 </body>
