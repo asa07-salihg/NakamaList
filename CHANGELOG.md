@@ -1,3 +1,9 @@
+## 1.7.4
+**Recent Activity stops waiting on a title's page**
+
+- Your friends' scores and their artwork now appear on Recent Activity the first time you open it. They come from your friends' lists, and until now only a title's page ever went and got those - so the rows were bare unless you happened to open something first, and looked fixed once you came back. Recent Activity fetches them itself now.
+- They arrive as each friend's list lands rather than all at the end, and the feed itself is not held up waiting for them. A list saved from a previous run shows straight away.
+
 ## 1.7.3
 **Two episodes in one minute**
 

@@ -17,7 +17,7 @@ on your phone, tablet and TV, in 56 languages.
 
 <br/><br/>
 
-[![Version](https://img.shields.io/badge/version-1.7.3-8b6cff?style=flat-square&labelColor=1d1929)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.7.4-8b6cff?style=flat-square&labelColor=1d1929)](CHANGELOG.md)
 [![Platform](https://img.shields.io/badge/Android%20%C2%B7%20Tablet%20%C2%B7%20TV-8.0%2B-3ddc84?style=flat-square&labelColor=1d1929)](#requirements)
 [![Languages](https://img.shields.io/badge/languages-56-b79bff?style=flat-square&labelColor=1d1929)](#languages)
 [![Price](https://img.shields.io/badge/free-no%20ads%2C%20no%20tracking-4c9f70?style=flat-square&labelColor=1d1929)](#download)
