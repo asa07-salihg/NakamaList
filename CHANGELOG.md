@@ -1,3 +1,17 @@
+## 1.7.6
+**Pure black, and a selector where you are looking**
+
+- A Pure black option for the Dark theme, in Settings then Theme and on the theme page during setup. On an OLED screen a black pixel is one that is switched off, so the backgrounds, the cards and the dividers all go down together rather than leaving grey furniture on a black screen.
+- It applies to Dark and not to System. System means following your device, and a black screen every evening is not something to inherit from a switch you set once in the afternoon.
+- On your profile, the Genres / Themes / Demographics buttons have moved down to sit directly above the card they change. They used to be at the top with Status and Minimum score, which meant scrolling back up to switch category and then back down to see what it did. Status and Minimum score have not moved, because those two do change the score and year charts.
+
+## 1.7.5
+**Sorting a list puts you back at the top of it**
+
+- Changing the sort, a filter or the search sometimes left you partway down the new order instead of at the first title, so you had to scroll up to see what you had just sorted for. It now starts at the top every time, on My List, on a friend's list, on Seasonal and in search.
+- Switching between Anime and Manga did the same thing, and more obviously: the two are different lists, and you arrived in the middle of one you had never scrolled.
+- Leaving the tab and coming back still returns you to where you were reading. What changed is that an old position can no longer attach itself to an order you have since changed.
+
 ## 1.7.4
 **Recent Activity stops waiting on a title's page**
 
