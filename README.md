@@ -11,7 +11,7 @@ on your phone, tablet and TV, in 56 languages.
 
 <br/>
 
-[![Version](https://img.shields.io/badge/version-1.7.6-8b6cff?labelColor=27303D&style=flat)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.7.8-8b6cff?labelColor=27303D&style=flat)](CHANGELOG.md)
 [![Android](https://img.shields.io/badge/Android%20%C2%B7%20Tablet%20%C2%B7%20TV-8.0%2B-3ddc84?labelColor=27303D&style=flat)](#requirements)
 [![Languages](https://img.shields.io/badge/languages-56-b79bff?labelColor=27303D&style=flat)](#languages)
 [![No ads](https://img.shields.io/badge/free-no%20ads%2C%20no%20tracking-4c9f70?labelColor=27303D&style=flat)](PRIVACY_POLICY.md)
@@ -82,8 +82,8 @@ this season, and your own Recent Activity across anime, episodes, manga and chap
 
 **Add people** by MyAnimeList username, or follow AniList accounts - both sets side by side.
 
-**Recent Activity.** Everyone you follow in one merged feed, newest first, swipeable across
-All, Anime, Episodes, Manga and Chapters.
+**Recent Activity.** Swipe between Friend Lists and Recent Activity. Everyone you follow sits in
+one merged feed, newest first, swipeable across All, Anime, Episodes, Manga and Chapters.
 
 **Their lists.** Browse a friend's anime and manga on the same screen as your own, with the same
 tabs, toolbar and layout.
@@ -100,7 +100,8 @@ search, and a random pick.
 
 **Rich title pages.** Synopsis, score and rank, related and recommended titles, characters and staff
 with their own pages, the trailer, opening and ending themes, status bars, per-episode discussions,
-and Share.
+and Share. Trailer, cast, staff, reviews and next-episode times still work with a MyAnimeList
+account alone.
 
 **Seasonal.** Browse every anime season, sorted the way you want.
 

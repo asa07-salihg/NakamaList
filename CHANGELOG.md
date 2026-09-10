@@ -1,3 +1,23 @@
+## 1.7.8
+**Swipe between your friends' lists and their activity, and episode times for everyone**
+
+- On the Friends page you can swipe sideways again between Friend Lists and Recent Activity. Inside a list, swiping still moves between the statuses, and when you reach the last one the next swipe carries you over to the other segment.
+- Recent Activity finds a poster for more rows. A title not on your own list is now looked up in every friend list the app has loaded, so a MyAnimeList entry that only a friend follows still gets its cover.
+- The next-episode countdown and the "aired since you last looked" check now also work if you use the app with only a MyAnimeList account. AniList stopped answering unsigned requests, which had quietly taken both away from those readers; the schedule now comes from AnimeSchedule as well, matched by id rather than by title.
+- Trailer, characters, staff, dub languages, adaptation links and reviews also come back for a MyAnimeList-only account. They are read from Kitsu's public API, joined by the same MyAnimeList id, with no key and no extra sign-in.
+- Kitsu reviews use the site's four grades (AWFUL, MEH, GOOD, GREAT) in the same star slot as AniList's 1-10 score. The source line and the "Open on" link name Kitsu or AniList to match where the review came from.
+- A new season that Kitsu has not linked to MyAnimeList yet is still matched by title, so its trailer is not dropped. Characters listed on Kitsu without voice credits (new cours) still appear on the rail.
+- The app no longer sends AniList requests it knows will be refused. After the first unsigned request is turned away, the rest wait six hours instead of failing one by one, which makes the page settle faster and leaves more room for the requests that do work.
+
+## 1.7.7
+**The airing countdown moves on by itself**
+
+- The countdown on a title's page used to reach "0m 0s" and stay there. It now says the episode is out, and a moment later it picks up the next one on its own, so you can leave the page open through a broadcast and it keeps up.
+- It could also sit on an episode that had already aired days earlier. When the schedule cannot be refreshed the row now shows the aired dates instead of counting down to a date in the past.
+- The cause was that AniList has stopped answering these requests unless they are signed. They now carry your AniList sign-in, so the schedule, cast, relations and the rest are current again. Requests also go out one at a time instead of all at once.
+- Episode notifications should be more reliable. The airing schedule was being read in a way that quietly discarded it for months at a time, and shows were only ever matched by one of their names - so a title you follow under its English name could go unnoticed. Both are fixed.
+- The background check for new episodes and news does far less work. It used to go through your whole list again for every headline of the past month, which on a large list was most of a minute of processing every fifteen minutes; it now prepares the list once and finishes in seconds.
+
 ## 1.7.6
 **Pure black, and a selector where you are looking**
 
