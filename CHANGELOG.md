@@ -1,3 +1,10 @@
+## 1.7.9
+**Rating the app without leaving it**
+
+- When you finish a series, NakamaList may ask what you make of the app. It appears as a small Google Play card over whatever page you are on: you leave a rating there and carry on, and nothing sends you out to the Play Store or loses your place.
+- It waits until you have finished a few titles before asking at all, and once it has asked it stays quiet for months. Google limits how often the card can be shown as well, so it will not turn up every time you finish something - and it never appears on a TV.
+- There is nothing to switch off. If you would rather not answer, dismissing the card is the whole of it, and nothing comes back to remind you.
+
 ## 1.7.8
 **Swipe between your friends' lists and their activity, and episode times for everyone**
 
