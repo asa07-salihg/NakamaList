@@ -1,3 +1,10 @@
+## 1.8.0
+**Chapters and volumes on your manga statistics**
+
+- The manga block on your profile now shows the chapters and volumes you have read, in the same place the anime block shows days and episodes. Chapters is the number that was missing: it is the manga equivalent of the episode count, and until now there was nowhere to see it.
+- It replaces Entries and Completed in that row. Completed was already listed a few lines below, so it was being counted twice, and the row was spending itself on a number you could see anyway.
+- This works whether your profile is reading from MyAnimeList or from AniList.
+
 ## 1.7.9
 **Rating the app without leaving it**
 
