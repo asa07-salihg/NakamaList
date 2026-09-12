@@ -1,3 +1,19 @@
+## 1.8.1
+**It stops closing itself**
+
+- The app could close outright while you were reading. Opening a character or a voice actor and asking for more of their credits goes to AniList, and when AniList answers "too many requests" - which it decides on its own schedule, not yours - nothing was there to catch the refusal, so the app shut. It is caught now: the credits simply stop loading, and the page you were on stays where it is.
+- That was one place it could happen; the same gap existed everywhere the app fetches something in the background. Every one of those has been closed. A request that fails can now leave a section empty, which is a nuisance, but it can no longer take the whole app down with it.
+- If the file holding your settings ever became unreadable - a full phone, an interrupted write, a cleanup app - NakamaList would not open at all, and would keep not opening until you cleared its data. It now starts on its defaults instead, and writes over them as soon as it can.
+- Tapping + on the home-screen widget could close the app on some phones, depending on what the manufacturer allows in the background. The +1 still shows on the widget; the failure is now quiet.
+- Dates set on a title - started on, finished on - were sent to MyAnimeList in whatever digits your language uses. In Arabic, Persian, Bengali and Nepali that meant the date was rejected and the change quietly did not save.
+- Two notifications arriving close together could replace each other in the tray, and the survivor could open the wrong item. They are kept apart now.
+- Ticking something read in the bell feed while a background check was running could undo the tick, or lose a newly-arrived episode. The two no longer write over each other.
+- Theme songs and trailers kept playing after you left a title, and the player stayed in memory. Leaving the page now stops and releases it - the same for videos inside forum posts and for the in-app browser.
+- When AniList asks the app to wait, it now waits only on AniList. Before, that pause was shared with everything else, so a rate limit could stop posters loading and lists refreshing on pages that had nothing to do with it.
+- Scrolling is lighter in a few places that were doing avoidable work on every frame: the News feed and the home history rows were rebuilding a date formatter for every visible row, the related and recommendation rails were rebuilding their contents whenever anything on the page changed, and the TV focus highlight was doing TV work on phones.
+- Every language the app ships in is now installed with it. Google Play was only installing the ones matching your phone's language, so picking any other language in Settings quietly fell back to English.
+- Opening a link in an external browser could fail on a work profile or a locked-down phone. It falls back to the in-app browser now instead of closing.
+
 ## 1.8.0
 **Chapters and volumes on your manga statistics**
 
