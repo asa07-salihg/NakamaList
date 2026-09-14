@@ -1,3 +1,9 @@
+## 1.8.2
+**Picking a person, and picking a score**
+
+- Opening the name picker on the Friends page could hang the app, and on a slower phone hang it long enough for Android to offer to close it. It was building a row for every single person you follow before it could show you any of them. Above a dozen people it now opens a searchable list that builds only the rows you can see, so you can type a few letters instead of scrolling past everyone.
+- Tapping a score to change it used to open every value on your scale at once. On the 100-point and one-decimal scales that meant a hundred rows: slow to open, and no way to reach 8.7 without scrolling most of them. It now asks for the whole number first and then the tenth - two taps, eleven rows either way, and every value is still there.
+
 ## 1.8.1
 **It stops closing itself**
 
