@@ -1,9 +1,9 @@
 # Terms of Use
 
 **App:** NakamaList  
-**Effective date:** July 27, 2026  
+**Effective date:** September 17, 2026  
 **Maintainer:** Ahmet Salih Gölen  
-**Contact:** nakamalist@proton.me  
+**Contact:** nakamalist@proton.me
 
 These Terms of Use ("Terms") govern your use of the NakamaList mobile application
 ("the App"). By installing or using the App, you agree to these Terms. If you do
@@ -82,11 +82,20 @@ authentication, or supported MyAnimeList functionality. They include, for exampl
 - **YouTube**, only when you tap a video embedded in a forum post or news article:
   the App loads YouTube's official IFrame embed so the trailer/PV plays in-app. The
   App does not download, extract, or re-host the video.
+- **Kitsu**, used read-only and without an account, to supply the same supplementary title details
+  (trailer, characters, staff, related titles, community reviews) for readers signed in to
+  MyAnimeList only. Your use of Kitsu is also subject to Kitsu's own terms.
 - **AniList**, used (a) without an account for supplementary read-only metadata and community
   reviews, and (b) optionally, if you sign in with your own AniList account, for the **Sync**
   feature, which reads and updates **your own** AniList list (status/progress/score) through the
   official AniList GraphQL API. Sync is user-initiated and only ever touches your own data. Your use
   of AniList is also subject to AniList's own Terms of Use; MyAnimeList remains the primary list.
+
+The App's **achievements** are based on the achievement system of **MALGRAPH**. The badge names, descriptions and
+images belong to that project and its respective rights holders; NakamaList reproduces them unchanged
+and claims no ownership of them. Every achievement is worked out on your own device from your own
+list, is visible only to you, and is not an award, endorsement, or statement by MyAnimeList, AniList,
+or MALGRAPH.
 
 The App also contains an optional **"Buy me a coffee" support link** in Settings. It is a
 voluntary donation, opens an external page operated by that provider, and buys no feature,

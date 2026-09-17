@@ -1,7 +1,7 @@
 # Privacy Policy
 
 **App:** NakamaList  
-**Effective date:** July 27, 2026  
+**Effective date:** September 17, 2026  
 **Maintainer:** Ahmet Salih Gölen  
 **Contact:** nakamalist@proton.me
 
@@ -95,14 +95,19 @@ All data the App stores is kept **locally on your device**, including:
 - App preferences, such as language, theme, fallback mode, news refresh interval,
   and similar settings.
 - News read/unread and bookmark state.
+- The achievement badge images, downloaded once and then kept on the device for good. They are
+  deliberately **not** part of "Clear cached data", because they are fixed artwork rather than a
+  refreshable copy of anything; they are excluded from cloud backup and device transfer, and
+  uninstalling the App removes them.
 - WebView/browser storage used by Android WebView for pages you open inside the App.
 
 NakamaList does not operate backend servers and does not upload, back up, or process
 your app data on NakamaList-controlled servers.
 
-Any statistics or charts the App shows about your own lists (such as the score, genre,
-and format breakdowns on the Profile screen) are **computed locally on your device**
-from data the official MyAnimeList API already returned. They are not sent anywhere.
+Any statistics, charts or achievements the App shows about your own lists (such as the score,
+genre, and format breakdowns on the Profile screen, and the achievement badges below them) are
+**computed locally on your device** from data the official MyAnimeList API already returned. They
+are not sent anywhere, and no achievement is published, shared, or visible to anyone else.
 
 Data stored by MyAnimeList itself is governed by MyAnimeList's own terms and privacy
 policy.
@@ -125,11 +130,18 @@ Network requests may be made to:
 - **YouTube** (`youtube-nocookie.com` / `img.youtube.com`), only when you tap a video
   embedded in a forum post or news article: the official YouTube IFrame embed is loaded
   in a WebView so the trailer/PV can play in-app. We never extract or proxy the video.
+- **Kitsu** (`kitsu.io` and its image CDN), used read-only and without an account, to show the same
+  supplementary details on a title's page - trailer, characters, staff, related titles and community
+  reviews - for readers who are signed in to MyAnimeList only. Only the title's public identifier (or,
+  when there is no mapping, its title) is sent; no account or personal data is involved.
 - **AniList** (`anilist.co` / `graphql.anilist.co`): used to display supplementary read-only
   anime/manga metadata and community reviews; and, if you sign in to AniList and use the optional
   **Sync** feature, to read and update **your own** AniList list entries (status/progress/score)
   through the official AniList API. NakamaList only ever accesses your own data and acts only when
   you start a sync.
+- **GitHub** (`raw.githubusercontent.com`), once, to download the achievement badge images the
+  Profile screen shows. The request carries no account information and is not repeated: each image is
+  stored on your device and re-used from there.
 - Image, RSS, CDN, or media sources referenced by the content displayed in the App or
   inside fallback web pages.
 - A **support/donation page** (`buymeacoffee.com`), only if you tap the optional

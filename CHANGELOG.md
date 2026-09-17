@@ -1,3 +1,15 @@
+## 1.8.3
+**Achievements**
+
+- Your profile has achievements now. 164 of them across anime and manga, from the badge system MALGRAPH built for MyAnimeList profiles, used here with permission and working exactly the way it does there.
+- They are worked out on your phone from your own list, so there is nothing to sign up for and nothing leaves the device. Watching, reading, scoring and even dropping nothing all count towards something.
+- Most come in four levels. Passing one keeps the earlier ones: they fold away under a line that says how many there are, and one tap brings them back.
+- Tap a badge to see which titles earned it, and tap any of those to open it.
+- The badge artwork is downloaded once, the first time you open the page, and then kept on your phone. Opening it again costs nothing.
+- Your manga block now shows Days, next to Mean Score, Volumes and Chapters. MyAnimeList counts a chapter as eight minutes and a volume as nine chapters, and a novel as four times either, so that is what this counts too. Re-reads are not included, so if you reread a lot this will read a little lower than your profile page.
+- Switching between MyAnimeList and AniList on your profile no longer empties the page. It used to throw the charts away and re-download your whole list to rebuild the same ones; now only the profile is refetched and everything else stays where it is.
+- The achievement cards on your profile are all the same size, and the list of titles a badge came from has moved inside the panel it opens, where it fits.
+
 ## 1.8.2
 **Picking a person, and picking a score**
 
