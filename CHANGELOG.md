@@ -1,3 +1,21 @@
+## 1.8.4
+**Getting to the right place**
+
+- Tapping a friend on a title's page took you to the Friends tab and then left you wherever you happened to have been last, usually Recent Activity - their list was loaded the whole time, one swipe away, with nothing saying so. It opens on their list now.
+- It also ignored which site the friend came from. An AniList friend was looked up under MyAnimeList, so their list came back wrong or empty and there was no way to reach them at all. The name now travels with the account it belongs to, and the page switches to it.
+- Home's feed switch has a third option: your own AniList activity. Your AniList account is the one account that can never show up under Friends - AniList answers "who do you follow", and nobody follows themselves - so until now there was nowhere in the app to see your own updates from that side.
+- Tapping "Show more" on a Discover row gives you the same cards the search results use, including the edit and +1 buttons. Before, a title you found by browsing could only be opened, while the same title found by typing its name could be added to your list on the spot.
+- On a manga written by one person and drawn by another, both names are now tappable. The two were one block with one destination, so tapping the artist opened the writer's page. Studios and magazines work the same way when a title has more than one.
+- News has a New anime tag, right next to All, for announcements only. Which articles belong there was worked out from sixty real headlines on MyAnimeList's own New Anime page rather than guessed at, so "Gets TV Anime", "Second Season in Production" and "Announced for Fall 2026" all land in it while "Reveals Main Cast" does not.
+- News now keeps three months of articles instead of one. The feed only ever hands over the most recent items, so what is kept is all there is to scroll back through, and a month meant the announcement of a season now airing had already gone.
+- Writers, artists and voice actors named in a news article open their page inside the app instead of throwing you out to a browser halfway through reading.
+- Your profile opens at the top, every time. It used to hand you back wherever you had scrolled to, and switching between MyAnimeList and AniList left you halfway down somebody else's numbers with nothing saying the page had changed.
+- Home's feed switch says "MyAnimeList activity" now rather than "Recent Activity", which described both options and told them apart for neither.
+- A studio's works list has the same cards as search: the score, how many people have it, and the buttons to add it to your list or add one episode. It was a poster and a name. With a MyAnimeList account the score, member count, type, episode count and Airing flag are MyAnimeList's, so each title reads exactly as it does in search. With AniList only, the same card is filled from AniList and MyAnimeList is not asked. The list itself still comes from AniList (or Kitsu). The page appears once everything is ready instead of filling scores in while you watch, and a studio you have opened before appears straight away. It also asks MyAnimeList for far less when that account is linked: titles you have already seen in a season, a ranking or a search cost nothing, and the rest are fetched fifteen at a time.
+- Adding a title to your list has one icon everywhere now - the list icon with a plus - on search results, Discover's full lists, a studio's works, Seasonal and a title's own page. Before, it was the edit pencil in some places and a bare plus in others, and the bare plus is what +1 looks like.
+- Adding a title from a studio's works list opened the edit sheet behind the studio page, where you could not see it. It opens on top.
+- Long lists load as you scroll: search results, Discover's full lists, a studio's works, a person's credits, reviews, and forum topics and posts. Nothing extra is fetched until you actually reach the bottom. If that automatic load ever adds nothing - a failed request, or only titles already on the list - a Load more button is still there to tap, so you are never stuck.
+
 ## 1.8.3
 **Achievements**
 
