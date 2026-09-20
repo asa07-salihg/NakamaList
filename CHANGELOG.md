@@ -1,3 +1,12 @@
+## 1.8.5
+**Behind the scenes**
+
+- Videos inside News articles and forum posts can go fullscreen now, and turn with the phone, the same way a trailer on a title's page does. The fullscreen button in them did nothing before.
+- The achievement cards on your profile are wider, so titles and levels like "Historical: level 3" fit instead of being cut off.
+- Tapping one of those cards opens the achievements page on that badge, outlined for a moment so you can see which one it is. It used to open at the top and leave you to find it.
+- The app now keeps its own pace with MyAnimeList: at most 120 requests a minute, never several in the same instant. MyAnimeList publishes no limit, but it does start refusing when an app asks too fast, and scrolling quickly through a few large studios or long search results could get close. You will not notice the difference in normal use.
+- If MyAnimeList does say "slow down", the app now listens: it waits as long as it was told (or a minute) before asking again, instead of carrying on and collecting more refusals. A friend's private list is not mistaken for this, so it never pauses anything else.
+
 ## 1.8.4
 **Getting to the right place**
 
