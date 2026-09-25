@@ -4,6 +4,8 @@
 - Reply on MyAnimeList is pinned to the bottom of every forum thread and episode discussion, so it is always one tap away. Since posts started loading as you scroll, it sat after the last post and could only be reached by scrolling through every page of the thread.
 - A small round button in the corner jumps to the newest post or back to the first. Jumping to the newest post loads the rest of the thread in one go.
 - On Friends, swiping from Recent Activity back to a friend's list no longer flashes past the Completed tab on its way. The list opens straight on the tab you left it on.
+- On some phones with a work profile or a locked-down browser, tapping Sign in with MyAnimeList or AniList on the welcome screen closed the app. It now opens the sign-in page in the next browser that can, or inside the app if none can.
+
 
 ## 1.8.5
 **Behind the scenes**
