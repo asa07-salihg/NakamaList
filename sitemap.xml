@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://asa07-salihg.github.io/NakamaList/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image><image:loc>https://asa07-salihg.github.io/NakamaList/assets/home.png</image:loc></image:image>
+    <image:image><image:loc>https://asa07-salihg.github.io/NakamaList/assets/mylist.png</image:loc></image:image>
+    <image:image><image:loc>https://asa07-salihg.github.io/NakamaList/assets/friends.png</image:loc></image:image>
+    <image:image><image:loc>https://asa07-salihg.github.io/NakamaList/assets/friendlist.png</image:loc></image:image>
+    <image:image><image:loc>https://asa07-salihg.github.io/NakamaList/assets/discover.png</image:loc></image:image>
+    <image:image><image:loc>https://asa07-salihg.github.io/NakamaList/assets/detail.png</image:loc></image:image>
+    <image:image><image:loc>https://asa07-salihg.github.io/NakamaList/assets/seasonal.png</image:loc></image:image>
+    <image:image><image:loc>https://asa07-salihg.github.io/NakamaList/assets/news.png</image:loc></image:image>
+    <image:image><image:loc>https://asa07-salihg.github.io/NakamaList/assets/news-article.png</image:loc></image:image>
+    <image:image><image:loc>https://asa07-salihg.github.io/NakamaList/assets/profile.png</image:loc></image:image>
+    <image:image><image:loc>https://asa07-salihg.github.io/NakamaList/assets/tablet-home.png</image:loc></image:image>
+    <image:image><image:loc>https://asa07-salihg.github.io/NakamaList/assets/tablet-mylist.png</image:loc></image:image>
+    <image:image><image:loc>https://asa07-salihg.github.io/NakamaList/assets/tablet-detail.png</image:loc></image:image>
+    <image:image><image:loc>https://asa07-salihg.github.io/NakamaList/assets/tablet-seasonal.png</image:loc></image:image>
   </url>
 </urlset>
