@@ -4,17 +4,17 @@
 
 <br/>
 
-**An unofficial, mobile-first MyAnimeList client for anime and manga.**
+**An unofficial MyAnimeList (MAL) client for Android, for anime and manga.**
 
-Track your lists, follow your friends, and keep up with the community,<br/>
-on your phone, tablet and TV, in 56 languages.
+Keep your list up to date, see what your friends are watching,<br/>
+and how they rated the show you just finished.
 
 <br/>
 
-[![Version](https://img.shields.io/badge/version-1.8.6-8b6cff?labelColor=27303D&style=flat)](CHANGELOG.md)
-[![Android](https://img.shields.io/badge/Android%20%C2%B7%20Tablet%20%C2%B7%20TV-8.0%2B-3ddc84?labelColor=27303D&style=flat)](#requirements)
-[![Languages](https://img.shields.io/badge/languages-56-b79bff?labelColor=27303D&style=flat)](#languages)
-[![No ads](https://img.shields.io/badge/free-no%20ads%2C%20no%20tracking-4c9f70?labelColor=27303D&style=flat)](PRIVACY_POLICY.md)
+[![Latest release](https://img.shields.io/github/v/release/asa07-salihg/NakamaList?label=latest&logo=github&logoColor=white&color=8b6cff&labelColor=27303D&style=flat)](CHANGELOG.md)
+[![Downloads](https://img.shields.io/badge/Google%20Play-10K%2B%20downloads-3ddc84?logo=googleplay&logoColor=white&labelColor=27303D&style=flat)](https://play.google.com/store/apps/details?id=com.nakamalist.app)
+[![Website](https://img.shields.io/badge/website-nakamalist-b79bff?logo=googlechrome&logoColor=white&labelColor=27303D&style=flat)](https://asa07-salihg.github.io/NakamaList/)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-support-ffdd00?logo=buymeacoffee&logoColor=ffdd00&labelColor=27303D&style=flat)](https://buymeacoffee.com/asa07salihg)
 
 <a href="https://play.google.com/store/apps/details?id=com.nakamalist.app">
   <img src="assets/getitonplaystore.png" height="62" alt="Get it on Google Play"/>
@@ -22,7 +22,7 @@ on your phone, tablet and TV, in 56 languages.
 
 <br/>
 
-[Website](https://asa07-salihg.github.io/NakamaList/)&nbsp;&nbsp;·&nbsp;&nbsp;[Screenshots](#screenshots)&nbsp;&nbsp;·&nbsp;&nbsp;[Features](#features)&nbsp;&nbsp;·&nbsp;&nbsp;[Download](#download)&nbsp;&nbsp;·&nbsp;&nbsp;[Support](#support)
+[Screenshots](#screenshots)&nbsp;&nbsp;·&nbsp;&nbsp;[Features](#features)&nbsp;&nbsp;·&nbsp;&nbsp;[Download](#download)&nbsp;&nbsp;·&nbsp;&nbsp;[Support](#support)
 
 </div>
 
@@ -55,16 +55,6 @@ on your phone, tablet and TV, in 56 languages.
 ## Features
 
 Sign in with **MyAnimeList or AniList** - either one works on its own, and linking both unlocks sync.
-
-- **Everything is editable** - status, score, progress, volumes, dates, rewatches, priority, tags, notes, and a one-tap `+1`
-- **One feed for everyone** - friends from MyAnimeList and AniList, merged, newest first
-- **Friend Scores** - what each person gave a title, next to your own, on every page
-- **Discover** - official rankings, Suggested-for-You, search, and a random pick
-- **Seasonal** - every anime season, sortable, with Plan to Watch straight from the grid
-- **News, forums and clubs** - read inside the app, not in a browser tab
-- **Phone, tablet and TV** - real tablet layouts; Android TV and Google TV by remote
-- **56 languages** - including right-to-left: Arabic, Hebrew, Persian, Urdu
-- **Private by design** - no ads, no third-party analytics, no tracking
 
 ### Your lists
 
@@ -109,14 +99,9 @@ account alone.
 
 **Notifications.** Airing reminders and news about your list, in a bookmarkable bell feed.
 
-### Everywhere, for everyone
+### Make it yours
 
-**Phone, tablet and TV.** Android TV and Google TV with full remote control, and tablets that fill
-the screen instead of stretching a portrait layout sideways.
-
-**56 languages**, including right-to-left support for Arabic, Hebrew, Persian and Urdu.
-
-**Make it yours.** Light, dark and white themes, an accent colour dial, swipe *revolver* navigation
+**Looks.** Light, dark and white themes, an accent colour dial, swipe *revolver* navigation
 you can reorder, and home-screen **Continue** widgets.
 
 **MAL and AniList sync** when both are linked: a previewed one-way apply, plus automatic
