@@ -1,3 +1,19 @@
+## 1.8.7
+**Made for the TV remote**
+
+- On Android TV and Google TV the whole app now works with the remote alone. Every button, card, tab, chip, switch, slider and menu can be reached with the arrow keys, and OK does what a tap does.
+- The selected item has a clear glowing outline around it, drawn outside the poster or card instead of over it, and it glides from one item to the next as you move.
+- Screens are laid out for a TV the way they are for a tablet: text and posters are sized for viewing from the sofa, and grids show more titles per row.
+- Coming up from the bottom bar starts at the top of the screen, and a tab bar is entered at the tab that is open. Moving up from a list lands on the selected tab or category, not whichever one happens to sit nearest.
+- Back always returns you to the thing you opened: the poster on Home or Discover, the topic in Forums, the article in News, the row in Settings.
+- Trailers and opening/ending videos centre themselves on screen when selected, so they can be watched, and OK plays and pauses them.
+- Text fields no longer pop the keyboard up just because you passed over them. Press OK on a field to type, and Back to put the keyboard away.
+- Long text - articles, reviews, character biographies, forum posts, the privacy policy and terms, licences - scrolls a page at a time with the arrow keys before moving on.
+- Forum threads: Right from a post reaches the jump-to-newest button, and the spoilers inside a post can be opened one by one.
+- On a TV, sharing is hidden (there is nothing to share to), and switches are toggled by selecting their whole row.
+- Opening a Discover tab no longer leaves its rows scrolled half a poster to the side.
+
+
 ## 1.8.6
 **Getting around threads**
 
