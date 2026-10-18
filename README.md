@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/og-card.png" alt="NakamaList - your anime, your friends, one app" width="100%"/>
+<img src="assets/og-card.png" alt="NakamaList: track anime and manga with your friends" width="100%"/>
 
 <br/>
 
@@ -49,67 +49,57 @@ and how they rated the show you just finished.
   <img src="assets/tablet-home.webp"   width="44%" alt="NakamaList on an Android tablet, in landscape"/>
   <img src="assets/tablet-mylist.webp" width="44%" alt="My List on a tablet, two panes side by side"/>
   <br/>
-  <sub><b>On a tablet it fills the screen</b> - not a portrait strip stretched sideways.</sub>
+  <sub>On a tablet the app uses the whole screen in landscape.</sub>
 </div>
 
 ## Features
 
-Sign in with **MyAnimeList or AniList** - either one works on its own, and linking both unlocks sync.
+You can sign in with MyAnimeList, AniList or both. Each one works on its own. When both are linked, every
+change you make on MyAnimeList is copied to AniList, and the Sync screen shows the differences between the
+two lists before you apply them.
 
 ### Your lists
 
-**Fully editable.** Status, score, episode and chapter progress, volumes, dates, rewatch and reread
-counts, priority, tags and comments - with a one-tap **+1**. Edits are instant and show up
-everywhere at once.
+Edit everything MyAnimeList lets you edit: status, score, episodes and chapters, volumes, start and finish
+dates, rewatch and reread counts, priority, tags and comments. The +1 button adds an episode in one tap,
+and the change shows up on every screen right away.
 
-**Your way.** List or poster-grid layout, status tabs, type filters and sorts, your preferred score
-scale (100-point, 10-point decimal, 5 stars, smileys) and titles in romaji or English.
+Lists can be shown as rows or a poster grid, with status tabs, type filters and sorting. Scores can be out
+of 10, out of 10 with decimals or out of 100, and titles can be in romaji or English.
 
-**A personalized Home.** Continue Watching and Reading, New Episodes, Plan-to-Watch and Plan-to-Read,
-this season, and your own Recent Activity across anime, episodes, manga and chapters.
+Home shows what you're watching and reading, new episodes, your Plan to Watch and Plan to Read lists,
+this season, and your own recent activity.
 
 ### Friends
 
-**Add people** by MyAnimeList username, or follow AniList accounts - both sets side by side.
+Add friends by their MyAnimeList username or follow people on AniList. Their updates appear in one feed,
+newest first, and you can filter it by anime, episodes, manga and chapters.
 
-**Recent Activity.** Swipe between Friend Lists and Recent Activity. Everyone you follow sits in
-one merged feed, newest first, swipeable across All, Anime, Episodes, Manga and Chapters.
+You can open a friend's anime and manga list and browse it the same way as your own. Every title page
+shows what your friends scored it, next to your own score and their average.
 
-**Their lists.** Browse a friend's anime and manga on the same screen as your own, with the same
-tabs, toolbar and layout.
-
-**Friend Scores** on every title page - what each person gave it, your score alongside, and their
-average.
-
-**Export and Import** your friends list, so a new phone or a reinstall costs nothing.
+Your friends list can be exported and imported, so you don't lose it when you change phones.
 
 ### Discover and community
 
-**Discover.** Every official ranking, Top Ranked Anime and Manga, Suggested-for-You, full-screen
-search, and a random pick.
+Discover has the official rankings, Top Ranked Anime and Manga, Suggested for You, search, and a button
+that opens a random top-ranked anime.
 
-**Rich title pages.** Synopsis, score and rank, related and recommended titles, characters and staff
-with their own pages, the trailer, opening and ending themes, status bars, per-episode discussions,
-and Share. Trailer, cast, staff, reviews and next-episode times still work with a MyAnimeList
-account alone.
+Title pages have the synopsis, score and rank, related and recommended titles, characters and staff with
+their own pages, the trailer, opening and ending songs, and a discussion thread for every episode.
 
-**Seasonal.** Browse every anime season, sorted the way you want.
+You can browse every anime season, read MyAnimeList news in the app, read the forums and browse clubs.
+The app can notify you when a new episode of something you're watching comes out, or when there's news
+about a title on your list.
 
-**News and community.** MyAnimeList news with an in-app reader, read-only Forums, and a Clubs browser.
+### Settings
 
-**Notifications.** Airing reminders and news about your list, in a bookmarkable bell feed.
-
-### Make it yours
-
-**Looks.** Light, dark and white themes, an accent colour dial, swipe *revolver* navigation
-you can reorder, and home-screen **Continue** widgets.
-
-**MAL and AniList sync** when both are linked: a previewed one-way apply, plus automatic
-write-through so an edit on one side lands on the other.
+System, white and dark themes with an optional pure black mode, accent colours, a reorderable bottom bar
+and home screen widgets for what you're watching and reading.
 
 > [!IMPORTANT]
-> **Privacy-first.** No ads, no third-party analytics, no tracking. Your sign-in is encrypted on your
-> device with a key that never leaves it. A mature-content (NSFW) toggle is off by default.
+> No ads, no third-party analytics and no tracking. Your sign-in is stored encrypted on your device.
+> Adult titles are hidden unless you turn them on.
 
 ## Download
 
@@ -121,30 +111,29 @@ write-through so an edit on one side lands on the other.
 
 </div>
 
-*Free. No account needed to browse - sign in only when you want to track.*
+*Free. You can browse without an account and sign in when you want to track.*
 
 ### Requirements
 
 - **Android** 8.0 (API 26) or newer
-- **Phones** in portrait and landscape
-- **Tablets** with multi-pane layouts that use the full screen
+- **Phones** in portrait
+- **Tablets** with layouts that use the full screen
 - **TV** on Android TV and Google TV, with its own launcher banner and full remote navigation
 - **Account** on MyAnimeList or AniList to track; browsing works without one
 
 ### Languages
 
-NakamaList is available in **56 languages**, including right-to-left support for Arabic, Hebrew,
-Persian and Urdu. The primary language is English, with Turkish as a first-class localization.
-Change it any time in Settings.
+NakamaList is available in **56 languages**, including the right-to-left languages Arabic, Hebrew,
+Persian and Urdu. You can change the language in Settings.
 
 ## Support
 
-- **Found a bug?** [Report it](https://github.com/asa07-salihg/NakamaList/issues/new?template=bug_report.md) - the template asks for the device, Android version and steps
+- **Found a bug?** [Report it](https://github.com/asa07-salihg/NakamaList/issues/new?template=bug_report.md). The template asks for your device, Android version and the steps.
 - **Want a feature?** [Suggest it](https://github.com/asa07-salihg/NakamaList/issues/new?template=feature_request.md)
 - **Anything else?** [nakamalist@proton.me](mailto:nakamalist@proton.me)
 
-If you would like to support development, use the **Sponsor** button at the top of this page
-(see [`FUNDING.yml`](FUNDING.yml)). It is entirely optional and always appreciated.
+If you want to support development, there is a **Sponsor** button at the top of this page
+(see [`FUNDING.yml`](FUNDING.yml)).
 
 ## Privacy and Terms
 

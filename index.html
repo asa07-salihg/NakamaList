@@ -4,6 +4,7 @@
   <meta name="google-site-verification" content="fendhI7GyMksF6w1IQmldaxWb5cM06VE_6yD8SFNYQg" />
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script>if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('io')</script>
 
   <title>NakamaList: MyAnimeList Client for Anime &amp; Manga on Android</title>
   <meta name="description" content="Free, unofficial MyAnimeList (MAL) client for Android. Track anime and manga, sign in with MAL or AniList, and compare scores with friends. No ads."/>
@@ -26,7 +27,7 @@
   <meta property="og:image" content="https://asa07-salihg.github.io/NakamaList/assets/og-card.png"/>
   <meta property="og:image:secure_url" content="https://asa07-salihg.github.io/NakamaList/assets/og-card.png"/>
   <meta property="og:image:type" content="image/png"/>
-  <meta property="og:image:alt" content="NakamaList - your anime, your friends, one app"/>
+  <meta property="og:image:alt" content="NakamaList: track anime and manga with your friends"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
   <meta property="og:url" content="https://asa07-salihg.github.io/NakamaList/"/>
@@ -36,7 +37,7 @@
   <meta name="twitter:title" content="NakamaList: MyAnimeList Client for Anime &amp; Manga on Android"/>
   <meta name="twitter:description" content="Free, unofficial MyAnimeList (MAL) client for Android. Track anime and manga, sign in with MAL or AniList, and compare scores with friends. No ads."/>
   <meta name="twitter:image" content="https://asa07-salihg.github.io/NakamaList/assets/og-card.png"/>
-  <meta name="twitter:image:alt" content="NakamaList - your anime, your friends, one app"/>
+  <meta name="twitter:image:alt" content="NakamaList: track anime and manga with your friends"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -52,35 +53,25 @@
       --badge-h:clamp(50px,4vw,58px);
       --mincho:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
       --gothic:Roboto,"Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+      /* set per element by the animation script; defaults here */
+      --d:0s; --c:0; --ul:0px; --uw:0px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     :target,section[id]{scroll-margin-top:0}
-    body{background:var(--washi);color:var(--sumi);font-family:var(--gothic);font-size:16.5px;line-height:1.7;
+    body{background:var(--washi);color:var(--sumi);font-family:var(--gothic),sans-serif;font-size:16.5px;line-height:1.7;
       -webkit-font-smoothing:antialiased;overflow-x:hidden;font-feature-settings:"palt"}
     @supports (overflow:clip){body{overflow-x:clip}}
     a{color:inherit}
     img{display:block;max-width:100%}
     :focus-visible{outline:2px solid var(--fuji-ink);outline-offset:3px}
     ::selection{background:var(--fuji);color:#fff}
-    .skip{position:absolute;left:-9999px;top:0;z-index:90;background:var(--sumi);color:#fff;padding:12px 18px}
+    .skip{position:absolute;left:-9999px;top:0;z-index:90;background:var(--sumi);color:var(--washi);padding:12px 18px}
     .skip:focus{left:0}
     .wrap{max-width:calc(var(--max) + 2*var(--edge));margin-inline:auto;padding-inline:var(--edge)}
-    h1,h2{font-family:var(--mincho);font-weight:700;line-height:1.18;letter-spacing:.005em;text-wrap:balance}
-    .tate{writing-mode:vertical-rl;font-family:var(--mincho);letter-spacing:.18em}
+    h1,h2{font-family:var(--mincho),serif;font-weight:700;line-height:1.18;letter-spacing:.005em;text-wrap:balance}
+    .tate{writing-mode:vertical-rl;font-family:var(--mincho),serif;letter-spacing:.18em}
 
-    .head{position:sticky;top:0;z-index:40;background:rgba(17,16,21,.96);border-bottom:1px solid var(--rule)}
-    .head .wrap{display:flex;align-items:center;gap:24px;height:62px}
-    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--mincho);font-weight:700;font-size:19px}
-    .logo img{width:30px;height:30px;border-radius:8px}
-    .nav{display:flex;gap:26px;margin-left:auto;font-size:14px}
-    .nav a{text-decoration:none;color:var(--sumi-2)}
-    .nav a:hover,.nav a[aria-current]{color:var(--sumi);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
-    .get{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:14px;font-weight:500;
-      background:var(--fuji);color:#fff;padding:8px 16px;border-radius:20px;transition:background .2s}
-    .get:hover{background:#a58fff}
-    .get img{width:15px;height:15px}
-    @media(max-width:980px){.nav{display:none}.get{margin-left:auto}}
 
     .phone{width:var(--pw);aspect-ratio:var(--phone);flex:none;border-radius:calc(var(--pw)*.12);
       border:1px solid var(--frame);background:#000;overflow:hidden}
@@ -123,7 +114,6 @@
     .row h2{font-size:clamp(1.8rem,2.8vw,2.6rem)}
     .row p{color:var(--sumi-2);font-size:clamp(1.02rem,1.2vw,1.12rem);max-width:38ch;margin-top:20px}
     .row .shots{justify-content:center}
-    .alt{background:var(--washi-2)}
     @media(max-width:880px){
       .row{grid-template-columns:minmax(0,1fr);gap:28px}
       .row .tate{writing-mode:horizontal-tb;flex-direction:row;padding:0;gap:10px;align-items:baseline}
@@ -145,7 +135,7 @@
     .faq details:first-child{border-top:1px solid var(--rule)}
     .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-weight:700;font-size:16.5px}
     .faq summary::-webkit-details-marker{display:none}
-    .faq summary::after{content:"+";font-family:var(--mincho);font-size:22px;line-height:1;color:var(--sumi-2)}
+    .faq summary::after{content:"+";font-family:var(--mincho),serif;font-size:22px;line-height:1;color:var(--sumi-2)}
     .faq details[open] summary::after{content:"\2212"}
     .faq details p{margin-top:10px;font-size:15.5px}
     .faq a{color:var(--fuji-ink);font-weight:700}
@@ -180,22 +170,70 @@
     .f-note a:hover{color:var(--sumi)}
     @media(max-width:880px){.row.wide,.row.faq{grid-template-columns:minmax(0,1fr)}}
     @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-    @media print{.head,.shots,.tab,.cta,.share{display:none!important}}
+    @media print{.shots,.tab,.cta,.share{display:none!important}}
 
     .waves{position:fixed;inset:0;z-index:0;pointer-events:none}
     main,footer{position:relative;z-index:1}
     .alt{background:rgba(24,23,30,.72)}
-    .head{z-index:40}
 
     .say{padding-block:clamp(56px,9vh,100px);text-align:center;position:relative}
     .say::before{content:"";position:absolute;top:0;left:var(--edge);right:var(--edge);height:1px;background:var(--rule)}
-    .say p{font-family:var(--mincho);font-weight:700;font-size:clamp(1.5rem,2.8vw,2.4rem);line-height:1.4;max-width:26ch;margin-inline:auto;text-wrap:balance}
+    .say p{font-family:var(--mincho),serif;font-weight:700;font-size:clamp(1.5rem,2.8vw,2.4rem);line-height:1.4;max-width:26ch;margin-inline:auto;text-wrap:balance}
     .say em{font-style:normal;color:var(--fuji)}
     .end .badge img{height:calc(var(--badge-h) * 2)}
+
+    /* scroll animations, only when html.io is set */
+    .progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:80;transform-origin:0 50%;transform:scaleX(0);background:var(--fuji);pointer-events:none}
+    @keyframes rise{from{opacity:0;translate:0 36px}to{opacity:1;translate:0 0}}
+    @keyframes phoneIn{from{opacity:0;translate:0 80px;rotate:6deg;scale:.92}to{opacity:1;translate:0 0;rotate:0deg;scale:1}}
+    .io .hero .app,.io .hero h1 span,.io .hero .lede,.io .hero .facts,.io .hero .cta{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+    .io .hero h1 span:nth-child(1){animation-delay:.08s}
+    .io .hero h1 span:nth-child(2){animation-delay:.2s}
+    .io .hero h1 span:nth-child(3){animation-delay:.32s}
+    .io .hero .lede{animation-delay:.44s}
+    .io .hero .cta{animation-delay:.56s}
+    .io .hero .phone{animation:phoneIn 1.2s cubic-bezier(.2,.7,.2,1) .3s both}
+
+    .io .rv{opacity:0;translate:0 48px;transition:opacity .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),translate 1s cubic-bezier(.2,.7,.2,1) var(--d,0s),
+      rotate 1s cubic-bezier(.2,.7,.2,1) var(--d,0s),scale 1s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+    .io .rv.l{translate:-56px 0}
+    .io .rv.ph{translate:0 110px;rotate:5deg;scale:.9}
+    .io .rv.b{rotate:-5deg}
+    .io .rv.zoom{translate:0 60px;scale:.86}
+    .io .rv.blur{translate:0 24px}
+    html.io .rv.in{opacity:1;translate:0 0;rotate:0deg;scale:1}
+    .io .row .tate .ln{transform-origin:50% 0;transform:scaleY(0);transition:transform 1.1s cubic-bezier(.2,.7,.2,1) .25s}
+    .io .row .tate.in .ln{transform:none}
+    @media(max-width:880px){.io .row .tate .ln{transform-origin:0 50%;transform:scaleX(0)}.io .row .tate.in .ln{transform:none}}
+
+    .phone,.tab{transition:scale .5s cubic-bezier(.2,.7,.2,1)}
+    @media(hover:hover) and (pointer:fine){.phone:hover,.tab:hover{scale:1.03}}
+    .badge{transition:translate .3s cubic-bezier(.2,.7,.2,1),opacity .2s}
+    .badge:hover{translate:0 -3px}
+    .row h2{position:relative}
+    .io .row h2::after{content:"";position:absolute;left:var(--ul,0);bottom:-10px;width:var(--uw,0);height:2px;background:var(--fuji);
+      transform-origin:0 50%;transform:scaleX(0);transition:transform 1.1s cubic-bezier(.2,.7,.2,1) .4s}
+    .io .row .in h2::after,.io .row h2.in::after{transform:none}
+    @media(max-width:880px){.io .rv.l{translate:0 40px}}
+    .io .ch{display:inline-block;opacity:0;translate:0 -.5em;transition:opacity .6s ease calc(var(--c,0)*.09s + .15s),translate .7s cubic-bezier(.2,.7,.2,1) calc(var(--c,0)*.09s + .15s)}
+    .io.ready .hero .tate .ch,.io .in .ch,.io .in.tate .ch{opacity:1;translate:0 0}
+    .io .hero .tate{animation:none}
+    .io .row .w{display:inline-block;opacity:0;translate:0 .55em;transition:opacity .7s ease calc(var(--c,0)*.06s + .1s),translate .8s cubic-bezier(.2,.7,.2,1) calc(var(--c,0)*.06s + .1s)}
+    .io .row .in .w{opacity:1;translate:0 0}
+    .io .say .sw{opacity:.18;transition:opacity .25s linear}
+    .io .rv.pop{translate:0 14px;scale:.6}
+    .faq summary{transition:color .2s}
+    .faq summary:hover{color:#fff}
+    @media(hover:hover) and (pointer:fine){.tabs3 figure:hover figcaption{color:var(--sumi)}}
+    figcaption{transition:color .3s}
+    .faq details p{transition:opacity .4s ease,translate .4s ease}
+    .faq details:not([open]) p{opacity:0;translate:0 -6px}
+    .faq summary::after{transition:rotate .3s ease}
+    .faq details[open] summary::after{rotate:180deg}
   </style>
 
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://asa07-salihg.github.io/NakamaList/#website","name":"NakamaList","url":"https://asa07-salihg.github.io/NakamaList/","inLanguage":"en"},{"@type":"SoftwareApplication","name":"NakamaList","softwareVersion":"1.8.7","dateModified":"2026-10-09","operatingSystem":"Android 8.0+","applicationCategory":"EntertainmentApplication","url":"https://asa07-salihg.github.io/NakamaList/","downloadUrl":"https://play.google.com/store/apps/details?id=com.nakamalist.app","installUrl":"https://play.google.com/store/apps/details?id=com.nakamalist.app","image":"https://asa07-salihg.github.io/NakamaList/assets/og-card.png","inLanguage":"en","description":"Free, ad-free MyAnimeList client for Android, tablet and TV. Track anime and manga, follow friends and compare their scores, and browse seasonal anime, rankings, news and forums.","author":{"@type":"Person","name":"Ahmet Salih Golen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"screenshot":[{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/home.png","url":"https://asa07-salihg.github.io/NakamaList/assets/home.png","width":1080,"height":2400,"caption":"NakamaList, an unofficial MyAnimeList app for Android: home screen with new episodes and Continue Watching"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/friends.png","url":"https://asa07-salihg.github.io/NakamaList/assets/friends.png","width":1080,"height":2400,"caption":"Friends activity feed in NakamaList, merging MyAnimeList and AniList friends in one place"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/friendlist.png","url":"https://asa07-salihg.github.io/NakamaList/assets/friendlist.png","width":1080,"height":2400,"caption":"A friend's anime list opened in NakamaList, with the same tabs as your own list"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/mylist.png","url":"https://asa07-salihg.github.io/NakamaList/assets/mylist.png","width":1080,"height":2400,"caption":"My List in the NakamaList MyAnimeList app, tracking anime and manga with status tabs and scores"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/detail.png","url":"https://asa07-salihg.github.io/NakamaList/assets/detail.png","width":1080,"height":2400,"caption":"Anime title page in NakamaList with synopsis, score, characters and Friend Scores"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/discover.png","url":"https://asa07-salihg.github.io/NakamaList/assets/discover.png","width":1080,"height":2400,"caption":"Discover screen in the NakamaList Android app with top anime rankings and recommendations"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/seasonal.png","url":"https://asa07-salihg.github.io/NakamaList/assets/seasonal.png","width":1080,"height":2400,"caption":"Seasonal anime chart in NakamaList showing this season as a grid of posters"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/news.png","url":"https://asa07-salihg.github.io/NakamaList/assets/news.png","width":1080,"height":2400,"caption":"MyAnimeList anime news shown as cards in the NakamaList app"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/profile.png","url":"https://asa07-salihg.github.io/NakamaList/assets/profile.png","width":1080,"height":2400,"caption":"Profile screen in NakamaList with anime and manga statistics and score distribution"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/tablet-home.png","url":"https://asa07-salihg.github.io/NakamaList/assets/tablet-home.png","width":2560,"height":1600,"caption":"NakamaList MyAnimeList app on an Android tablet: home screen in landscape"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/tablet-mylist.png","url":"https://asa07-salihg.github.io/NakamaList/assets/tablet-mylist.png","width":2560,"height":1600,"caption":"My List in NakamaList on an Android tablet, with the list and a title side by side"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/tablet-detail.png","url":"https://asa07-salihg.github.io/NakamaList/assets/tablet-detail.png","width":2560,"height":1600,"caption":"Anime title page in NakamaList on an Android tablet across two panes"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/tablet-seasonal.png","url":"https://asa07-salihg.github.io/NakamaList/assets/tablet-seasonal.png","width":2560,"height":1600,"caption":"Seasonal anime chart in NakamaList on an Android tablet as a wide grid of posters"}],"featureList":["Track anime and manga","Friends activity feed and Friend Scores","Sign in with MyAnimeList or AniList","Optional AniList sync","Trailers, characters, staff and reviews with a MyAnimeList account alone","Seasonal anime","Rankings and recommendations","News, forums and clubs","New-episode notifications","Profile statistics","Android tablet and Android TV support","56 languages"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is NakamaList free?","acceptedAnswer":{"@type":"Answer","text":"Yes. No ads, no subscription, and no third-party tracking."}},{"@type":"Question","name":"Is it an official MyAnimeList app?","acceptedAnswer":{"@type":"Answer","text":"No. It's an independent app that signs in through the official MyAnimeList and AniList APIs with your own account. It isn't affiliated with either of them."}},{"@type":"Question","name":"Do I need a MyAnimeList account?","acceptedAnswer":{"@type":"Answer","text":"You can sign in with MyAnimeList, with AniList, or with both. When both are linked, every change you make on your MyAnimeList list is copied to AniList, and a Sync screen can bring the two lists in line."}},{"@type":"Question","name":"Does it track manga as well as anime?","acceptedAnswer":{"@type":"Answer","text":"Yes, along with light novels and manhwa. You track chapters and volumes the same way you track episodes."}},{"@type":"Question","name":"What Android version do I need?","acceptedAnswer":{"@type":"Answer","text":"NakamaList runs on Android 8.0 and newer, on phones, tablets and Android TV."}},{"@type":"Question","name":"How do I report a bug or ask for a feature?","acceptedAnswer":{"@type":"Answer","text":"Open an issue on GitHub at https://github.com/asa07-salihg/NakamaList/issues or email nakamalist@proton.me. There's a template for bugs and one for feature requests."}}]}]}
+    {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://asa07-salihg.github.io/NakamaList/#website","name":"NakamaList","url":"https://asa07-salihg.github.io/NakamaList/","inLanguage":"en"},{"@type":"SoftwareApplication","name":"NakamaList","softwareVersion":"1.8.7","dateModified":"2026-10-09","operatingSystem":"Android 8.0+","applicationCategory":"EntertainmentApplication","url":"https://asa07-salihg.github.io/NakamaList/","downloadUrl":"https://play.google.com/store/apps/details?id=com.nakamalist.app","installUrl":"https://play.google.com/store/apps/details?id=com.nakamalist.app","image":"https://asa07-salihg.github.io/NakamaList/assets/og-card.png","inLanguage":"en","description":"Free, ad-free MyAnimeList client for Android, tablet and TV. Track anime and manga, follow friends and compare their scores, and browse seasonal anime, rankings, news and forums.","author":{"@type":"Person","name":"Ahmet Salih Golen"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"screenshot":[{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/home.png","url":"https://asa07-salihg.github.io/NakamaList/assets/home.png","width":1080,"height":2400,"caption":"NakamaList, an unofficial MyAnimeList app for Android: home screen with new episodes and Continue Watching"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/friends.png","url":"https://asa07-salihg.github.io/NakamaList/assets/friends.png","width":1080,"height":2400,"caption":"Friends activity feed in NakamaList, merging MyAnimeList and AniList friends in one place"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/friendlist.png","url":"https://asa07-salihg.github.io/NakamaList/assets/friendlist.png","width":1080,"height":2400,"caption":"A friend's anime list opened in NakamaList, with the same tabs as your own list"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/mylist.png","url":"https://asa07-salihg.github.io/NakamaList/assets/mylist.png","width":1080,"height":2400,"caption":"My List in the NakamaList MyAnimeList app, tracking anime and manga with status tabs and scores"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/detail.png","url":"https://asa07-salihg.github.io/NakamaList/assets/detail.png","width":1080,"height":2400,"caption":"Anime title page in NakamaList with synopsis, score, characters and Friend Scores"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/discover.png","url":"https://asa07-salihg.github.io/NakamaList/assets/discover.png","width":1080,"height":2400,"caption":"Discover screen in the NakamaList Android app with top anime rankings and recommendations"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/seasonal.png","url":"https://asa07-salihg.github.io/NakamaList/assets/seasonal.png","width":1080,"height":2400,"caption":"Seasonal anime chart in NakamaList showing this season as a grid of posters"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/news.png","url":"https://asa07-salihg.github.io/NakamaList/assets/news.png","width":1080,"height":2400,"caption":"MyAnimeList anime news shown as cards in the NakamaList app"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/profile.png","url":"https://asa07-salihg.github.io/NakamaList/assets/profile.png","width":1080,"height":2400,"caption":"Profile screen in NakamaList with anime and manga statistics and score distribution"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/tablet-home.png","url":"https://asa07-salihg.github.io/NakamaList/assets/tablet-home.png","width":2560,"height":1600,"caption":"NakamaList MyAnimeList app on an Android tablet: home screen in landscape"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/tablet-mylist.png","url":"https://asa07-salihg.github.io/NakamaList/assets/tablet-mylist.png","width":2560,"height":1600,"caption":"My List in NakamaList on an Android tablet, with the list and a title side by side"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/tablet-detail.png","url":"https://asa07-salihg.github.io/NakamaList/assets/tablet-detail.png","width":2560,"height":1600,"caption":"Anime title page in NakamaList on an Android tablet across two panes"},{"@type":"ImageObject","contentUrl":"https://asa07-salihg.github.io/NakamaList/assets/tablet-seasonal.png","url":"https://asa07-salihg.github.io/NakamaList/assets/tablet-seasonal.png","width":2560,"height":1600,"caption":"Seasonal anime chart in NakamaList on an Android tablet as a wide grid of posters"}],"featureList":["Track anime and manga","Friends activity feed and Friend Scores","Sign in with MyAnimeList or AniList","Optional AniList sync","Trailers, characters, staff and reviews","Seasonal anime","Rankings and recommendations","News, forums and clubs","New-episode notifications","Profile statistics","Android tablet and Android TV support","56 languages"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is NakamaList free?","acceptedAnswer":{"@type":"Answer","text":"Yes. No ads, no subscription, and no third-party tracking."}},{"@type":"Question","name":"Is it an official MyAnimeList app?","acceptedAnswer":{"@type":"Answer","text":"No. It's an independent app that signs in through the official MyAnimeList and AniList APIs with your own account. It isn't affiliated with either of them."}},{"@type":"Question","name":"Do I need a MyAnimeList account?","acceptedAnswer":{"@type":"Answer","text":"You can sign in with MyAnimeList, with AniList, or with both. When both are linked, every change you make on your MyAnimeList list is copied to AniList, and a Sync screen can bring the two lists in line."}},{"@type":"Question","name":"Does it track manga as well as anime?","acceptedAnswer":{"@type":"Answer","text":"Yes, along with light novels and manhwa. You track chapters and volumes the same way you track episodes."}},{"@type":"Question","name":"What Android version do I need?","acceptedAnswer":{"@type":"Answer","text":"NakamaList runs on Android 8.0 and newer, on phones, tablets and Android TV."}},{"@type":"Question","name":"How do I report a bug or ask for a feature?","acceptedAnswer":{"@type":"Answer","text":"Open an issue on GitHub at https://github.com/asa07-salihg/NakamaList/issues or email nakamalist@proton.me. There's a template for bugs and one for feature requests."}}]}]}
   </script>
 </head>
 
@@ -226,7 +264,7 @@
     <p class="tate" aria-hidden="true"><span class="k" lang="ja">記録</span><span class="ln"></span><span>Lists</span></p>
     <div>
       <h2>Your anime and manga list</h2>
-      <p>Anime and manga live in one list with your progress, scores and notes. Tap +1 after an episode and it updates everywhere in the app right away. Scores can be out of 10, out of 100 or in stars, and titles can be in romaji or English.</p>
+      <p>Anime and manga live in one list with your progress, scores and notes. Tap +1 after an episode and it updates everywhere in the app right away. Scores can be out of 10, out of 10 with decimals or out of 100, and titles can be in romaji or English.</p>
     </div>
     <div class="shots">
       <div class="phone"><img src="assets/mylist.png" srcset="assets/mylist.webp 640w, assets/mylist-1080.webp 1080w" sizes="(max-width:880px) 60vw, 268px" width="1080" height="2400" loading="lazy" decoding="async" alt="My List in the NakamaList MyAnimeList app, tracking anime and manga with status tabs and scores"/></div>
@@ -402,10 +440,12 @@
         g.strokeStyle='rgba(139,108,255,'+a.toFixed(3)+')'; g.lineWidth=1.1; g.stroke();
       }
     }
+    var raf=0;
     function frame(){
+      raf=0;
       if(!running) return;
       px+=(tx-px)*.08; py+=(ty-py)*.08; t+=.016;
-      draw(); requestAnimationFrame(frame);
+      draw(); raf=requestAnimationFrame(frame);
     }
     function point(x,y){ tx=x; ty=y; if(px<-9000){ px=x; py=y; } }
     addEventListener('pointermove',function(e){ point(e.clientX,e.clientY); },{passive:true});
@@ -413,14 +453,114 @@
     document.addEventListener('pointerleave',function(){ tx=-9999; ty=-9999; });
     addEventListener('scroll',function(){ scroll=scrollY; if(reduce) draw(); },{passive:true});
     addEventListener('resize',function(){ size(); draw(); });
-    document.addEventListener('visibilitychange',function(){ running=!document.hidden&&!reduce; if(running) frame(); });
+    document.addEventListener('visibilitychange',function(){ running=!document.hidden&&!reduce; if(running&&!raf) frame(); });
     size();
     if(reduce){ draw(); } else { frame(); }
   })();
 </script>
 <script>
-document.querySelector('.share .copy').addEventListener('click',function(){var b=this,u=b.dataset.url;
-navigator.clipboard.writeText(u).then(function(){var m=document.querySelector('.share .copied');b.classList.add('done');m.textContent='Link copied';setTimeout(function(){b.classList.remove('done');m.textContent=''},1800)})});
+document.querySelector('.share .copy').addEventListener('click',function(){var b=this,u=b.dataset.url,m=document.querySelector('.share .copied');
+function ok(){b.classList.add('done');m.textContent='Link copied';setTimeout(function(){b.classList.remove('done');m.textContent=''},1800)}
+function old(){var i=document.createElement('input');i.value=u;document.body.appendChild(i);i.select();try{document.execCommand('copy');ok()}catch(e){}i.remove()}
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(u).then(ok,old)}else{old()}});
+</script>
+<script>
+(function(){
+  var root=document.documentElement; if(!root.classList.contains('io')) return;
+  try{
+  var bar=document.createElement('div'); bar.className='progress'; bar.setAttribute('aria-hidden','true'); document.body.appendChild(bar);
+  function tag(sel,cls,step){
+    [].filter.call(document.querySelectorAll(sel),function(el){ return !el.querySelector('details'); }).forEach(function(el,i){
+      el.classList.add('rv'); if(cls) cls.split(' ').forEach(function(c){ if(c) el.classList.add(c); });
+      if(step!=null) el.style.setProperty('--d',(i*step).toFixed(2)+'s');
+    });
+  }
+  // letters of the Japanese labels, words of the headings
+  function split(el,cls,words){
+    var n=0;
+    (function walk(node){
+      [].slice.call(node.childNodes).forEach(function(c){
+        if(c.nodeType===3){
+          var parts=words?c.nodeValue.split(/(\s+)/):Array.from(c.nodeValue), f=document.createDocumentFragment();
+          parts.forEach(function(t){ if(!t) return; if(/^\s+$/.test(t)){ f.appendChild(document.createTextNode(t)); return; }
+            var sp=document.createElement('span'); sp.className=cls; sp.textContent=t; sp.style.setProperty('--c',n++); f.appendChild(sp); });
+          node.replaceChild(f,c);
+        } else if(c.nodeType===1 && c.className!=='ln') walk(c);
+      });
+    })(el);
+  }
+  document.querySelectorAll('.hero .tate, .row .tate .k, .end .tate').forEach(function(el){ split(el,'ch',false); });
+  document.querySelectorAll('.say p').forEach(function(el){ split(el,'sw',true); });
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ root.classList.add('ready'); }); });
+  // one underline under each heading, as wide as its longest line
+  var heads=[].slice.call(document.querySelectorAll('.row h2'));
+  heads.forEach(function(h){ var u=document.createElement('span'); u.className='u';
+    while(h.firstChild) u.appendChild(h.firstChild); h.appendChild(u); });
+  function underline(){
+    heads.forEach(function(h){
+      var rs=h.firstChild.getClientRects(), hb=h.getBoundingClientRect(), l=1e9, r=-1e9;
+      for(var i=0;i<rs.length;i++){ l=Math.min(l,rs[i].left); r=Math.max(r,rs[i].right); }
+      if(r>l){ h.style.setProperty('--ul',(l-hb.left)+'px'); h.style.setProperty('--uw',(r-l)+'px'); }
+    });
+  }
+  heads.forEach(function(h){ split(h.firstChild,'w',true); });
+  underline(); addEventListener('resize',underline); if(document.fonts) document.fonts.ready.then(underline);
+
+  // "56 languages" counts up the first time it is seen
+  [].slice.call(document.querySelectorAll('.row p')).forEach(function(p){
+    var walker=document.createTreeWalker(p,NodeFilter.SHOW_TEXT), t;
+    while((t=walker.nextNode())){ var i=t.nodeValue.indexOf('56 languages'); if(i<0) continue;
+      var after=t.splitText(i); after.nodeValue=after.nodeValue.slice(2); var num=document.createElement('span'); num.className='count'; num.textContent='56';
+      t.parentNode.insertBefore(num,after);
+      var cio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; cio.disconnect();
+        var t0=performance.now(); (function step(now){ var k=Math.min(1,(now-t0)/1400), v=Math.round(56*(1-Math.pow(1-k,3))); num.textContent=v; if(k<1) requestAnimationFrame(step); })(t0); }); },{threshold:.6});
+      cio.observe(num); break; }
+  });
+  tag('.row .tate');
+  tag('.row > div:not(.shots):not(.body):not(.tabs3)', 'l');
+  tag('.row.wide .body > div:first-child', 'l');
+  tag('.faq h2', 'l');
+  document.querySelectorAll('.row .shots').forEach(function(sh){
+    sh.querySelectorAll('.phone').forEach(function(ph,i){ ph.classList.add('rv','ph'); if(i%2) ph.classList.add('b'); ph.style.setProperty('--d',(0.12+i*.18).toFixed(2)+'s'); });
+  });
+  tag('.row.wide .body .tab', 'zoom');
+  tag('.tabs3 figure', 'zoom', .14);
+  tag('.faq details', '', .07);
+  tag('.end .tate, .end h2, .end .cta', '', .12);
+  tag('.share a, .share button', 'pop', .06);
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{rootMargin:'0px 0px -12% 0px',threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  setTimeout(function(){ document.querySelectorAll('.rv').forEach(function(el){ var r=el.getBoundingClientRect(); if(r.top<innerHeight&&r.bottom>0) el.classList.add('in'); }); },1200);
+
+  var phones=[].slice.call(document.querySelectorAll('.shots .phone')), tabs=[].slice.call(document.querySelectorAll('.wide .body .tab'));
+  var sayWords=[].slice.call(document.querySelectorAll('.say .sw')), sayEl=document.querySelector('.say p');
+  var hero=document.querySelector('.hero .phone'), tiltX=0, tiltY=0, fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if(fine&&hero) addEventListener('pointermove',function(e){ tiltY=(e.clientX/innerWidth-.5)*10; tiltX=-(e.clientY/innerHeight-.5)*8; onScroll(); },{passive:true});
+  var ticking=false;
+  function update(){
+    ticking=false;
+    if(sayEl){ var sr=sayEl.getBoundingClientRect(), pr=(innerHeight*.85-sr.top)/(innerHeight*.5), n=sayWords.length;
+      sayWords.forEach(function(w,i){ var o=Math.max(0,Math.min(1,pr*n-i)); w.style.opacity=(.18+.82*o).toFixed(2); }); }
+    var h=innerHeight, max=document.documentElement.scrollHeight-h;
+    bar.style.transform='scaleX('+(max>0?Math.min(1,scrollY/max):0)+')';
+    var k=innerWidth<880?0:1;   // stacked layout on narrow screens: depth would push phones into the text
+    phones.forEach(function(ph){
+      var r=ph.getBoundingClientRect(); if(r.bottom<-200||r.top>h+200) return;
+      var c=(r.top+r.height/2-h/2)/h, depth=ph.previousElementSibling?.16:.08;
+      ph.style.transform='translate3d(0,'+(-c*depth*120*k).toFixed(1)+'px,0)'+(ph===hero&&fine?' perspective(900px) rotateX('+tiltX.toFixed(2)+'deg) rotateY('+tiltY.toFixed(2)+'deg)':'');
+    });
+    tabs.forEach(function(tb){
+      var r=tb.getBoundingClientRect(); if(r.bottom<0||r.top>h) return;
+      var c=(r.top+r.height/2-h/2)/h;
+      tb.style.transform='perspective(1400px) rotateX('+(c*8*k).toFixed(2)+'deg)';
+    });
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); update();
+  }catch(err){ root.classList.remove('io'); }
+})();
 </script>
 </body>
 </html>
