@@ -1,3 +1,25 @@
+## 1.8.8
+**Two screens, one app**
+
+- On handhelds with a second screen under the main one, like the AYN Thor, NakamaList now uses both as one tall screen. The top bar sits on the upper screen and the navigation on the lower one.
+- Lists carry on from the upper screen onto the lower one: Seasonal, Discover, My List, Friends, News, Forums, a title's page, your profile, Settings and the pages opened from them. Dragging either screen scrolls the whole list.
+- A row cut by the edge between the screens is drawn on both, so nothing goes missing in the gap, and the selection outline wraps around both halves of it.
+- Seasonal shows four columns on two screens, with the edit and +1 buttons stacked so they never cover the score.
+- A title's edit button, a thread's reply bar and its jump-to-newest button sit on the lower screen, above the navigation.
+- With the built-in controller, Down at the end of the upper screen carries on onto the lower one and Up comes back, row by row. Down twice quickly jumps to the navigation, Up twice quickly to the top of the screen.
+- Settings > Controller buttons lets you choose Xbox or Nintendo button positions, assign any button to any action, and turn the sticks on or off. The welcome screen shows which button does what.
+- Typing opens a keyboard on the whole lower screen, in your language: touch it or steer it with the controller. Back closes it first and keeps what you typed. One key away is the system keyboard, for languages typed by composing (Chinese, Japanese, Korean, Amharic).
+- The first-run setup uses both screens too, and Settings has a switch to keep everything on the main screen.
+- Settings > My List can export your list as MyAnimeList XML files (anime and manga), from MyAnimeList, AniList or both. Import them on MyAnimeList to restore or move your list; titles already on it are updated.
+- Forum topics with no replies open on MyAnimeList, because MyAnimeList's app interface returns no posts for them. Topic titles no longer show "&amp;" in place of "&".
+- Friend Scores on a title's page start with ten friends. "Show more" opens all of them, "Show less" folds them back.
+- With a remote or controller, rows of posters keep the selected one in the middle as you move along them, and grids keep to their column when you move up and down past the edge of the screen.
+- A card with nothing to choose inside it opens on the first press of OK.
+- Coming back from a page in Settings returns to the row that opened it.
+- The app opens a little faster: the image cache is ready before the first screen asks for it.
+- Fixed a crash on launch on some Honor phones (Android 16).
+
+
 ## 1.8.7
 **Made for the TV remote**
 

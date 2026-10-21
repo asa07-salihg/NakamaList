@@ -65,7 +65,8 @@ dates, rewatch and reread counts, priority, tags and comments. The +1 button add
 and the change shows up on every screen right away.
 
 Lists can be shown as rows or a poster grid, with status tabs, type filters and sorting. Scores can be out
-of 10, out of 10 with decimals or out of 100, and titles can be in romaji or English.
+of 10, out of 10 with decimals or out of 100, and titles can be in romaji or English. Your list can be
+saved as MyAnimeList XML files, from MyAnimeList, AniList or both, ready to import on MyAnimeList.
 
 Home shows what you're watching and reading, new episodes, your Plan to Watch and Plan to Read lists,
 this season, and your own recent activity.
@@ -119,6 +120,8 @@ and home screen widgets for what you're watching and reading.
 - **Phones** in portrait
 - **Tablets** with layouts that use the full screen
 - **TV** on Android TV and Google TV, with its own launcher banner and full remote navigation
+- **Dual-screen handhelds** such as the AYN Thor, with both screens used as one and controller buttons you
+  can reassign
 - **Account** on MyAnimeList or AniList to track; browsing works without one
 
 ### Languages
