@@ -6,10 +6,11 @@
 - A row cut by the edge between the screens is drawn on both, so nothing goes missing in the gap, and the selection outline wraps around both halves of it.
 - Seasonal shows four columns on two screens, with the edit and +1 buttons stacked so they never cover the score.
 - A title's edit button, a thread's reply bar and its jump-to-newest button sit on the lower screen, above the navigation.
+- On a title's page, a thread or a Settings page, the back bar at the top scrolls away with the page and comes back at the top, leaving the upper screen to the page.
 - With the built-in controller, Down at the end of the upper screen carries on onto the lower one and Up comes back, row by row. Down twice quickly jumps to the navigation, Up twice quickly to the top of the screen.
 - Settings > Controller buttons lets you choose Xbox or Nintendo button positions, assign any button to any action, and turn the sticks on or off. The welcome screen shows which button does what.
 - Typing opens a keyboard on the whole lower screen, in your language: touch it or steer it with the controller. Back closes it first and keeps what you typed. One key away is the system keyboard, for languages typed by composing (Chinese, Japanese, Korean, Amharic).
-- The first-run setup uses both screens too, and Settings has a switch to keep everything on the main screen.
+- The first-run setup uses both screens too, and Settings has a switch to keep everything on the main screen. While it is open, the controller stays on its buttons and never selects the app behind it.
 - Settings > My List can export your list as MyAnimeList XML files (anime and manga), from MyAnimeList, AniList or both. Import them on MyAnimeList to restore or move your list; titles already on it are updated.
 - Forum topics with no replies open on MyAnimeList, because MyAnimeList's app interface returns no posts for them. Topic titles no longer show "&amp;" in place of "&".
 - Friend Scores on a title's page start with ten friends. "Show more" opens all of them, "Show less" folds them back.
@@ -18,7 +19,6 @@
 - Coming back from a page in Settings returns to the row that opened it.
 - The app opens a little faster: the image cache is ready before the first screen asks for it.
 - Fixed a crash on launch on some Honor phones (Android 16).
-
 
 ## 1.8.7
 **Made for the TV remote**
@@ -35,7 +35,6 @@
 - On a TV, sharing is hidden (there is nothing to share to), and switches are toggled by selecting their whole row.
 - Opening a Discover tab no longer leaves its rows scrolled half a poster to the side.
 
-
 ## 1.8.6
 **Getting around threads**
 
@@ -43,7 +42,6 @@
 - A small round button in the corner jumps to the newest post or back to the first. Jumping to the newest post loads the rest of the thread in one go.
 - On Friends, swiping from Recent Activity back to a friend's list no longer flashes past the Completed tab on its way. The list opens straight on the tab you left it on.
 - On some phones with a work profile or a locked-down browser, tapping Sign in with MyAnimeList or AniList on the welcome screen closed the app. It now opens the sign-in page in the next browser that can, or inside the app if none can.
-
 
 ## 1.8.5
 **Behind the scenes**
