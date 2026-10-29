@@ -1,3 +1,16 @@
+## 1.8.9
+**Genres, filters and clearer errors**
+
+- Tap a genre, theme or demographic on a title's page (Action, Isekai, Shounen, ...) to see it as a list inside the app, in MyAnimeList's Members or Score order. It opens at the title you came from, outlined for a moment, and loads further down MyAnimeList's ranking as you scroll.
+- Genre lists have a filter row that stays in place: My List's checklist (Not in My List, Watching, Completed, On-Hold, Dropped, Plan to Watch) and the order.
+- Search results get the same My List checklist and a filter laid out like MyAnimeList's genre page - genres, themes and demographics side by side; tick several to find titles that have all of them.
+- A title opened from a genre list, a ranking, a studio's or person's works or a "Show more" list now opens in front of it. Back returns to the list where you left it, with that title outlined, and the title's page comes back where you had scrolled it.
+- Posters in search results, rankings and genre lists are as large as in My List.
+- When MyAnimeList or AniList is down, busy or under maintenance, or your device is offline, the app now says so plainly instead of showing a code like "HTTP 503".
+- My List: switching to an empty tab no longer brings back the tabs you had scrolled away; pull down on the empty page to show them.
+- Two screens: the lower screen shows a title when you hold its card or select it with OK, and says how until you do. Sync with AniList, Navigation, Theme and Browser in Settings run on over both screens, swipes on the lower screen reach Friends' Recent Activity, and pages turned to start at their top.
+- With a controller, opening a season from Seasonal's Archive stays on the Archive.
+
 ## 1.8.8
 **Two screens, one app**
 
