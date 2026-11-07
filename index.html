@@ -233,7 +233,9 @@
     .faq details[open] summary::after{rotate:180deg}
 
     /* clock: each section is a slice between two spokes, turned by the scroll */
-    html.clock main{--clock-h:auto;display:grid;grid-template-rows:var(--clock-h)}
+    html.clock main{--clock-h:auto;display:grid;grid-template-rows:var(--clock-h);overflow:clip}
+    html.clock-snap{scroll-snap-type:y mandatory}
+    .clock-pt{position:absolute;left:0;width:1px;height:1px;scroll-snap-align:start;scroll-snap-stop:always;pointer-events:none}
     html.clock:not(.clock-on) main,html.clock:not(.clock-on) footer{visibility:hidden}
     html.clock main>*{grid-area:1/1;align-self:start;position:sticky;top:0;transform-origin:0 0;width:100%}
     html.clock .clock-sub{transform-origin:0 0}
@@ -757,20 +759,20 @@ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(u)
     list.forEach(function(it){ var s=it.el.style; s.transform=''; s.top=''; s.clipPath=''; s.visibility=''; it.el.classList.remove('clock-sub'); });
     [].forEach.call(document.querySelectorAll('.row .tate'),function(t){ t.style.marginTop=''; });
     root.style.removeProperty('--clock-pw');
-    main.style.removeProperty('--clock-h'); root.classList.remove('clock','clock-on','clock-moving'); list=[];
+    main.style.removeProperty('--clock-h'); root.classList.remove('clock','clock-on','clock-moving'); list=[]; points();
   }
   function set(force){
     var w=want(), at=on&&STEP?(scrollY-top0)/STEP:null;
     if(w&&on&&!force) return;
     if(on) off();
     on=w; if(!on) return;
-    root.classList.add('clock'); build(); layout();
+    root.classList.add('clock'); build(); layout(); points();
     // a new window size changes the length of a turn: stay on the same slice
     if(at!=null) scrollTo({top:top0+at*STEP,behavior:'instant'});
     q=aim=target(); draw();
     if(shown) show();
   }
-  function relayout(){ if(!on) return; layout(); q=aim=target(); draw(); }
+  function relayout(){ if(!on) return; layout(); points(); q=aim=target(); draw(); }
   function show(){ if(on) root.classList.add('clock-on'); else root.classList.remove('clock'); }
   function sliceOf(el){
     for(var i=list.length-1;i>=0;i--) if(list[i].el===el||list[i].el.contains(el)) return i;
@@ -791,22 +793,17 @@ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(u)
     if(Math.abs(target()-i)>.01) scrollTo({top:top0+i*STEP});
   });
   addEventListener('scroll',req,{passive:true});
-  // A finger lets go anywhere, and the page would stay half turned: on a touch screen, once the scroll
-  // has come to rest, it settles on the slice it was heading for.
-  var down=false, idle=0, lastY=scrollY, dir=1, snapping=false;
-  function settle(){
-    if(!on||down) return;
-    var x=(scrollY-top0)/STEP, k=Math.floor(x), f=x-k; if(x<=0||x>=list.length-1||f<.01||f>.99){ snapping=false; return; }
-    var to=dir>0?(f>.2?k+1:k):(f<.8?k:k+1);
-    snapping=true; scrollTo({top:top0+to*STEP,behavior:'smooth'});
-  }
-  if(touch){
-    addEventListener('touchstart',function(){ down=true; snapping=false; clearTimeout(idle); },{passive:true});
-    addEventListener('touchend',function(){ down=false; clearTimeout(idle); idle=setTimeout(settle,160); },{passive:true});
-    addEventListener('scroll',function(){
-      if(scrollY!==lastY){ if(!snapping) dir=scrollY>lastY?1:-1; lastY=scrollY; }
-      clearTimeout(idle); idle=setTimeout(settle,160);
-    },{passive:true});
+  // A finger lets go anywhere, and a flick ran on through several slices: on a touch screen the page
+  // snaps, one slice per swipe, on empty invisible snap points (one per slice)
+  var pts=[];
+  function points(){
+    pts.forEach(function(p){ p.remove(); }); pts=[];
+    root.classList.toggle('clock-snap',on&&touch);
+    if(!on||!touch) return;
+    for(var i=0;i<list.length;i++){
+      var p=document.createElement('div'); p.className='clock-pt'; p.setAttribute('aria-hidden','true');
+      p.style.top=Math.round(top0+i*STEP)+'px'; document.body.appendChild(p); pts.push(p);
+    }
   }
   var lastW=root.clientWidth, lastH=innerHeight;
   addEventListener('resize',function(){
