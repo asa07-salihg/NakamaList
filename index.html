@@ -5,7 +5,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <script>if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('io')</script>
-  <script>if(window.DOMMatrix&&innerHeight<=1400&&!matchMedia('(prefers-reduced-motion: reduce)').matches){var r=document.documentElement;r.classList.add('clock');setTimeout(function(){if(!r.classList.contains('clock-on'))r.classList.remove('clock')},4000)}</script>
+  <script>if(window.DOMMatrix&&innerHeight<=1400&&innerHeight>=480&&!matchMedia('(prefers-reduced-motion: reduce)').matches){var r=document.documentElement;r.classList.add('clock');setTimeout(function(){if(!r.classList.contains('clock-on'))r.classList.remove('clock')},4000)}</script>
 
   <title>NakamaList: MyAnimeList Client for Anime &amp; Manga on Android</title>
   <meta name="description" content="Free, unofficial MyAnimeList (MAL) client for Android. Track anime and manga, sign in with MAL or AniList, and compare scores with friends. No ads."/>
@@ -247,7 +247,8 @@
     html.clock footer{border-top:0}
     @media(min-width:881px){
       html.clock .row .tate{margin-top:0}
-      html.clock .row .shots{--pw:var(--clock-pw,clamp(200px,19vw,268px))}
+      html.clock{--clock-pw:clamp(200px,19vw,268px)}
+      html.clock .row .shots{--pw:var(--clock-pw)}
       html.clock .hero .shots{--pw:min(clamp(200px,19vw,268px),33vh)}
     }
     .spokes{position:fixed;inset:0;z-index:0;pointer-events:none;display:none}
@@ -593,13 +594,14 @@ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(u)
 (function(){
   var root=document.documentElement, main=document.querySelector('main'), foot=document.querySelector('footer'), cv=document.querySelector('.spokes');
   if(!main||!cv||!cv.getContext||!window.DOMMatrix){ root.classList.remove('clock'); return; }
-  var still=matchMedia('(prefers-reduced-motion: reduce)');
+  var still=matchMedia('(prefers-reduced-motion: reduce)'), touch=matchMedia('(pointer: coarse)').matches;
   var g=cv.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2);
   var on=false, W=0, H=0, D=0, TH=1, STEP=0, top0=0, list=[], fill=[], q=0, aim=0, raf=0, last=0, rest=0;
   var LINE=(getComputedStyle(root).getPropertyValue('--sumi-2')||'#a39fae').trim();
   var tops=[].slice.call(main.children);
   var band=tops.map(function(s){var b=getComputedStyle(s).backgroundColor;return /rgba?\(0, 0, 0, 0\)|transparent/.test(b)?null:b});
-  function want(){ return !still.matches&&innerHeight<=1400; }
+  // too short a screen (a phone on its side) keeps the plain page: a slice would be too small to read
+  function want(){ return !still.matches&&innerHeight<=1400&&innerHeight>=480; }
 
   // pictures under their text (and on a phone every screenshot row) turn as slices of their own
   function build(){
@@ -639,9 +641,10 @@ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(u)
     return {l:l,t:t,r:r,b:b};
   }
   function layout(){
-    W=innerWidth; H=innerHeight; STEP=Math.round(H*.85);
+    W=root.clientWidth||innerWidth; H=innerHeight; STEP=Math.round(H*.85);
     list.forEach(function(it){ it.el.style.transform='none'; it.tf='none'; it.el.style.clipPath='none'; });
-    D=Math.round(Math.max(W*.25,H*.6));
+    // on a phone the hub sits further out, so a slice turns by less and its neighbours stay out of the way
+    D=Math.round(W<700?H*1.1:Math.max(W*.25,H*.6));
     var w=document.querySelector('main .wrap'), XL=w?w.getBoundingClientRect().left+Math.min(parseFloat(getComputedStyle(w).paddingLeft)||0,64):W*.05;
     TH=2*Math.atan((H/2)/(D+Math.max(0,XL-16)));
     var T=Math.tan(TH/2), big=W<700?1.45:1.6, m=Math.max(16,W*.02);
@@ -788,10 +791,27 @@ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(u)
     if(Math.abs(target()-i)>.01) scrollTo({top:top0+i*STEP});
   });
   addEventListener('scroll',req,{passive:true});
-  var lastW=innerWidth, lastH=innerHeight, touch=matchMedia('(pointer: coarse)').matches;
+  // A finger lets go anywhere, and the page would stay half turned: on a touch screen, once the scroll
+  // has come to rest, it settles on the slice it was heading for.
+  var down=false, idle=0, lastY=scrollY, dir=1, snapping=false;
+  function settle(){
+    if(!on||down) return;
+    var x=(scrollY-top0)/STEP, k=Math.floor(x), f=x-k; if(x<=0||x>=list.length-1||f<.01||f>.99){ snapping=false; return; }
+    var to=dir>0?(f>.2?k+1:k):(f<.8?k:k+1);
+    snapping=true; scrollTo({top:top0+to*STEP,behavior:'smooth'});
+  }
+  if(touch){
+    addEventListener('touchstart',function(){ down=true; snapping=false; clearTimeout(idle); },{passive:true});
+    addEventListener('touchend',function(){ down=false; clearTimeout(idle); idle=setTimeout(settle,160); },{passive:true});
+    addEventListener('scroll',function(){
+      if(scrollY!==lastY){ if(!snapping) dir=scrollY>lastY?1:-1; lastY=scrollY; }
+      clearTimeout(idle); idle=setTimeout(settle,160);
+    },{passive:true});
+  }
+  var lastW=root.clientWidth, lastH=innerHeight;
   addEventListener('resize',function(){
-    if(touch&&innerWidth===lastW&&Math.abs(innerHeight-lastH)<160){ req(); return; }
-    lastW=innerWidth; lastH=innerHeight; set(true);
+    if(touch&&root.clientWidth===lastW&&Math.abs(innerHeight-lastH)<160){ req(); return; }
+    lastW=root.clientWidth; lastH=innerHeight; set(true);
   });
   if(still.addEventListener) still.addEventListener('change',function(){ set(true); });
   set(true);
