@@ -238,6 +238,7 @@
     .clock-pt{position:absolute;left:0;width:1px;height:1px;scroll-snap-align:start;scroll-snap-stop:always;pointer-events:none}
     html.clock:not(.clock-on) main,html.clock:not(.clock-on) footer{visibility:hidden}
     html.clock main>*{grid-area:1/1;align-self:start;position:sticky;top:0;transform-origin:0 0;width:100%}
+    html.clock main>*+*{transform:translateY(1000vh)}
     html.clock .clock-sub{transform-origin:0 0}
     html.clock-moving main>*,html.clock-moving .clock-sub,html.clock-moving footer{will-change:transform}
     html.clock .rv{translate:none!important;rotate:none!important;scale:1!important}
@@ -714,16 +715,20 @@ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(u)
     aim=target(); if(Math.abs(aim-q)>2) q=aim-2*Math.sign(aim-q);
     q+=(aim-q)*(1-Math.exp(-dt/70));
     if(Math.abs(aim-q)<.0015){ q=aim; last=0; clearTimeout(rest); rest=setTimeout(function(){ root.classList.remove('clock-moving'); },160); }
-    else { raf=requestAnimationFrame(draw); root.classList.add('clock-moving'); }
-    var px=-D, py=H/2, far='translate(0px,'+(3*H)+'px)';
+    else { raf=requestAnimationFrame(draw); if(!touch) root.classList.add('clock-moving'); }
+    warm(Math.round(q));
+    var px=-D, py=H/2, far='translate(0px,'+(10*H)+'px)';
     // at rest only the slice at three o'clock shows; while turning, it and the one coming in
     function seen(a){ return Math.abs(a)<TH*.985; }
     function clip(it,c){ if(it.clip!==c){ it.clip=c; it.el.style.clipPath=it.clips[c]; } }
     function tf(it,v){ if(it.tf!==v){ it.tf=v; it.el.style.transform=v; } }
+    // on a phone only the slices on screen keep a layer, so a swipe does not repaint them all at once
+    function live(it,v){ if(touch&&it.wc!==v){ it.wc=v; it.el.style.willChange=v?'transform':''; } }
     list.forEach(function(it,i){
       var a=(i-q)*TH;
       if(it.kind==='sub'){
         var pi=list.indexOf(it.parent), pa=(pi-q)*TH;
+        live(it,seen(a));
         if(!seen(a)){ tf(it,'none'); it.el.style.visibility='hidden'; return; }
         it.el.style.visibility='';
         // undo the section's turn, then turn as a slice of its own
@@ -732,6 +737,7 @@ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(u)
         return;
       }
       var subOn=it.subs&&it.subs.length&&seen(a+TH);
+      live(it,seen(a)||subOn);
       if(!seen(a)&&!subOn){ tf(it,far); return; }
       clip(it,seen(a)?(subOn?'both':'own'):'sub');
       tf(it,mat(it,a).toString());
@@ -755,11 +761,30 @@ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(u)
     }
   }
   function req(){ if(!raf) raf=requestAnimationFrame(draw); }
+  // the slices next in line get their pictures and their reveal before they turn in, not after
+  var near=null;
+  function warm(k){
+    if(k===near) return; near=k;
+    list.forEach(function(it,i){
+      if(i<k-1||i>k+2) return;
+      [].forEach.call(it.el.querySelectorAll('img[loading="lazy"]'),function(im){ im.loading='eager'; if(im.decode) im.decode().catch(function(){}); });
+      if(i<=k+1) [].forEach.call(it.el.querySelectorAll('.rv'),function(r){ r.classList.add('in'); });
+    });
+  }
+  // then the rest, one at a time and in order, once the page has loaded
+  function trickle(){
+    var im=on&&!(navigator.connection&&navigator.connection.saveData)&&main.querySelector('img[loading="lazy"]');
+    if(!im) return;
+    im.loading='eager';
+    if(im.complete) setTimeout(trickle,0);
+    else { im.addEventListener('load',trickle,{once:true}); im.addEventListener('error',trickle,{once:true}); }
+  }
+  addEventListener('load',function(){ setTimeout(trickle,800); });
   function off(){
-    list.forEach(function(it){ var s=it.el.style; s.transform=''; s.top=''; s.clipPath=''; s.visibility=''; it.el.classList.remove('clock-sub'); });
+    list.forEach(function(it){ var s=it.el.style; s.transform=''; s.top=''; s.clipPath=''; s.visibility=''; s.willChange=''; it.el.classList.remove('clock-sub'); });
     [].forEach.call(document.querySelectorAll('.row .tate'),function(t){ t.style.marginTop=''; });
     root.style.removeProperty('--clock-pw');
-    main.style.removeProperty('--clock-h'); root.classList.remove('clock','clock-on','clock-moving'); list=[]; points();
+    main.style.removeProperty('--clock-h'); root.classList.remove('clock','clock-on','clock-moving'); list=[]; near=null; points();
   }
   function set(force){
     var w=want(), at=on&&STEP?(scrollY-top0)/STEP:null;
