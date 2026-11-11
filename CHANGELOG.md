@@ -1,3 +1,14 @@
+## 1.9.0
+**Widgets, reviews as written, and safer sign-in**
+
+- Two new home-screen widgets. My List scrolls through everything you are watching or reading, with a +1 on every row and a switch between anime and manga at the top. New Episodes lists this week's episodes of what you are watching: the ones that are out and you have not seen first, then the ones still to air, with their day and time.
+- The Continue Watching and Continue Reading widgets now show the title, and an anime says when its next episode airs or that one is out. Stretched wide, the poster stands beside the text instead of being cropped. The arrows sit at the top of the card.
+- Widgets update on their own about once an hour, so an episode you marked on the website or on another device shows up without opening the app. The widget picker shows what each widget looks like.
+- AniList reviews are shown the way they were written: headings, bold and italic, centred blocks, quotes, lists, spoilers you tap to reveal, links, pictures and YouTube videos. Reviews from Kitsu are plain text, as before.
+- In forum posts and news, a dividing line is drawn as a line, and a post that starts with large text no longer comes out large all the way down.
+- AniList sign-in only completes a sign-in you started in the app. Links from notifications, posts and reviews are opened only if they are web addresses, and a page in the in-app browser can no longer start other apps by itself.
+- Device backups no longer include the in-app browser's cookies. After moving to a new phone you sign in again there, as you already do in the app.
+
 ## 1.8.9
 **Genres, filters and clearer errors**
 
